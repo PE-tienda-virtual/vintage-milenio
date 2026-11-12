@@ -1218,7 +1218,7 @@ productosCatalogo = [
         "medidas": "11cm x 6 cm"
     },
     {
-        "id": 136,
+        "id": 137,
         "nombre": "Llaverito Perlita con Corazon",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/40.jpg"],
@@ -1227,7 +1227,7 @@ productosCatalogo = [
         "medidas": "12 cm"
     },
     {
-        "id": 136,
+        "id": 138,
         "nombre": "Lazo de Perlitas",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/39.jpg"],
@@ -1236,7 +1236,7 @@ productosCatalogo = [
         "medidas": "11cm x 6 cm"
     },
     {
-        "id": 136,
+        "id": 139,
         "nombre": "Llaverito Estrella",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/41.jpg"],
@@ -1245,7 +1245,7 @@ productosCatalogo = [
         "medidas": "6 cm"
     },
     {
-        "id": 136,
+        "id": 140,
         "nombre": "Llaverito Triple Totoro",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/42.jpg"],
@@ -1254,7 +1254,7 @@ productosCatalogo = [
         "medidas": "23cm"
     },
     {
-        "id": 136,
+        "id": 141,
         "nombre": "Peluchito Gato  ",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/43.jpg"],
@@ -1263,7 +1263,7 @@ productosCatalogo = [
         "medidas": "10cm x 6 cm"
     },
     {
-        "id": 136,
+        "id": 142,
         "nombre": "Peluchito Gato Negro",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/44.jpg"],
@@ -1272,7 +1272,7 @@ productosCatalogo = [
         "medidas": "10cm x 6 cm"
     },
     {
-        "id": 136,
+        "id": 143,
         "nombre": "Peluchito Gato Blanco",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/45.jpg"],
@@ -1302,6 +1302,16 @@ let fotoPrincipalActual = "";
 let isPlayingLofi = false;
 
 window.addEventListener('DOMContentLoaded', () => {
+    // Recuperar carrito guardado en localStorage al iniciar
+    const carritoGuardado = localStorage.getItem('vintage_milenio_carrito');
+    if (carritoGuardado) {
+        try {
+            carrito = JSON.parse(carritoGuardado);
+        } catch (e) {
+            carrito = [];
+        }
+    }
+
     renderizarCatalogo(productosCatalogo);
     renderizarPinesGrid();
     actualizarContadorCarrito();
@@ -1315,6 +1325,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (el) el.textContent = heroTexts[hIndex];
     }, 3000);
 });
+
+// Función auxiliar para guardar el carrito en localStorage
+function guardarCarritoStorage() {
+    localStorage.setItem('vintage_milenio_carrito', JSON.stringify(carrito));
+}
 
 function toggleLofiMusic() {
     const audio = document.getElementById('lofi-audio');
@@ -1712,6 +1727,7 @@ function agregarAlCarritoDesdeDetalle(idProducto) {
             esPin: false
         });
     }
+    guardarCarritoStorage(); // Guardar cambios en el navegador
     actualizarContadorCarrito();
     abrirCarrito();
     sincronizarPrecioPinesEnCarrito();
@@ -1720,6 +1736,7 @@ function agregarAlCarritoDesdeDetalle(idProducto) {
 function modificarCantidad(index, cambio) {
     carrito[index].cantidad += cambio;
     if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
+    guardarCarritoStorage(); // Guardar cambios en el navegador
     actualizarContadorCarrito();
     renderizarContenidoCarrito();
     sincronizarPrecioPinesEnCarrito();
@@ -1943,6 +1960,7 @@ function agregarPinesAICarrito() {
         variantes: "Colección 58mm",
         esPin: true
     });
+    guardarCarritoStorage(); // Guardar cambios en el navegador
     actualizarContadorCarrito();
     abrirCarrito();
 }
@@ -1952,6 +1970,7 @@ function sincronizarPrecioPinesEnCarrito() {
     if (pinItem) {
         const calc = calcularPrecioPines();
         pinItem.precio = calc.precioUnitario;
+        guardarCarritoStorage(); // Guardar cambios en el navegador
         actualizarContadorCarrito();
         renderizarContenidoCarrito();
     }
