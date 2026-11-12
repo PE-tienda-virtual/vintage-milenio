@@ -127,11 +127,11 @@ productosCatalogo = [
     esPreventa: false,
     esBoxEspecial: false,
     imagenes: [
-        "img/Bolso japones Clasico/1.jpg",
-        "img/Bolso japones Clasico/2.jpg",
-        "img/Bolso japones Clasico/3.jpg",
-        "img/Bolso japones Clasico/4.jpg",
-        "img/Bolso japones Clasico/5.jpg"
+        "img/Bolso Japones Clasico/1.jpg",
+        "img/Bolso Japones Clasico/2.jpg",
+        "img/Bolso Japones Clasico/3.jpg",
+        "img/Bolso Japones Clasico/4.jpg",
+        "img/Bolso Japones Clasico/5.jpg"
     ],
     colores: ["Blanco", "Bronceado", "Marrón Oscuro", "Azul", "Negro"],
     tieneTallas: false,
@@ -191,9 +191,9 @@ productosCatalogo = [
     esPreventa: false,
     esBoxEspecial: false,
     imagenes: [
-        "img/Bolso japones itabag II/1.jpg",
-        "img/Bolso japones itabag II/2.jpg",
-        "img/Bolso japones itabag II/3.jpg",
+        "img/Bolso Japones Itabag II/1.jpg",
+        "img/Bolso Japones Itabag II/2.jpg",
+        "img/Bolso Japones Itabag II/3.jpg",
     ],
     colores: ["Negro", "Marrón"],
     tieneTallas: true,
@@ -871,11 +871,11 @@ productosCatalogo = [
     esPreventa: false,
     esBoxEspecial: false,
     imagenes: [
-        "img/Bolso cruzado XS/1.jpg",
-        "img/Bolso cruzado XS/2.jpg",
-        "img/Bolso cruzado XS/3.jpg",
-        "img/Bolso cruzado XS/4.jpg",
-        "img/Bolso cruzado XS/5.jpg"
+        "img/Boiso cruzado XS/1.jpg",
+        "img/Boiso cruzado XS/2.jpg",
+        "img/Boiso cruzado XS/3.jpg",
+        "img/Boiso cruzado XS/4.jpg",
+        "img/Boiso cruzado XS/5.jpg"
     ],
     colores: ["Negro / Vino"],
     tieneTallas: false,
