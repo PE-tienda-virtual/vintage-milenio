@@ -36,24 +36,8 @@
 
    <!-- Audio ambiental oculto -->
 <audio id="lofi-audio" loop>
-    <source src="musica.mp3" type="audio/ogg">
+    <source src="musica.mp3" type="audio/mp3">
 </audio>
-
-<!-- Botón interactivo -->
-<button onclick="toggleAudio()">🎵 Activar / Desactivar Ambiente Lo-Fi</button>
-
-<script>
-    function toggleAudio() {
-        const audio = document.getElementById('lofi-audio');
-        if (audio.paused) {
-            audio.play().catch(error => {
-                console.log("Error al reproducir el audio:", error);
-            });
-        } else {
-            audio.pause();
-        }
-    }
-</script>
 
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="max-w-md md:max-w-7xl mx-auto bg-white min-h-screen shadow-2xl relative border-x border-slate-100 flex flex-col justify-between">
@@ -63,7 +47,6 @@
 <div id="welcome-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4 transition-opacity duration-300">
     <div class="bg-white rounded-3xl w-full max-w-sm p-6 shadow-2xl relative overflow-hidden border border-slate-100">
         <div class="flex justify-between items-center mb-4">
-            <!-- TÍTULO INTERACTIVO MEJORADO -->
             <h3 class="font-outfit text-lg font-extrabold text-slate-900 tracking-tight cursor-pointer transition-all duration-300 hover:text-blue-600 hover:scale-[1.02] select-none">
                 Bienvenido a Vintage Milenio
             </h3>
@@ -72,7 +55,6 @@
             </button>
         </div>
         
-                <!-- Resto del contenido del carrusel y botones... -->
                 <div class="relative w-full aspect-square bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-inner">
                     <button onclick="cambiarSlideModal(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition">
                         <i class="fa-solid fa-chevron-left text-xs"></i>
@@ -144,33 +126,29 @@
                 </div>
             </div>
 
-                            <!-- Barra Superior con Música y Anuncios Dinámicos -->
-                <div class="bg-slate-900 text-white text-[11px] py-2 px-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 overflow-hidden relative">
-                    
-                    <!-- ANUNCIO CON EFECTO DE DESPLAZAMIENTO / APARICIÓN DINÁMICA -->
-                    <div class="flex items-center gap-2 overflow-hidden flex-1 min-w-[200px]">
-                        <span class="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded animate-pulse uppercase tracking-wider">¡Nuevo!</span>
-                        <div class="relative w-full overflow-hidden h-4 flex items-center">
-                            <!-- Texto animado que se desliza o cambia -->
-                            <p class="absolute whitespace-nowrap animate-marquee font-medium text-slate-300 flex items-center gap-6">
-                                <span>📦 Envíos rápidos y seguros a todo el Perú</span>
-                                <span>💳 Aceptamos Yape, Plin y Transferencia Bancaria</span>
-                            </p>
-                        </div>
+            <!-- Barra Superior con Música y Anuncios Dinámicos -->
+            <div class="bg-slate-900 text-white text-[11px] py-2 px-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 overflow-hidden relative">
+                <div class="flex items-center gap-2 overflow-hidden flex-1 min-w-[200px]">
+                    <span class="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded animate-pulse uppercase tracking-wider">¡Nuevo!</span>
+                    <div class="relative w-full overflow-hidden h-4 flex items-center">
+                        <p class="absolute whitespace-nowrap animate-marquee font-medium text-slate-300 flex items-center gap-6">
+                            <span>📦 Envíos rápidos y seguros a todo el Perú</span>
+                            <span>💳 Aceptamos Yape, Plin y Transferencia Bancaria</span>
+                        </p>
                     </div>
-
-                    <!-- BOTÓN LO-FI SÚPER INTERACTIVO -->
-                    <button onclick="toggleLofiMusic()" class="group relative bg-slate-800 hover:bg-slate-700 text-slate-200 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold flex items-center gap-2.5 transition-all duration-300 border border-slate-700 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-400/10 active:scale-95">
-                        <!-- Efecto de ondas de música simuladas con puntos que vibran -->
-                        <span class="flex items-end gap-0.5 h-3">
-                            <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-2"></span>
-                            <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-3" style="animation-delay: 0.15s;"></span>
-                            <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-1.5" style="animation-delay: 0.3s;"></span>
-                        </span>
-                        <i id="lofi-icon" class="fa-solid fa-play text-[9px] text-amber-400 transition-transform group-hover:scale-110"></i>
-                        <span id="lofi-text" class="tracking-wide">Ambiente Lo-Fi</span>
-                    </button>
                 </div>
+
+                <!-- Botón Lo-Fi Conectado a script.js -->
+                <button onclick="toggleLofiMusic()" class="group relative bg-slate-800 hover:bg-slate-700 text-slate-200 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold flex items-center gap-2.5 transition-all duration-300 border border-slate-700 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-400/10 active:scale-95">
+                    <span class="flex items-end gap-0.5 h-3">
+                        <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-2"></span>
+                        <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-3" style="animation-delay: 0.15s;"></span>
+                        <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-1.5" style="animation-delay: 0.3s;"></span>
+                    </span>
+                    <i id="lofi-icon" class="fa-solid fa-play text-[9px] text-amber-400 transition-transform group-hover:scale-110"></i>
+                    <span id="lofi-text" class="tracking-wide">Ambiente Lo-Fi</span>
+                </button>
+            </div>
 
             <!-- CABECERA -->
             <header class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-100">
@@ -197,12 +175,10 @@
                             <a href="#" onclick="cambiarVista('home'); return false;" class="text-slate-300 hover:text-white transition">Inicio</a>
                             <a href="#" onclick="cambiarVista('catalogo', 'todos'); return false;" class="text-slate-300 hover:text-white transition">Catálogo</a>
                             
-                            <!-- Box Especial con diseño especial y llamativo -->
                             <a href="#" onclick="cambiarVista('catalogo', 'box-especial'); return false;" class="relative px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 rounded-xl transition shadow-md flex items-center gap-1.5 animate-bounce">
                                 <i class="fa-solid fa-gift text-xs"></i> <span>Box Especial</span>
                             </a>
 
-                            <!-- Preventa con diseño especial y llamativo -->
                             <a href="#" onclick="cambiarVista('catalogo', 'preventa'); return false;" class="relative px-3 py-1 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-slate-950 rounded-xl transition shadow-md flex items-center gap-1.5 animate-bounce">
                                 <i class="fa-solid fa-fire text-xs animate-pulse"></i> <span>Preventa</span>
                             </a>
@@ -277,7 +253,6 @@
                         <button class="pill bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition" data-filter="accesorios" onclick="filtrarCatalogo('accesorios')">Accesorios</button>
                         <button class="pill bg-amber-100 text-amber-900 hover:bg-amber-500 hover:text-slate-950 px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition border border-amber-300" data-filter="box-especial" onclick="filtrarCatalogo('box-especial')"><i class="fa-solid fa-gift mr-1"></i> Box Especial</button>
                         <button class="pill bg-pink-100 text-pink-900 hover:bg-pink-600 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition border border-pink-300" data-filter="preventa" onclick="filtrarCatalogo('preventa')"><i class="fa-solid fa-fire mr-1"></i> Preventa</button>
-                        
                     </div>
                     
                     <div class="catalog-search max-w-md">
@@ -285,7 +260,6 @@
                     </div>
                 </div>
 
-                <!-- Grilla de productos: 3 columnas en móvil, 5 en escritorio -->
                 <div class="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-5" id="main-products-grid"></div>
             </section>
 
