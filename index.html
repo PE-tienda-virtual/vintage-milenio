@@ -1,544 +1,608 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Milenio - Catálogo y Personalización</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts & FontAwesome -->
+    <title>Vintage Milenio | Marroquinería & Diseño de Bolsos Independiente</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0052cc',
+                        'primary-hover': '#003d99',
+                        whatsapp: '#00a884',
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-blue-600 selection:text-white">
 
-    <!-- VENTANA MODAL DE PUBLICIDAD / BIENVENIDA -->
-    <div class="welcome-modal-overlay" id="welcome-modal">
-        <div class="welcome-modal-card">
-            <div class="modal-header">
-                <h3>Bienvenido a Vintage Milenio</h3>
-                <button class="modal-close-btn" onclick="cerrarModalBienvenida()"><i class="fa-solid fa-xmark"></i></button>
+   <!-- Audio ambiental oculto -->
+<audio id="lofi-audio" loop>
+    <source src="musica.mp3" type="audio/ogg">
+</audio>
+
+<!-- Botón interactivo -->
+<button onclick="toggleAudio()">🎵 Activar / Desactivar Ambiente Lo-Fi</button>
+
+<script>
+    function toggleAudio() {
+        const audio = document.getElementById('lofi-audio');
+        if (audio.paused) {
+            audio.play().catch(error => {
+                console.log("Error al reproducir el audio:", error);
+            });
+        } else {
+            audio.pause();
+        }
+    }
+</script>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="max-w-md md:max-w-7xl mx-auto bg-white min-h-screen shadow-2xl relative border-x border-slate-100 flex flex-col justify-between">
+        
+        <div>
+           <!-- VENTANA MODAL DE PUBLICIDAD BIENVENIDA -->
+<div id="welcome-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4 transition-opacity duration-300">
+    <div class="bg-white rounded-3xl w-full max-w-sm p-6 shadow-2xl relative overflow-hidden border border-slate-100">
+        <div class="flex justify-between items-center mb-4">
+            <!-- TÍTULO INTERACTIVO MEJORADO -->
+            <h3 class="font-outfit text-lg font-extrabold text-slate-900 tracking-tight cursor-pointer transition-all duration-300 hover:text-blue-600 hover:scale-[1.02] select-none">
+                Bienvenido a Vintage Milenio
+            </h3>
+            <button onclick="cerrarModalBienvenida()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-700 transition">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+        </div>
+        
+                <!-- Resto del contenido del carrusel y botones... -->
+                <div class="relative w-full aspect-square bg-slate-100 rounded-2xl overflow-hidden mb-4 shadow-inner">
+                    <button onclick="cambiarSlideModal(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="cambiarSlideModal(1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <div id="modal-slides-track" class="flex h-full transition-transform duration-300 ease-in-out">
+                        <div class="min-w-full h-full">
+                            <img src="img/Morral Cosmic/1.jpg" alt="Anuncio 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="min-w-full h-full">
+                            <img src="img/Morral Urban Illust/1.jpg" alt="Anuncio 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="min-w-full h-full">
+                            <img src="img/Morral Belstaff/1.png" alt="Anuncio 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-2 mb-4" id="modal-dots-container">
+                    <span class="w-2 h-2 rounded-full bg-blue-600 cursor-pointer transition shadow-sm" onclick="irASlideModal(0)"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-300 cursor-pointer transition shadow-sm" onclick="irASlideModal(1)"></span>
+                    <span class="w-2 h-2 rounded-full bg-slate-300 cursor-pointer transition shadow-sm" onclick="irASlideModal(2)"></span>
+                </div>
+                <div class="text-center">
+                    <h4 class="font-outfit font-bold text-sm text-slate-900 mb-3">Nueva Colección Exclusiva & Box Especiales</h4>
+                    <button onclick="explorarDesdeModal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl font-extrabold text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 mb-2">
+                        Explorar catálogo <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                    <a href="#" onclick="cerrarModalBienvenida(); return false;" class="text-xs text-slate-500 hover:underline">Continuar a la tienda</a>
+                </div>
             </div>
+        </div>
 
-            <div class="modal-slider-container">
-                <button class="slider-arrow prev" onclick="cambiarSlideModal(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="slider-arrow next" onclick="cambiarSlideModal(1)"><i class="fa-solid fa-chevron-right"></i></button>
-
-                <div class="modal-slides-track" id="modal-slides-track">
-                    <div class="modal-slide active">
-                        <img src="img/morral-1-1.jpg" alt="Anuncio 1">
-                    </div>
-                    <div class="modal-slide">
-                        <img src="img/maletin-1-1.jpg" alt="Anuncio 2">
-                    </div>
-                    <div class="modal-slide">
-                        <img src="img/mochila-op-1.jpg" alt="Anuncio 3">
-                    </div>
+            <!-- VENTANA MODAL DE DETALLE DE PRODUCTO -->
+            <div id="product-detail-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[10000] hidden items-center justify-center p-4">
+                <div class="bg-white w-full max-w-2xl max-h-[90vh] rounded-3xl overflow-y-auto relative p-6 md:p-8 shadow-2xl border border-slate-100">
+                    <button onclick="cerrarModalDetalle()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 w-9 h-9 rounded-full flex items-center justify-center text-slate-700 transition z-10">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div id="detail-modal-content-area"></div>
                 </div>
             </div>
 
-            <div class="modal-dots" id="modal-dots-container">
-                <span class="dot-indicator active" onclick="irASlideModal(0)"></span>
-                <span class="dot-indicator" onclick="irASlideModal(1)"></span>
-                <span class="dot-indicator" onclick="irASlideModal(2)"></span>
+            <!-- VENTANA MODAL PARA AMPLIAR DISEÑO DE PIN -->
+            <div id="pin-preview-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[10000] hidden items-center justify-center p-4">
+                <div class="bg-white rounded-3xl w-full max-w-sm p-6 text-center relative shadow-2xl border border-slate-100">
+                    <button onclick="cerrarPinModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 w-8 h-8 rounded-full flex items-center justify-center text-slate-700 transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div class="w-48 h-48 mx-auto mb-4 overflow-hidden shadow-xl rounded-full bg-slate-50 flex border-4 border-slate-100 items-center justify-center">
+                        <img id="pin-modal-img" src="" alt="Pin Ampliado" class="w-full h-full object-cover">
+                    </div>
+                    <h3 id="pin-modal-title" class="font-outfit text-xl font-bold mb-1 text-slate-900"></h3>
+                    <p class="text-xs text-slate-500 mb-5">Pin Solapero Circular 58mm de alta definición.</p>
+                    <button onclick="agregarPinDesdemodalClick()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-extrabold py-3 rounded-2xl transition shadow-lg text-xs">
+                        Añadir al pedido
+                    </button>
+                </div>
             </div>
 
-            <div class="modal-footer">
-                <h4 id="modal-slide-title">Nueva Colección Exclusiva</h4>
-                <button class="btn-modal-explore" onclick="explorarDesdeModal()">
-                    Explorar catálogo <i class="fa-solid fa-arrow-right"></i>
-                </button>
-                <a href="#" class="modal-skip-link" onclick="cerrarModalBienvenida()">Continuar a la tienda</a>
+            <!-- VENTANA MODAL PARA POLÍTICAS / LIBRO DE RECLAMACIONES -->
+            <div id="policy-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[10000] hidden items-center justify-center p-4">
+                <div class="bg-white w-full max-w-xl max-h-[90vh] rounded-3xl overflow-y-auto relative p-6 md:p-8 shadow-2xl border border-slate-100">
+                    <button onclick="cerrarModalPolitica()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 w-8 h-8 rounded-full flex items-center justify-center text-slate-700 transition z-10">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div id="policy-modal-content" class="text-xs md:text-sm text-slate-700 space-y-3"></div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- VENTANA MODAL DE DETALLE DE PRODUCTO (CARACTERÍSTICAS Y ESPECIFICACIONES) -->
-    <div class="product-detail-modal-overlay" id="product-detail-modal">
-        <div class="product-detail-modal-card">
-            <button class="detail-modal-close" onclick="cerrarModalDetalle()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="detail-modal-body" id="detail-modal-content-area">
-                <!-- Se inyecta dinámicamente desde script.js -->
-            </div>
-        </div>
-    </div>
+                            <!-- Barra Superior con Música y Anuncios Dinámicos -->
+                <div class="bg-slate-900 text-white text-[11px] py-2 px-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 overflow-hidden relative">
+                    
+                    <!-- ANUNCIO CON EFECTO DE DESPLAZAMIENTO / APARICIÓN DINÁMICA -->
+                    <div class="flex items-center gap-2 overflow-hidden flex-1 min-w-[200px]">
+                        <span class="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded animate-pulse uppercase tracking-wider">¡Nuevo!</span>
+                        <div class="relative w-full overflow-hidden h-4 flex items-center">
+                            <!-- Texto animado que se desliza o cambia -->
+                            <p class="absolute whitespace-nowrap animate-marquee font-medium text-slate-300 flex items-center gap-6">
+                                <span>📦 Envíos rápidos y seguros a todo el Perú</span>
+                                <span>💳 Aceptamos Yape, Plin y Transferencia Bancaria</span>
+                            </p>
+                        </div>
+                    </div>
 
-    <!-- Barra Superior de Anuncios -->
-    <div class="top-announcement-bar">
-        <span>⚡ Envíos a todo el Perú - Gratis por compras mayores a S/ 150 ⚡ Pagos seguros con Yape, Plin y Transferencia</span>
-    </div>
+                    <!-- BOTÓN LO-FI SÚPER INTERACTIVO -->
+                    <button onclick="toggleLofiMusic()" class="group relative bg-slate-800 hover:bg-slate-700 text-slate-200 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold flex items-center gap-2.5 transition-all duration-300 border border-slate-700 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-400/10 active:scale-95">
+                        <!-- Efecto de ondas de música simuladas con puntos que vibran -->
+                        <span class="flex items-end gap-0.5 h-3">
+                            <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-2"></span>
+                            <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-3" style="animation-delay: 0.15s;"></span>
+                            <span class="w-0.5 bg-amber-400 rounded-full animate-bounce h-1.5" style="animation-delay: 0.3s;"></span>
+                        </span>
+                        <i id="lofi-icon" class="fa-solid fa-play text-[9px] text-amber-400 transition-transform group-hover:scale-110"></i>
+                        <span id="lofi-text" class="tracking-wide">Ambiente Lo-Fi</span>
+                    </button>
+                </div>
 
-    <!-- CABECERA DE 2 NIVELES (TIPO MOY STORE) -->
-    <header class="site-header">
-        <!-- Nivel 1: Logo + Buscador + Carrito -->
-        <div class="header-top-row">
-            <div class="container header-top-container">
-                <div class="logo-area">
-                    <a href="#" onclick="cambiarVista('home')">
-                        <img src="img/logotienda.png" alt="Vintage Milenio Logo" class="brand-logo">
-                        <span class="brand-name">MILENIO VINTAGE</span>
+            <!-- CABECERA -->
+            <header class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-100">
+                <div class="py-3 px-4 md:px-8 flex items-center justify-between gap-4">
+                    <a href="#" onclick="cambiarVista('home'); return false;" class="flex items-center gap-2.5">
+                       <div class="w-9 h-9 rounded-2xl bg-slate-900 flex items-center justify-center text-white font-outfit font-extrabold shadow-md overflow-hidden"><img src="img/logotienda.png" alt="Logo" class="w-full h-full object-cover"></div>
+                        <span class="font-outfit text-lg md:text-xl font-extrabold tracking-tight text-slate-900">MILENIO VINTAGE</span>
                     </a>
-                </div>
-
-                <div class="header-search-bar">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="global-search-input" placeholder="Busca tu producto (ej. Morral, Mochila, Ita-bag)..." onkeyup="buscarEnCatalogoGlobal(event)">
-                </div>
-
-                <div class="header-cart-widget" id="cart-btn">
-                    <div class="cart-widget-icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span id="cart-count">0</span>
-                    </div>
-                    <div class="cart-widget-text">
-                        <span class="widget-label">Carrito</span>
-                        <strong id="header-cart-total">S/ 0.00</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Nivel 2: Barra de Menú / Categorías -->
-        <div class="header-bottom-nav">
-            <div class="container">
-                <nav class="main-nav">
-                    <a href="#" onclick="cambiarVista('home')">Inicio</a>
-                    <a href="#" onclick="cambiarVista('catalogo', 'todos')">Catálogo</a>
-                    <a href="#" onclick="cambiarVista('catalogo', 'morrales')">Morrales</a>
-                    <a href="#" onclick="cambiarVista('catalogo', 'mochilas')">Mochilas</a>
-                    <a href="#" onclick="cambiarVista('catalogo', 'carteras')">Carteras</a>
-                    <a href="#" onclick="cambiarVista('catalogo', 'accesorios')">Accesorios</a>
-                    <a href="#" onclick="cambiarVista('personaliza')" class="highlight-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Personaliza a tu medida</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- SECCIÓN 1: INICIO (HOME) -->
-    <section id="page-home" class="page-section active-section">
-        <!-- PORTADA HERO CON TEXTO ANIMADO -->
-        <div class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('img/estrella/estrella\ 1.png');">
-            <div class="hero-content">
-                <span class="hero-badge">TIENDA VIRTUAL</span>
-                <h1 class="hero-animated-title">
-                    PRODUCTOS <br>
-                    <span class="animated-text-holder" id="animated-hero-text">VINTAGE</span>
-                </h1>
-                <p class="hero-subtitle">¡Envíos rápidos a todo el Perú!</p>
-                <button onclick="cambiarVista('catalogo', 'todos')" class="btn-hero-catalog">Ver catálogo <i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-        </div>
-
-        <!-- CATEGORÍAS PRINCIPALES -->
-        <div class="categories-section">
-            <div class="container">
-                <h2>Explora por categoría</h2>
-                <div class="categories-grid">
-                    <div onclick="cambiarVista('catalogo', 'morrales')" class="category-card">
-                        <img src="img/morral-1-1.jpg" alt="Morrales">
-                        <h3>Morrales</h3>
-                    </div>
-                    <div onclick="cambiarVista('catalogo', 'mochilas')" class="category-card">
-                        <img src="img/mochila-op-1.jpg" alt="Mochilas">
-                        <h3>Mochilas</h3>
-                    </div>
-                    <div onclick="cambiarVista('catalogo', 'carteras')" class="category-card">
-                        <img src="img/bolso-japones-1.jpg" alt="Carteras">
-                        <h3>Carteras</h3>
-                    </div>
-                    <div onclick="cambiarVista('catalogo', 'accesorios')" class="category-card">
-                        <img src="img/lanyard-1.jpg" alt="Accesorios">
-                        <h3>Accesorios</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN DE OFERTAS RÁPIDAS -->
-        <div class="quick-offers-section">
-            <div class="container">
-                <div class="quick-offers-grid">
-                    <div class="quick-offer-card" onclick="cambiarVista('catalogo', 'morrales')">
-                        <div class="offer-img-box">
-                            <img src="img/morral-1-1.jpg" alt="Morrales Canvas">
-                        </div>
-                        <div class="offer-info">
-                            <span class="offer-subtitle">MORRALES DE</span>
-                            <h4>LONA CANVAS</h4>
-                            <p class="offer-price">desde <span>S/ 59.00</span></p>
-                            <span class="offer-link">Ver más <i class="fa-solid fa-circle-chevron-right"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="quick-offer-card" onclick="cambiarVista('catalogo', 'mochilas')">
-                        <div class="offer-img-box">
-                            <img src="img/mochila-op-1.jpg" alt="Mochilas Otaku">
-                        </div>
-                        <div class="offer-info">
-                            <span class="offer-subtitle">MOCHILAS</span>
-                            <h4>TEMÁTICAS ANIME</h4>
-                            <p class="offer-price">desde <span>S/ 69.00</span></p>
-                            <span class="offer-link">Ver más <i class="fa-solid fa-circle-chevron-right"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="quick-offer-card" onclick="cambiarVista('catalogo', 'accesorios')">
-                        <div class="offer-img-box">
-                            <img src="img/lanyard-1.jpg" alt="Lanyards & Correas">
-                        </div>
-                        <div class="offer-info">
-                            <span class="offer-subtitle">CORREAS Y</span>
-                            <h4>LANYARDS</h4>
-                            <p class="offer-price">desde <span>S/ 15.00</span></p>
-                            <span class="offer-link">Ver más <i class="fa-solid fa-circle-chevron-right"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="quick-offer-card" onclick="cambiarVista('personaliza')">
-                        <div class="offer-img-box">
-                            <img src="img/bandolera-1.jpg" alt="Modelos a Medida">
-                        </div>
-                        <div class="offer-info">
-                            <span class="offer-subtitle">PEDIDOS</span>
-                            <h4>A TU MEDIDA</h4>
-                            <p class="offer-price">desde <span>S/ 45.00</span></p>
-                            <span class="offer-link">Ver más <i class="fa-solid fa-circle-chevron-right"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 2: CATÁLOGO DINÁMICO -->
-    <section id="page-catalogo" class="page-section">
-        <div class="container catalog-container">
-            <h1 class="catalog-title">Todo el catálogo</h1>
-            <div class="catalog-controls">
-                <div class="filter-pills">
-                    <button class="pill active" data-filter="todos" onclick="filtrarCatalogo('todos')">Todos</button>
-                    <button class="pill" data-filter="morrales" onclick="filtrarCatalogo('morrales')">Morrales</button>
-                    <button class="pill" data-filter="mochilas" onclick="filtrarCatalogo('mochilas')">Mochilas</button>
-                    <button class="pill" data-filter="carteras" onclick="filtrarCatalogo('carteras')">Carteras</button>
-                    <button class="pill" data-filter="accesorios" onclick="filtrarCatalogo('accesorios')">Accesorios</button>
-                </div>
-                <div class="catalog-search">
-                    <input type="text" id="catalog-search-input" placeholder="Filtrar por palabra..." onkeyup="buscarEnCatalogo()">
-                </div>
-            </div>
-            <div class="products-grid" id="main-products-grid"></div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 3: PERSONALIZA A TU MEDIDA -->
-    <section id="page-personaliza" class="page-section">
-        <div class="container custom-page-container">
-            <span class="custom-tag">A TU GUSTO</span>
-            <h1 class="custom-title">Personaliza a tu medida</h1>
-            <p class="custom-desc">Ingresa tus medidas, sube la foto frontal de referencia de tu modelo y envíanos tu solicitud directamente.</p>
-
-            <div class="custom-layout">
-                <div class="custom-form-card">
-                    <h2>Envía tu solicitud</h2>
-                    <form id="custom-request-form" onsubmit="enviarSolicitudPersonalizada(event)">
-                        <div class="form-row-2">
-                            <div class="form-group">
-                                <label class="form-label">Nombre *</label>
-                                <input type="text" id="cust-nombre" placeholder="Tu nombre completo" required>
+                    
+                    <div class="flex items-center gap-3">
+                        <div id="cart-btn" onclick="abrirCarrito()" class="flex items-center gap-2.5 cursor-pointer py-1.5 px-3.5 rounded-2xl hover:bg-slate-100 transition border border-slate-200/80 bg-white shadow-sm">
+                            <div class="relative text-lg text-slate-900">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span id="cart-count" class="absolute -top-1.5 -right-1.5 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-extrabold bg-blue-600 shadow-sm">0</span>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">WhatsApp *</label>
-                                <input type="tel" id="cust-whatsapp" placeholder="Ej. 987 654 321" required>
-                            </div>
+                            <strong id="header-cart-total" class="text-xs font-extrabold text-slate-900">S/ 0.00</strong>
                         </div>
+                    </div>
+                </div>
 
-                        <label class="form-label">Medidas del producto (cm)</label>
-                        <div class="form-row-3">
-                            <div class="form-group">
-                                <input type="number" id="medida-alto" value="26" min="1" placeholder="Alto" required>
-                                <small class="sub-label">Alto</small>
-                            </div>
-                            <div class="form-group">
-                                <input type="number" id="medida-ancho" value="32" min="1" placeholder="Ancho" required>
-                                <small class="sub-label">Ancho</small>
-                            </div>
-                            <div class="form-group">
-                                <input type="number" id="medida-fuelle" value="12" min="1" placeholder="Fuelle" required>
-                                <small class="sub-label">Fuelle (Fondo)</small>
-                            </div>
-                        </div>
+                <div class="bg-slate-900 overflow-x-auto no-scrollbar border-t border-slate-800">
+                    <div class="px-4 md:px-8">
+                        <nav class="flex gap-5 md:gap-8 text-xs font-extrabold uppercase tracking-wider whitespace-nowrap py-3.5 items-center">
+                            <a href="#" onclick="cambiarVista('home'); return false;" class="text-slate-300 hover:text-white transition">Inicio</a>
+                            <a href="#" onclick="cambiarVista('catalogo', 'todos'); return false;" class="text-slate-300 hover:text-white transition">Catálogo</a>
+                            
+                            <!-- Box Especial con diseño especial y llamativo -->
+                            <a href="#" onclick="cambiarVista('catalogo', 'box-especial'); return false;" class="relative px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 rounded-xl transition shadow-md flex items-center gap-1.5 animate-bounce">
+                                <i class="fa-solid fa-gift text-xs"></i> <span>Box Especial</span>
+                            </a>
 
-                        <div class="form-group">
-                            <label class="form-label">Modelo de referencia *</label>
-                            <input type="text" id="cust-modelo" placeholder="Ej. Morral Anime / Ita-Bag / Maletín" required>
-                        </div>
+                            <!-- Preventa con diseño especial y llamativo -->
+                            <a href="#" onclick="cambiarVista('catalogo', 'preventa'); return false;" class="relative px-3 py-1 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-slate-950 rounded-xl transition shadow-md flex items-center gap-1.5 animate-bounce">
+                                <i class="fa-solid fa-fire text-xs animate-pulse"></i> <span>Preventa</span>
+                            </a>
 
-                        <div class="form-group">
-                            <label class="form-label">Detalles adicionales *</label>
-                            <textarea id="cust-detalle" rows="3" placeholder="Describe materiales (lona, drill, cuero), cierres, bolsillos o colores..." required></textarea>
-                        </div>
+                            <a href="#" onclick="cambiarVista('personaliza'); return false;" class="text-amber-300 hover:text-amber-200 transition flex items-center gap-1"><i class="fa-solid fa-wand-magic-sparkles"></i> Personaliza tu morral</a>
+                            <a href="#" onclick="cambiarVista('pin-personalizado'); return false;" class="text-pink-300 hover:text-pink-200 transition flex items-center gap-1"><i class="fa-solid fa-compact-disc"></i> Pines 58mm</a>
+                        </nav>
+                    </div>
+                </div>
+            </header>
 
-                        <div class="upload-zone" onclick="document.getElementById('cust-image-file').click()">
-                            <i class="fa-solid fa-cloud-arrow-up"></i>
-                            <p id="upload-status-text">Haz clic para <strong>subir la foto frontal principal</strong></p>
-                            <span class="file-hint">Formatos: JPG, PNG (máx. 10 MB)</span>
-                            <input type="file" id="cust-image-file" accept="image/*" style="display: none;" onchange="mostrarVistaPreviaFrontal(this)">
-                        </div>
-
-                        <button type="submit" class="btn-submit-custom" id="btn-submit-cust-main">
-                            <i class="fa-brands fa-whatsapp"></i> Enviar solicitud por WhatsApp
+            <!-- SECCIÓN 1: INICIO -->
+            <section id="page-home" class="page-section active-section">
+                <div class="h-96 md:h-[450px] bg-cover bg-center flex items-center px-6 md:px-16 text-white relative" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('img/portada.png');">
+                    <div class="max-w-lg">
+                        <span class="bg-white text-slate-900 px-3.5 py-1 text-[10px] font-extrabold uppercase tracking-widest rounded-full inline-block mb-3 shadow-md">TIENDA VIRTUAL EXCLUSIVA</span>
+                        <h1 class="font-outfit text-3xl md:text-5xl font-extrabold leading-tight mb-3 tracking-tight">
+                            MORRALES, MOCHILAS & <br>
+                            <span id="animated-hero-text" class="text-blue-400 inline-block transition-all duration-300">ESTILO Y2K</span>
+                        </h1>
+                        <p class="text-xs md:text-sm font-medium text-slate-200 mb-6 max-w-md">Diseños vintage y confección de alta resistencia. ¡Envíos seguros a todo el Perú!</p>
+                        <button onclick="cambiarVista('catalogo', 'todos')" class="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-2xl font-extrabold text-xs inline-flex items-center gap-2 transition shadow-lg shadow-blue-600/30">
+                            Ver catálogo completo <i class="fa-solid fa-chevron-right text-[10px]"></i>
                         </button>
-                    </form>
-                </div>
-
-                <div class="preview-frontal-wrapper">
-                    <div class="preview-header">
-                        <h3><i class="fa-regular fa-image"></i> Foto Principal Frontal</h3>
-                    </div>
-                    <div class="preview-box-container" id="preview-box">
-                        <div class="empty-preview-msg" id="empty-preview-msg">
-                            <i class="fa-solid fa-image"></i>
-                            <p>Sube una foto para ver la vista previa de tu modelo</p>
-                        </div>
-                        <img id="img-preview-frontal" src="" alt="Vista previa frontal" class="hidden">
-                    </div>
-                    <div class="preview-footer">
-                        <p>Esta foto se enviará adjunta en el enlace de WhatsApp para fabricar tu pedido.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN 4: CHECKOUT -->
-    <section id="page-checkout" class="page-section">
-        <div class="container checkout-container">
-            <h1 class="checkout-title">Finalizar compra</h1>
-            <div class="checkout-layout">
-                <div class="checkout-form-area">
-                    <div class="checkout-step-block">
-                        <h2>1. Tus datos</h2>
-                        <div class="form-row-2">
-                            <div class="form-group">
-                                <label class="form-label">Nombre y apellido *</label>
-                                <input type="text" id="chk-nombre" placeholder="Nombre completo" required>
+                <div class="py-12 px-4 md:px-8 bg-slate-50">
+                    <h2 class="font-outfit text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">Explora por categorías</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                        <div onclick="cambiarVista('catalogo', 'morrales')" class="relative rounded-3xl overflow-hidden aspect-square cursor-pointer group shadow-sm border border-slate-200">
+                            <img src="img/Morral Belstaff/1.png" alt="Morrales" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                                <h3 class="font-outfit text-lg font-bold text-white">Morrales</h3>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Número de WhatsApp *</label>
-                                <input type="tel" id="chk-whatsapp" placeholder="Ej. 987 654 321" required>
+                        </div>
+                        <div onclick="cambiarVista('catalogo', 'mochilas')" class="relative rounded-3xl overflow-hidden aspect-square cursor-pointer group shadow-sm border border-slate-200">
+                            <img src="img/Mochila Satoru Gojo/1.jpg" alt="Mochilas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                                <h3 class="font-outfit text-lg font-bold text-white">Mochilas</h3>
+                            </div>
+                        </div>
+                        <div onclick="cambiarVista('catalogo', 'carteras')" class="relative rounded-3xl overflow-hidden aspect-square cursor-pointer group shadow-sm border border-slate-200">
+                            <img src="img/Goth Hobo Bag/1.jpg" alt="Carteras" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                                <h3 class="font-outfit text-lg font-bold text-white">Carteras</h3>
+                            </div>
+                        </div>
+                        <div onclick="cambiarVista('catalogo', 'box-especial')" class="relative rounded-3xl overflow-hidden aspect-square cursor-pointer group shadow-md border-2 border-amber-400">
+                            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=500&q=80" alt="Box Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent flex items-end p-5">
+                                <div>
+                                    <span class="bg-amber-500 text-slate-950 text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase mb-1 inline-block">Destacado</span>
+                                    <h3 class="font-outfit text-lg font-bold text-white">Box Especial</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: CATÁLOGO UNIFICADO -->
+            <section id="page-catalogo" class="page-section py-8 px-4 md:px-8 max-w-7xl mx-auto">
+                <h1 class="font-outfit text-2xl md:text-3xl font-extrabold mb-6 text-slate-900">Catálogo de Productos</h1>
+                
+                <div class="flex flex-col gap-4 mb-8">
+                    <div class="flex gap-2.5 overflow-x-auto no-scrollbar filter-pills pb-2">
+                        <button class="pill active bg-slate-900 text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition shadow-md" data-filter="todos" onclick="filtrarCatalogo('todos')">Todos</button>
+                        <button class="pill bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition" data-filter="morrales" onclick="filtrarCatalogo('morrales')">Morrales</button>
+                        <button class="pill bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition" data-filter="mochilas" onclick="filtrarCatalogo('mochilas')">Mochilas</button>
+                        <button class="pill bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition" data-filter="carteras" onclick="filtrarCatalogo('carteras')">Carteras</button>
+                        <button class="pill bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition" data-filter="accesorios" onclick="filtrarCatalogo('accesorios')">Accesorios</button>
+                        <button class="pill bg-amber-100 text-amber-900 hover:bg-amber-500 hover:text-slate-950 px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition border border-amber-300" data-filter="box-especial" onclick="filtrarCatalogo('box-especial')"><i class="fa-solid fa-gift mr-1"></i> Box Especial</button>
+                        <button class="pill bg-pink-100 text-pink-900 hover:bg-pink-600 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition border border-pink-300" data-filter="preventa" onclick="filtrarCatalogo('preventa')"><i class="fa-solid fa-fire mr-1"></i> Preventa</button>
+                        
+                    </div>
+                    
+                    <div class="catalog-search max-w-md">
+                        <input type="text" id="catalog-search-input" placeholder="Buscar por nombre de producto..." onkeyup="buscarEnCatalogo()" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:outline-none focus:border-blue-600 bg-white shadow-sm font-medium">
+                    </div>
+                </div>
+
+                <!-- Grilla de productos: 3 columnas en móvil, 5 en escritorio -->
+                <div class="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-5" id="main-products-grid"></div>
+            </section>
+
+            <!-- SECCIÓN 3: PERSONALIZA TU MORRAL -->
+            <section id="page-personaliza" class="page-section py-8 px-4 md:px-8 max-w-4xl mx-auto">
+                <span class="text-[10px] font-extrabold tracking-widest text-blue-600 uppercase mb-1 block">A TU MEDIDA</span>
+                <h1 class="font-outfit text-2xl md:text-3xl font-extrabold mb-2 text-slate-900">Personaliza tu morral</h1>
+                <p class="text-xs text-slate-600 mb-6">Ingresa tus medidas, sube tu foto de referencia y envíanos tu solicitud directa a WhatsApp.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h2 class="font-outfit text-base font-bold mb-4 text-slate-900">Formulario de solicitud</h2>
+                        <form id="custom-request-form" onsubmit="enviarSolicitudPersonalizada(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Nombre *</label>
+                                <input type="text" id="cust-nombre" placeholder="Tu nombre completo" required class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:border-blue-600 focus:outline-none bg-slate-50">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp *</label>
+                                <input type="tel" id="cust-whatsapp" placeholder="Ej. 987 654 321" required class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:border-blue-600 focus:outline-none bg-slate-50">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Medidas (cm)</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div>
+                                        <input type="number" id="medida-alto" value="26" min="1" placeholder="Alto" required class="w-full px-2 py-2.5 border border-slate-200 rounded-xl text-xs text-center focus:border-blue-600 focus:outline-none bg-slate-50 font-bold">
+                                        <small class="text-[9px] text-slate-500 block text-center mt-0.5">Alto</small>
+                                    </div>
+                                    <div>
+                                        <input type="number" id="medida-ancho" value="32" min="1" placeholder="Ancho" required class="w-full px-2 py-2.5 border border-slate-200 rounded-xl text-xs text-center focus:border-blue-600 focus:outline-none bg-slate-50 font-bold">
+                                        <small class="text-[9px] text-slate-500 block text-center mt-0.5">Ancho</small>
+                                    </div>
+                                    <div>
+                                        <input type="number" id="medida-fuelle" value="12" min="1" placeholder="Fuelle" required class="w-full px-2 py-2.5 border border-slate-200 rounded-xl text-xs text-center focus:border-blue-600 focus:outline-none bg-slate-50 font-bold">
+                                        <small class="text-[9px] text-slate-500 block text-center mt-0.5">Fuelle</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Modelo de referencia *</label>
+                                <input type="text" id="cust-modelo" placeholder="Ej. Morral Anime / Ita-Bag" required class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:border-blue-600 focus:outline-none bg-slate-50">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Descripción del Modelo *</label>
+                                <textarea id="cust-detalle" rows="2" placeholder="Describe materiales, cierres, bolsillos..." required class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:border-blue-600 focus:outline-none bg-slate-50"></textarea>
+                            </div>
+                            <div onclick="document.getElementById('cust-image-file').click()" class="border-2 border-dashed border-blue-400 rounded-2xl p-4 text-center bg-blue-50/50 hover:bg-blue-50 cursor-pointer transition">
+                                <i class="fa-solid fa-cloud-arrow-up text-xl text-blue-600 mb-1"></i>
+                                <p id="upload-status-text" class="text-xs font-bold text-slate-800">Sube la foto frontal de referencia</p>
+                                <input type="file" id="cust-image-file" accept="image/*" class="hidden" onchange="mostrarVistaPreviaFrontal(this)">
+                            </div>
+                            <button type="submit" class="w-full bg-whatsapp hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-2xl transition flex items-center justify-center gap-2 shadow-md text-xs">
+                                Enviar solicitud por WhatsApp <i class="fa-brands fa-whatsapp text-sm"></i>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xs font-extrabold text-slate-900 mb-3 flex items-center gap-1.5"><i class="fa-regular fa-image text-blue-600"></i> Vista Previa</h3>
+                            <div id="preview-box" class="w-full aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative shadow-inner">
+                                <div id="empty-preview-msg" class="text-center text-slate-400 p-4">
+                                    <i class="fa-solid fa-image text-4xl mb-2 text-slate-300"></i>
+                                    <p class="text-xs font-medium">Sube una foto para visualizarla</p>
+                                </div>
+                                <img id="img-preview-frontal" src="" alt="Vista previa" class="hidden w-full h-full object-cover rounded-xl">
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                            <p class="text-[11px] text-slate-600 leading-relaxed">💡 <strong>Nota:</strong> Nuestros morrales personalizados se fabrican bajo pedido con altos estándares de calidad y materiales segun descripción del cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: PIN PERSONALIZADO -->
+            <section id="page-pin-personalizado" class="page-section py-8 px-4 md:px-8 max-w-4xl mx-auto">
+                <span class="text-[10px] font-extrabold tracking-widest text-pink-600 uppercase mb-1 block">COLECCIONABLES Y ANIME</span>
+                <h1 class="font-outfit text-2xl md:text-3xl font-extrabold mb-2 text-slate-900">Pin Personalizado (58mm)</h1>
+                <p class="text-xs text-slate-600 mb-6">Elige entre nuestros diseños o sube tus propias imágenes en alta definición.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-5">
+                        <div class="bg-pink-50/80 border border-pink-200 rounded-2xl p-4 text-xs">
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <i class="fa-solid fa-tags text-pink-600 text-sm"></i>
+                                <strong class="font-extrabold text-slate-900">Precio unitario:</strong>
+                                <span id="pin-unit-display" class="font-extrabold text-pink-600">S/ 3.50 c/u</span>
+                            </div>
+                            <div id="pin-promo-status" class="text-[11px] text-slate-600 leading-relaxed">
+                                Al llevar un morral, mochila o cartera, tus pines bajan a <span class="text-amber-600 font-extrabold">S/ 2.00 c/u</span>.
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-900 mb-2">Sube tus propias imágenes (Opcional)</h3>
+                            <div onclick="document.getElementById('pin-custom-files').click()" class="border-2 border-dashed border-pink-300 rounded-2xl p-4 text-center bg-pink-50/30 hover:bg-pink-50 cursor-pointer transition">
+                                <i class="fa-solid fa-cloud-arrow-up text-pink-600 mb-1 text-lg"></i>
+                                <p class="text-xs text-slate-700 font-bold">Subir fotos o fanarts</p>
+                                <input type="file" id="pin-custom-files" accept="image/*" multiple class="hidden" onchange="handlePinCustomUpload(this)">
+                            </div>
+                            <div id="pin-uploaded-previews" class="grid grid-cols-4 gap-2 mt-3"></div>
+                        </div>
+
+                        <div class="border-t border-slate-100 pt-4 flex justify-between items-center text-xs">
+                            <span class="text-xs text-slate-500 font-medium">Total seleccionados: <strong id="total-pins-count" class="text-slate-900">0</strong> pines</span>
+                            <span id="pin-total-price" class="text-2xl font-extrabold text-slate-900">S/ 0.00</span>
+                        </div>
+
+                        <button onclick="agregarPinesAICarrito()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-extrabold py-3.5 rounded-2xl transition text-xs flex items-center justify-center gap-2 shadow-md">
+                            Añadir pack de pines al carrito <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h3 class="text-xs font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-grip text-pink-600"></i> Diseños disponibles (Clic para ampliar)
+                        </h3>
+                        <div id="pins-catalog-grid" class="grid grid-cols-1 gap-3 max-h-[420px] overflow-y-auto pr-1"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 5: CHECKOUT -->
+            <section id="page-checkout" class="page-section py-8 px-4 md:px-8 max-w-3xl mx-auto">
+                <h1 class="font-outfit text-2xl md:text-3xl font-extrabold mb-6 text-slate-900">Finalizar compra</h1>
+                <div class="space-y-6">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h2 class="font-outfit text-base font-bold mb-4 text-slate-900">1. Tus datos de contacto</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Nombre y apellido *</label>
+                                <input type="text" id="chk-nombre" placeholder="Nombre completo" required class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:border-blue-600 focus:outline-none bg-slate-50">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp *</label>
+                                <input type="tel" id="chk-whatsapp" placeholder="Ej. 987 654 321" required class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs focus:border-blue-600 focus:outline-none bg-slate-50">
                             </div>
                         </div>
                     </div>
 
-                    <div class="checkout-step-block">
-                        <h2>2. Modalidad de entrega</h2>
-                        <div class="delivery-options-grid">
-                            <div class="delivery-card active" id="del-card-domicilio" onclick="seleccionarDelivery('domicilio', 10)">
-                                <i class="fa-solid fa-house"></i>
-                                <strong>Delivery a domicilio</strong>
-                                <span>Solo Lima · Costo fijo S/ 10</span>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h2 class="font-outfit text-base font-bold mb-4 text-slate-900">2. Método de Envío</h2>
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <div class="delivery-card active border-2 cursor-pointer transition border-blue-600 bg-blue-50/50 rounded-2xl p-4 text-center shadow-sm" id="del-card-domicilio" onclick="seleccionarDelivery('domicilio', 10)">
+                                <i class="fa-solid fa-house text-blue-600 text-lg mb-1 block"></i>
+                                <strong class="text-xs font-extrabold text-slate-900 block">Domicilio</strong>
+                                <span class="text-[10px] text-slate-500 font-bold">S/ 10</span>
                             </div>
-                            <div class="delivery-card" id="del-card-estacion" onclick="seleccionarDelivery('estacion', 0)">
-                                <i class="fa-solid fa-train"></i>
-                                <strong>Entrega en estación</strong>
-                                <span>¡Gratis! Coordinamos día y hora</span>
+                            <div class="delivery-card border border-slate-200 bg-white rounded-2xl p-4 text-center cursor-pointer transition hover:border-slate-300 shadow-sm" id="del-card-estacion" onclick="seleccionarDelivery('estacion', 0)">
+                                <i class="fa-solid fa-train text-blue-600 text-lg mb-1 block"></i>
+                                <strong class="text-xs font-extrabold text-slate-900 block">Estación</strong>
+                                <span class="text-[10px] text-slate-500 font-bold">Gratis</span>
                             </div>
-                            <div class="delivery-card" id="del-card-provincia" onclick="seleccionarDelivery('provincia', 12)">
-                                <i class="fa-solid fa-box-archive"></i>
-                                <strong>Envío a provincia</strong>
-                                <span>Desde S/ 12</span>
+                            <div class="delivery-card border border-slate-200 bg-white rounded-2xl p-4 text-center cursor-pointer transition hover:border-slate-300 shadow-sm" id="del-card-provincia" onclick="seleccionarDelivery('provincia', 12)">
+                                <i class="fa-solid fa-box-archive text-blue-600 text-lg mb-1 block"></i>
+                                <strong class="text-xs font-extrabold text-slate-900 block">Provincia</strong>
+                                <span class="text-[10px] text-slate-500 font-bold">S/ 12</span>
                             </div>
                         </div>
 
-                        <div class="delivery-fields-container" id="delivery-fields-box">
-                            <div id="fields-domicilio" class="delivery-subfields">
-                                <div class="form-group">
-                                    <label class="form-label">Dirección de entrega *</label>
-                                    <input type="text" id="chk-direccion" placeholder="Dirección exacta (Av./Jr./Calle, N°)">
+                        <div id="delivery-fields-box">
+                            <div id="fields-domicilio" class="space-y-3 text-xs">
+                                <div>
+                                    <label class="block font-bold text-slate-700 mb-1">Dirección exacta</label>
+                                    <input type="text" id="chk-direccion" placeholder="Av. / Jr. / Calle , N°" class="w-full px-4 py-3 border border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none bg-slate-50">
                                 </div>
-                                <div class="form-row-2">
-                                    <div class="form-group">
-                                        <label class="form-label">Distrito *</label>
-                                        <input type="text" id="chk-distrito" placeholder="Distrito de Lima o Callao">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Distrito</label>
+                                        <input type="text" id="chk-distrito" placeholder="Distrito" class="w-full px-4 py-3 border border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none bg-slate-50">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Referencia</label>
-                                        <input type="text" id="chk-referencia" placeholder="Cerca a parque / avenida / grifo">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Referencia</label>
+                                        <input type="text" id="chk-referencia" placeholder="Cerca a..." class="w-full px-4 py-3 border border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none bg-slate-50">
                                     </div>
                                 </div>
                             </div>
-
-                            <div id="fields-estacion" class="delivery-subfields hidden">
-                                <div class="form-row-2">
-                                    <div class="form-group">
-                                        <label class="form-label">Red de Transporte *</label>
-                                        <select id="chk-linea-estacion" onchange="actualizarEstaciones()">
+                            <div id="fields-estacion" class="space-y-3 text-xs" hidden>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Red *</label>
+                                        <select id="chk-linea-estacion" onchange="actualizarEstaciones()" class="w-full px-4 py-3 border border-slate-200 rounded-2xl bg-slate-50 focus:border-blue-600 focus:outline-none font-bold">
                                             <option value="Metropolitano">Metropolitano</option>
-                                            <option value="Tren Eléctrico">Tren Eléctrico (Línea 1)</option>
+                                            <option value="Tren Eléctrico">Tren Eléctrico (Linea 1)</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Estación de Encuentro *</label>
-                                        <select id="chk-estacion-nombre"></select>
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Estación *</label>
+                                        <select id="chk-estacion-nombre" class="w-full px-4 py-3 border border-slate-200 rounded-2xl bg-slate-50 focus:border-blue-600 focus:outline-none font-bold"></select>
                                     </div>
                                 </div>
                             </div>
-
-                            <div id="fields-provincia" class="delivery-subfields hidden">
-                                <div class="form-row-2">
-                                    <div class="form-group">
-                                        <label class="form-label">Agencia de Envío *</label>
-                                        <select id="chk-agencia-provincia">
+                            <div id="fields-provincia" class="space-y-3 text-xs" hidden>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Agencia *</label>
+                                        <select id="chk-agencia-provincia" class="w-full px-4 py-3 border border-slate-200 rounded-2xl bg-slate-50 focus:border-blue-600 focus:outline-none font-bold">
                                             <option value="Shalom">Shalom</option>
                                             <option value="Olva Courier">Olva Courier</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Ciudad / Departamento *</label>
-                                        <input type="text" id="chk-ciudad-provincia" placeholder="Ej. Arequipa, Trujillo, Cusco">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Ciudad *</label>
+                                        <input type="text" id="chk-ciudad-provincia" placeholder="Ej. Arequipa" class="w-full px-4 py-3 border border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none bg-slate-50">
                                     </div>
                                 </div>
-                                <div class="form-row-2">
-                                    <div class="form-group">
-                                        <label class="form-label">Oficina de Destino *</label>
-                                        <input type="text" id="chk-oficina-provincia" placeholder="Nombre o dirección de la agencia">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">Oficina *</label>
+                                        <input type="text" id="chk-oficina-provincia" placeholder="Agencia destino" class="w-full px-4 py-3 border border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none bg-slate-50">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label">DNI del Receptor *</label>
-                                        <input type="text" id="chk-dni-provincia" placeholder="Número de DNI">
+                                    <div>
+                                        <label class="block font-bold text-slate-700 mb-1">DNI Receptor *</label>
+                                        <input type="text" id="chk-dni-provincia" placeholder="DNI" class="w-full px-4 py-3 border border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none bg-slate-50">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="checkout-step-block">
-                        <h2>3. Método de pago</h2>
-                        <div class="payment-methods-list">
-                            <label class="payment-option-row active" onclick="seleccionarMetodoPago(this, 'Yape / Plin')">
-                                <input type="radio" name="payment_method" checked>
-                                <div class="payment-text">
-                                    <strong>Yape / Plin</strong>
-                                    <span>Yape o Plin al +51 926 412 894</span>
-                                </div>
+                    <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+                        <h2 class="font-outfit text-base font-bold mb-4 text-slate-900">3. Método de Pago</h2>
+                        <div class="space-y-3 text-xs">
+                            <label class="payment-option-row active border-2 border-blue-600 bg-blue-50/50 rounded-2xl p-4 flex items-center gap-3 cursor-pointer transition shadow-sm" onclick="seleccionarMetodoPago(this, 'Yape / Plin')">
+                                <input type="radio" name="payment_method" checked class="accent-blue-600 w-4 h-4">
+                                <div><strong class="font-bold text-slate-900 text-sm">Yape / Plin</strong> (+51 926 412 894)</div>
                             </label>
-                            <label class="payment-option-row" onclick="seleccionarMetodoPago(this, 'Transferencia bancaria')">
-                                <input type="radio" name="payment_method">
-                                <div class="payment-text">
-                                    <strong>Transferencia bancaria</strong>
-                                    <span>BCP / Interbank</span>
-                                </div>
+                            <label class="payment-option-row border border-slate-200 bg-white rounded-2xl p-4 flex items-center gap-3 cursor-pointer transition shadow-sm" onclick="seleccionarMetodoPago(this, 'Transferencia bancaria')">
+                                <input type="radio" name="payment_method" class="accent-blue-600 w-4 h-4">
+                                <div><strong class="font-bold text-slate-900 text-sm">Transferencia bancaria</strong> (BCP / BBVA)</div>
                             </label>
                         </div>
                     </div>
-                </div>
 
-                <div class="checkout-summary-area">
-                    <div class="summary-card">
-                        <h3>Resumen del pedido</h3>
-                        <div id="checkout-summary-items" class="summary-items-list"></div>
-                        <div class="summary-totals">
-                            <div class="total-row">
-                                <span>Subtotal</span>
-                                <span id="summary-subtotal">S/ 0.00</span>
-                            </div>
-                            <div class="total-row">
-                                <span>Envío</span>
-                                <span id="summary-envio">S/ 10.00</span>
-                            </div>
-                            <div class="total-row grand-total">
-                                <span>Total</span>
-                                <span id="summary-total">S/ 0.00</span>
-                            </div>
+                    <div class="bg-slate-900 text-white rounded-3xl p-6 shadow-xl">
+                        <h3 class="font-outfit text-base font-bold mb-4 text-white">Resumen del Pedido</h3>
+                        <div id="checkout-summary-items" class="divide-y divide-slate-800 max-h-48 overflow-y-auto px-1 text-xs mb-4"></div>
+                        <div class="space-y-2 border-t border-slate-800 pt-4 text-xs">
+                            <div class="flex justify-between text-slate-300"><span>Subtotal</span><span id="summary-subtotal" class="font-bold">S/ 0.00</span></div>
+                            <div class="flex justify-between text-slate-300"><span>Envío</span><span id="summary-envio" class="font-bold">S/ 10.00</span></div>
+                            <div class="flex justify-between text-base font-extrabold text-white pt-2 border-t border-slate-800"><span>Total a Pagar</span><span id="summary-total" class="text-blue-400">S/ 0.00</span></div>
                         </div>
-                        <button class="btn-confirm-whatsapp-order" onclick="enviarPedidoFinalWhatsApp()">
-                            <i class="fa-brands fa-whatsapp"></i> Confirmar pedido por WhatsApp
+                        <button onclick="enviarPedidoFinalWhatsApp()" class="w-full mt-6 bg-whatsapp hover:bg-emerald-700 text-white font-extrabold py-4 rounded-2xl transition flex items-center justify-center gap-2 shadow-lg text-xs">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Confirmar pedido por WhatsApp
                         </button>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
 
-    <!-- SECCIÓN DE BENEFICIOS (AZUL CLARO) -->
-    <section class="benefits-section">
-        <div class="container benefits-grid">
-            <div class="benefit-card">
-                <i class="fa-solid fa-scissors benefit-icon"></i>
-                <h3>Calidad garantizada</h3>
-                <p>Materiales resistentes y acabados de alta durabilidad.</p>
+        <!-- Carrito Lateral Drawer -->
+        <div id="cart-drawer" class="fixed top-0 right-[-440px] w-full max-w-[380px] h-full bg-white shadow-2xl z-[1000] transition-all duration-300 flex flex-col border-l border-slate-100">
+            <div class="p-5 border-b border-slate-100 flex justify-between items-center bg-white">
+                <h3 class="font-outfit text-lg font-bold text-slate-900">Tu Carrito</h3>
+                <button onclick="cerrarCarrito()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-700 transition">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
             </div>
-            <div class="benefit-card">
-                <i class="fa-solid fa-shield-halved benefit-icon"></i>
-                <h3>Compra 100% segura</h3>
-                <p>Paga con Yape, Plin o transferencia verificada.</p>
+            <div class="p-4 flex-grow overflow-y-auto bg-slate-50/50" id="cart-items">
+                <p class="text-center text-slate-400 text-xs mt-12 font-medium">Tu carrito está vacío.</p>
             </div>
-            <div class="benefit-card">
-                <i class="fa-solid fa-truck-fast benefit-icon"></i>
-                <h3>Envíos a todo el Perú</h3>
-                <p>Despachos con Olva Courier y Shalom con número de seguimiento.</p>
+            <div class="p-5 border-t border-slate-100 bg-white shadow-lg">
+                <div class="flex justify-between items-center mb-4 text-xs font-bold">
+                    <span class="text-slate-600">Subtotal del pedido</span>
+                    <span id="cart-total-price" class="text-slate-900 text-base font-extrabold">S/ 0.00</span>
+                </div>
+                <button onclick="irACheckout()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-2xl font-extrabold text-xs transition shadow-lg shadow-blue-600/20">
+                    Proceder al pago
+                </button>
             </div>
         </div>
-    </section>
+        <div id="cart-overlay" onclick="cerrarCarrito()" class="fixed inset-0 bg-slate-950/50 backdrop-blur-sm z-[999] hidden"></div>
 
-    <!-- Carrito Lateral Drawer -->
-    <div class="cart-drawer" id="cart-drawer">
-        <div class="cart-header">
-            <h3>Tu carrito</h3>
-            <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <p class="empty-cart-msg">Tu carrito está vacío.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Subtotal</span>
-                <span id="cart-total-price">S/ 0.00</span>
-            </div>
-            <button class="btn-checkout-primary" onclick="irACheckout()">Finalizar compra</button>
-        </div>
-    </div>
-    <div class="cart-overlay" id="cart-overlay"></div>
+        <!-- PIE DE PAGINA -->
+        <footer class="bg-slate-950 text-slate-300 pt-12 pb-8 px-6 md:px-12 text-xs border-t border-slate-900 mt-16">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="space-y-3">
+                    <span class="font-outfit text-lg font-extrabold text-white block">MILENIO VINTAGE</span>
+                    <p class="text-slate-400 leading-relaxed">Morrales, mochilas y accesorios con alma vintage y diseño independiente de alta calidad.</p>
+                    <p class="text-slate-400 font-semibold">Lun a Dom | 9am - 11pm<br>WhatsApp: +51 926 412 894</p>
+                </div>
 
-    <!-- PIE DE PÁGINA FOOTER -->
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-col brand-col">
-                <img src="img/morral-1-1.jpg" alt="Logo Vintage Milenio" class="footer-logo">
-                <p class="footer-brand-desc">Morrales, mochilas, carteras y accesorios con alma vintage. Hechos para durar.</p>
-                <div class="footer-socials">
-                    <a href="https://instagram.com/vintagemilenio" target="_blank">Instagram</a> · 
-                    <a href="https://facebook.com/vintagemilenio" target="_blank">Facebook</a> · 
-                    <a href="https://tiktok.com/@vintagemilenio" target="_blank">TikTok: @vintagemilenio</a>
+                <div class="space-y-2">
+                    <h4 class="font-outfit text-sm font-bold text-white mb-2">Políticas de la tienda</h4>
+                    <ul class="space-y-1.5 font-medium">
+                        <li><a href="#" onclick="abrirModalPolitica('privacidad'); return false;" class="text-slate-400 hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> Políticas de privacidad</a></li>
+                        <li><a href="#" onclick="abrirModalPolitica('envio'); return false;" class="text-slate-400 hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> Políticas de envío</a></li>
+                        <li><a href="#" onclick="abrirModalPolitica('cambios'); return false;" class="text-slate-400 hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> Políticas de cambios y devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col justify-between items-start md:items-end space-y-4">
+                    <div class="flex items-center justify-end">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-slate-700 bg-slate-900 shadow-md flex items-center justify-center">
+                            <img src="img/logotienda.png" alt="Logo Vintage Milenio" class="w-full h-full object-cover" onerror="this.src='imag/logotienda'">
+                        </div>
+                    </div>
+                    <div onclick="abrirModalReclamaciones()" class="cursor-pointer group inline-block bg-white p-2 rounded-xl shadow-md border border-slate-200 hover:scale-105 transition">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-book-open text-blue-600 text-lg"></i>
+                            <div class="text-left">
+                                <span class="text-[10px] font-extrabold text-blue-600 uppercase tracking-tight block">Libro de</span>
+                                <span class="text-xs font-extrabold text-slate-900 block leading-none">Reclamaciones</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="footer-col">
-                <h4 class="footer-heading">ENLACES ÚTILES</h4>
-                <ul class="footer-links-list">
-                    <li><a href="#">Políticas de cambio</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Libro de reclamaciones</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">ATENCIÓN AL CLIENTE</h4>
-                <div class="footer-info-list">
-                    <p><strong>WhatsApp:</strong> +51 926 412 894</p>
-                    <p><strong>Horario:</strong> Lun a Sáb · 9:00 am – 8:00 pm</p>
-                    <p><strong>Pagos:</strong> Yape · Plin · Transferencia · Tarjeta</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
+            <div class="border-t border-slate-900 pt-6 text-center text-slate-500 max-w-7xl mx-auto">
                 <p>&copy; 2026 Vintage Milenio. Todos los derechos reservados.</p>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
+    <!-- Script Principal -->
     <script src="script.js"></script>
 </body>
 </html>
