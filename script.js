@@ -1218,7 +1218,7 @@ productosCatalogo = [
         "medidas": "11cm x 6 cm"
     },
     {
-        "id": 137,
+        "id": 136,
         "nombre": "Llaverito Perlita con Corazon",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/40.jpg"],
@@ -1227,7 +1227,7 @@ productosCatalogo = [
         "medidas": "12 cm"
     },
     {
-        "id": 138,
+        "id": 136,
         "nombre": "Lazo de Perlitas",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/39.jpg"],
@@ -1236,7 +1236,7 @@ productosCatalogo = [
         "medidas": "11cm x 6 cm"
     },
     {
-        "id": 139,
+        "id": 136,
         "nombre": "Llaverito Estrella",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/41.jpg"],
@@ -1245,7 +1245,7 @@ productosCatalogo = [
         "medidas": "6 cm"
     },
     {
-        "id": 140,
+        "id": 136,
         "nombre": "Llaverito Triple Totoro",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/42.jpg"],
@@ -1254,7 +1254,7 @@ productosCatalogo = [
         "medidas": "23cm"
     },
     {
-        "id": 141,
+        "id": 136,
         "nombre": "Peluchito Gato  ",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/43.jpg"],
@@ -1263,7 +1263,7 @@ productosCatalogo = [
         "medidas": "10cm x 6 cm"
     },
     {
-        "id": 142,
+        "id": 136,
         "nombre": "Peluchito Gato Negro",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/44.jpg"],
@@ -1272,7 +1272,7 @@ productosCatalogo = [
         "medidas": "10cm x 6 cm"
     },
     {
-        "id": 143,
+        "id": 136,
         "nombre": "Peluchito Gato Blanco",
         "categoria": "accesorios",
         "imagenes": ["img/accesorios/45.jpg"],
