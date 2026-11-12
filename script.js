@@ -56,7 +56,6 @@ productosCatalogo = [
             "⚡ Ideal para cuadernos A4",
             "⚡ Ideal para laptop de 12 pulg",
             "",
-
             "📌 Nota: No entra Folders"
         ],
         desc: "Morral Totoro de lona canvas en estilo messenger bag con 6 compartimientos organizadores."
@@ -835,10 +834,8 @@ productosCatalogo = [
         "⚡ Ideal para cuadernos A4 y Folders",
         "⚡ Ideal para laptop de 15 pulg"
     ],
-    desc: "Backpack mochila clásica Pikachu New Style en nylon de 3 compartimientos, ideal para cuadernos A4, folders y laptop de hasta 15 pulgadas[cite: 10]."
+    desc: "Backpack mochila clásica Pikachu New Style en nylon de 3 compartimientos, ideal para cuadernos A4, folders y laptop de hasta 15 pulgadas."
     },
-
-
     {
     id: 30,
     nombre: "Mochila Card",
@@ -874,11 +871,11 @@ productosCatalogo = [
     esPreventa: false,
     esBoxEspecial: false,
     imagenes: [
-        "img/Boiso cruzado XS/1.jpg",
-        "img/Boiso cruzado XS/2.jpg",
-        "img/Boiso cruzado XS/3.jpg",
-        "img/Boiso cruzado XS/4.jpg",
-        "img/Boiso cruzado XS/5.jpg"
+        "img/Bolso cruzado XS/1.jpg",
+        "img/Bolso cruzado XS/2.jpg",
+        "img/Bolso cruzado XS/3.jpg",
+        "img/Bolso cruzado XS/4.jpg",
+        "img/Bolso cruzado XS/5.jpg"
     ],
     colores: ["Negro / Vino"],
     tieneTallas: false,
@@ -950,7 +947,6 @@ productosCatalogo = [
         "desc": "4 compartimientos, color Crema / Hueso, material Poliéster, estilo Cartuchera Large.",
         "medidas": "23cm x 12cm x 6 cm"
     },
-   
     {
         "id": 108,
         "nombre": "Llavero Mono",
@@ -1974,73 +1970,27 @@ function seleccionarDelivery(tipo, costo) {
     renderizarCheckoutResumen();
 }
 
-const estacionesMetropolitano = [// Terminal y Zona Norte
-  "Terminal Naranjal",
-  "Estación Izaguirre",
-  "Estación Palmeras",
-  "Estación Tomás Valle",
-  "Estación El Milagro",
-  "Estación Honorio Delgado",
-  "Estación UNI",
-  "Estación Parque del Trabajo",
-  "Estación Caquetá",
-  
-  // Zona Norte / Centro (Eje Alfonso Ugarte y Centro Histórico)
-  "Estación Dos de Mayo",
-  "Estación Ramón Castilla",
-  "Estación Tacna",
-  "Estación Jirón de la Unión",
-  "Estación Colmena",
-  "Estación Quilca",
-  "Estación España",
-  "Estación Central",
-  
-  // Vía Expresa (Norte a Sur)
-  "Estación Estadio Nacional",
-  "Estación México",
-  "Estación Canadá",
-  "Estación Javier Prado",
-  "Estación Canaval y Moreyra",
-  "Estación Aramburú",
-  "Estación Domingo Orué",
-  "Estación Angamos",
-  "Estación Ricardo Palma",
-  "Estación Benavides",
-  "Estación 28 de Julio",
-  "Estación Plaza de Flores",
-  
-  // Zona Sur (Barranco y Chorrillos)
-  "Estación Bulevar",
-  "Estación Balta",
-  "Estación Escuela Militar",
-  "Estación Honorio delgado",
-  "Estación Plaza lima sur",
-  "Terminal Matellini"];
-const estacionesTren = ["Estación Villa El Salvador","Estación Parque Industrial",
-  "Estación Pumacahua",
-  "Estación Villa María",
-  "Estación María Auxiliadora",
-  "Estación San Juan",
-  "Estación Atocongo",
-  "Estación Jorge Chávez",
-  "Estación Ayacucho",
-  "Estación Cabitos",
-  "Estación Angamos",
-  "Estación San Borja Sur",
-  "Estación La Cultura",
-  "Estación Nicolás Arriola",
-  "Estación Gamarra",
-  "Estación Miguel Grau",
-  "Estación El Ángel",
-  "Estación Presbítero Maestro",
-  "Estación Caja de Agua",
-  "Estación Pirámide del Sol",
-  "Estación Los Jardines",
-  "Estación Los Postes",
-  "Estación San Carlos",
-  "Estación San Martín",
-  "Estación Santa Rosa",
-  "Estación Bayóvar"];
+const estacionesMetropolitano = [
+  "Terminal Naranjal", "Estación Izaguirre", "Estación Palmeras", "Estación Tomás Valle", 
+  "Estación El Milagro", "Estación Honorio Delgado", "Estación UNI", "Estación Parque del Trabajo", 
+  "Estación Caquetá", "Estación Dos de Mayo", "Estación Ramón Castilla", "Estación Tacna", 
+  "Estación Jirón de la Unión", "Estación Colmena", "Estación Quilca", "Estación España", 
+  "Estación Central", "Estación Estadio Nacional", "Estación México", "Estación Canadá", 
+  "Estación Javier Prado", "Estación Canaval y Moreyra", "Estación Aramburú", "Estación Domingo Orué", 
+  "Estación Angamos", "Estación Ricardo Palma", "Estación Benavides", "Estación 28 de Julio", 
+  "Estación Plaza de Flores", "Estación Bulevar", "Estación Balta", "Estación Escuela Militar", 
+  "Estación Plaza lima sur", "Terminal Matellini"
+];
+
+const estacionesTren = [
+  "Estación Villa El Salvador", "Estación Parque Industrial", "Estación Pumacahua", "Estación Villa María", 
+  "Estación María Auxiliadora", "Estación San Juan", "Estación Atocongo", "Estación Jorge Chávez", 
+  "Estación Ayacucho", "Estación Cabitos", "Estación Angamos", "Estación San Borja Sur", 
+  "Estación La Cultura", "Estación Nicolás Arriola", "Estación Gamarra", "Estación Miguel Grau", 
+  "Estación El Ángel", "Estación Presbítero Maestro", "Estación Caja de Agua", "Estación Pirámide del Sol", 
+  "Estación Los Jardines", "Estación Los Postes", "Estación San Carlos", "Estación San Martín", 
+  "Estación Santa Rosa", "Estación Bayóvar"
+];
 
 function actualizarEstaciones() {
     const lineaEl = document.getElementById('chk-linea-estacion');
