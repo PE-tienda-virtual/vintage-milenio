@@ -1,2090 +1,2454 @@
-productosCatalogo = [
-{
-    id: 1,
-    nombre: "Morral de Lona RYH",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral de lona RYH/1.jpg",
-        "img/Morral de lona RYH/2.jpg",
-        "img/Morral de lona RYH/3.jpg",
-        "img/Morral de lona RYH/4.jpg",
-        "img/Morral de lona RYH/5.jpg",
-        "img/Morral de lona RYH/6.jpg",
-        "img/Morral de lona RYH/7.jpg"
-    ],
-    colores: ["Negro", "Marrón", "Verde", "Kakhi"],
-    tieneTallas: false,
-    precio: 79.00,
-    medidas: "33 x 26 x 13 cm",
-    caracteristicasEspecificas: [
-        "⚡ Material: Lona Canvas Grueso",
-        "⚡ Estilo: Bolso / Morral - Bolsa de Negocios",
-        "⚡ 4 compartimientos organizadores",
-        "⚡ Medidas: 33 x 26 x 13 cm",
-        "⚡ Ideal para cuadernos A4",
-        "⚡ Ideal para laptop de hasta 12 pulg",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm"
-    ],
-    desc: "Clásico morral de lona RYH / bolso de negocios de lona canvas grueso con 4 compartimientos y correa ajustable."
-    },
- {
-        id: 2,
-        nombre: "Morral Totoro Clasico",
-        categoria: "morrales",
-        esPreventa: false,
-        esBoxEspecial: false,
-        imagenes: ["img/Morral Totoro Clasico/1.jpg",
-            "img/Morral Totoro Clasico/2.jpg",
-            "img/Morral Totoro Clasico/3.jpg",
-            "img/Morral Totoro Clasico/4.jpg",
-            "img/Morral Totoro Clasico/5.jpg",
-            "img/Morral Totoro Clasico/6.jpg",
-            "img/Morral Totoro Clasico/7.jpg",
-            "img/Morral Totoro Clasico/8.jpg", 
-        ],
-        colores: ["Blanco Marfil", "Negro", "Verde Menta"],
-        tieneTallas: false,
-        precio: 79.00,
-        medidas: "36 x 28 x 10 cm",
-        caracteristicasEspecificas: [
-            "⚡ Morral Totoro: Lona Canvas",
-            "⚡ Estilo: Messenger Bag - Cartera",
-            "⚡ 6 compartimientos",
-            "⚡ Medidas A4: 36 x 28 x 10 cm",
-            "⚡ Ideal para cuadernos A4",
-            "⚡ Ideal para laptop de 12 pulg",
-            "",
-            "📌 Nota: No entra Folders"
-        ],
-        desc: "Morral Totoro de lona canvas en estilo messenger bag con 6 compartimientos organizadores."
-    },
-  
+const standardSizes = [
+  { name: 'S', dim: '32 x 28 x 10 cm', price: 79.00 },
+  { name: 'M (Ideal)', dim: '39 x 30 x 12 cm', price: 89.00 },
+  { name: 'L', dim: '44 x 32 x 14 cm', price: 105.00 }
+];
+
+const products = [
   {
-  id: 3,
-  nombre: "Bolso Cruzado Vintage",
-  categoria: "morrales",
-  imagenes: ["img/Morral cruzado Vintage/1.jpg", "img/Morral cruzado Vintage/2.jpg", "img/Morral cruzado Vintage/3.jpg", "img/Morral cruzado Vintage/4.jpg"],
-  colores: ["Negro", "Marrón Vintage", "Beige khaki", "Verde Militar"],
-  tieneTallas: true,
-  tallas: [
-    { 
-      talla: "S", 
-      precio: 79.00, 
-      dimensiones: "32cm x 28cm x 10cm", 
-      desc: "5 bolsillos, 100% Lona Canvas. Ideal para Cuadernos A4." 
-    },
-    { 
-      talla: "M", 
-      precio: 89.00, 
-      dimensiones: "39cm x 30cm x 12cm", 
-      desc: "7 bolsillos, 100% Lona Canvas. Ideal para laptop de 14\" y folders." 
-    },
-    { 
-      talla: "L", 
-      precio: 99.00, 
-      dimensiones: "44cm x 32cm x 14cm", 
-      desc: "9 bolsillos, 100% Lona Canvas. Ideal para laptop de 16\" y folders." 
-    }
-  ]
-    },
-
- {
+    id: 1,
+    name: "Morral de Lona RYH",
+    category: "morrales",
+    price: 75.00,
+    oldPrice: 95.00,
+    rating: "4.9 (10 valoraciones)",
+    img: "img/Morral de lona RYH/1.jpg",
+    desc: "Clásico morral de lona RYH / bolso de negocios de lona canvas grueso con 4 compartimientos y correa ajustable.",
+    bullets: [
+      "Material: Lona Canvas Grueso",
+      "Estilo: Bolso / Morral - Bolsa de Negocios",
+      "4 compartimientos organizadores",
+      "Ideal para cuadernos A4 y laptop de hasta 12 pulg",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm"
+    ],
+    badge: "Más Vendido",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Morral de lona RYH/1.jpg", price: 75.00, status: "disponible" },
+      { name: "Marrón", img: "img/Morral de lona RYH/2.jpg", price: 75.00, status: "disponible" },
+      { name: "Verde", img: "img/Morral de lona RYH/3.jpg", price: 77.00, status: "disponible" },
+      { name: "Kakhi", img: "img/Morral de lona RYH/4.jpg", price: 77.00, status: "disponible" }
+    ],
+    lookbookImages: [
+      "img/Morral de lona RYH/5.jpg",
+      "img/Morral de lona RYH/6.jpg",
+      "img/Morral de lona RYH/7.jpg"
+    ]
+  },
+  {
+    id: 2,
+    name: "Morral Totoro Clasico",
+    category: "morrales",
+    price: 60.00,
+    oldPrice: 75.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/Morral Totoro Clasico/1.jpg",
+    desc: "Morral Totoro de lona canvas en estilo messenger bag con 6 compartimientos organizadores.",
+    bullets: [
+      "Material: Lona Canvas",
+      "Estilo: Messenger Bag - Cartera",
+      "6 compartimientos organizadores",
+      "Medidas: 36x28x10 cm",
+      "Ideal para cuadernos A4 y laptop de 12 pulg (Nota: No entra Folders)"
+    ],
+    badge: "Popular",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Verde Olivo", img: "img/Morral Totoro Clasico/1.jpg", price: 60, status: "disponible" },
+      { name: "Negro", img: "img/Morral Totoro Clasico/2.jpg", price: 66.00, status: "disponible" },
+      { name: "Azul", img: "img/Morral Totoro Clasico/3.jpg", price: 66.00, status: "disponible" },
+      { name: "Gris Lila", img: "img/Morral Totoro Clasico/3.jpg", price: 60.00, status: "disponible" },
+      { name: "Amarillo", img: "img/Morral Totoro Clasico/3.jpg", price: 60.00, status: "disponible" },
+      { name: "Verde oscuro", img: "img/Morral Totoro Clasico/3.jpg", price: 60.00, status: "disponible" }
+    ],
+    lookbookImages: [
+      "img/Morral Totoro Clasico/4.jpg",
+      "img/Morral Totoro Clasico/5.jpg",
+      "img/Morral Totoro Clasico/6.jpg",
+      "img/Morral Totoro Clasico/7.jpg",
+      "img/Morral Totoro Clasico/8.jpg"
+    ]
+  },
+  {
+    id: 3,
+    name: "Bolso Cruzado Vintage",
+    category: "morrales",
+    price: 75.00,
+    oldPrice: 99.00,
+    rating: "5.0 (15 valoraciones)",
+    img: "img/Morral cruzado Vintage/1.jpg",
+    desc: "Bolso cruzado vintage 100% lona canvas con múltiples bolsillos organizadores y opción de tallas.",
+    bullets: [
+      "Material: 100% Lona Canvas",
+      "Múltiples bolsillos organizadores según talla",
+      "Ideal para cuadernos y laptops"
+    ],
+    badge: "Destacado",
+    tagColor: "bg-amber-500/15 text-amber-700 border-amber-500/30",
+    sizes: [
+      { name: 'S', dim: '32cm x 28cm x 10cm (5 bolsillos)', price: 75.00 },
+      { name: 'M', dim: '39cm x 30cm x 12cm (7 bolsillos)', price: 90.00 },
+      { name: 'L', dim: '44cm x 32cm x 14cm (9 bolsillos)', price: 110.00 }
+    ],
+    variants: [
+      { name: "Negro", img: "img/Morral cruzado Vintage/3.jpg", price: 75.00, status: "disponible" },
+      { name: "Verde Militar", img: "img/Morral cruzado Vintage/2.jpg", price: 75.00, status: "disponible" },
+      { name: "Beige khaki", img: "img/Morral cruzado Vintage/1.jpg", price: 75.00, status: "disponible" }
+    ],
+    lookbookImages: [
+      "img/Morral cruzado Vintage/4.jpg",
+      "img/Morral cruzado Vintage/5.jpg",
+      "img/Morral cruzado Vintage/6.jpg",
+      "img/Morral cruzado Vintage/7.jpg"
+    ]
+  },
+  {
     id: 4,
-    nombre: "Bolso Bandolera Y2K",
-    categoria: "carteras",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso Bandolera y2k/1.jpg",
-        "img/Bolso Bandolera y2k/2.jpg",
-        "img/Bolso Bandolera y2k/3.jpg",
-        "img/Bolso Bandolera y2k/4.jpg",
-        "img/Bolso Bandolera y2k/5.jpg",
-        "img/Bolso Bandolera y2k/6.jpg"
+    name: "Bolso Bandolera Y2K",
+    category: "carteras",
+    price: 45.00,
+    oldPrice: 60.00,
+    rating: "4.7 (6 valoraciones)",
+    img: "img/Bolso Bandolera y2k/1.jpg",
+    desc: "Morral Y2K / Bolso Bandolera clásico de poliéster ligero y duradero con compartimento para tableta de 11 pulgadas y bolsillo portabotella.",
+    bullets: [
+      "Material: Poliéster importado, resistente y duradero",
+      "Compartimento para tableta 11\"",
+      "Bolsillo interior portabotella",
+      "Medidas: 32cm x 23cm x 9cm",
+      "Uso dual: cartera o morral"
     ],
-    colores: ["Blanco", "Negro", "Verde", "Khaki"],
-    tieneTallas: false,
-    precio: 45.00,
-    medidas: "32cm x 23cm x 9cm",
-    caracteristicasEspecificas: [
-        "⚡ Material: Importado de Poliéster, resistente y duradero",
-        "⚡ Ligero y duradero",
-        "⚡ Ideal para cuadernos A4",
-        "⚡ Compartimento para tableta 11\"",
-        "⚡ Bolsillo interior portabotella",
-        "⚡ Medidas: 32cm x 23cm x 9cm",
-        "⚡ Confortable, lo puedes llevar como cartera o como morral"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Blanco", img: "img/Bolso Bandolera y2k/3.jpg", price: 45.00, status: "disponible" },
+      { name: "Negro", img: "img/Bolso Bandolera y2k/4.jpg", price: 45.00, status: "disponible" },
+      { name: "Verde", img: "img/Bolso Bandolera y2k/5.jpg", price: 45.00, status: "disponible" },
+      { name: "Khaki", img: "img/Bolso Bandolera y2k/6.jpg", price: 45.00, status: "disponible" }
     ],
-    desc: "Morral Y2K / Bolso Bandolera clásico de poliéster ligero y duradero con compartimento para tableta de 11 pulgadas y bolsillo portabotella."
-    },
-
-    {
+    lookbookImages: [
+      "img/Bolso Bandolera y2k/1.jpg",
+      "img/Bolso Bandolera y2k/2.jpg"
+    ]
+  },
+  {
     id: 5,
-    nombre: "Bolso Japonés Clásico",
-    categoria: "carteras",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso Japones Clasico/1.jpg",
-        "img/Bolso Japones Clasico/2.jpg",
-        "img/Bolso Japones Clasico/3.jpg",
-        "img/Bolso Japones Clasico/4.jpg",
-        "img/Bolso Japones Clasico/5.jpg"
+    name: "Bolso Japonés Clásico",
+    category: "carteras",
+    price: 80.00,
+    oldPrice: 100.00,
+    rating: "4.9 (12 valoraciones)",
+    img: "img/Bolso Japones Clasico/1.jpg",
+    desc: "Shoulder bag Bolso Japonés modelo clásico en cuero PU de alta calidad con múltiples compartimientos, correa ajustable y gran capacidad para laptop y folders.",
+    bullets: [
+      "Material: Cuero PU de Alta Calidad",
+      "Medidas: 39x30x12 cm",
+      "Correa ajustable: Longitud máx 140cm / Ancho 4cm",
+      "2 compartimientos grandes y 1 pequeño",
+      "Ideal para laptop de 14\", A5/A4, Tablet y Folders"
     ],
-    colores: ["Blanco", "Bronceado", "Marrón Oscuro", "Azul", "Negro"],
-    tieneTallas: false,
-    precio: 80.00,
-    medidas: "39 x 30 x 12 cm",
-    caracteristicasEspecificas: [
-        "⚡ Shoulder Bag / Bolso Japonés - Modelo Clásico",
-        "⚡ Material: Cuero PU de Alta Calidad",
-        "⚡ Uso: Bolso / cartera o Morral (INCLUYE CORREA SIMPLE)",
-        "⚡ Medidas: 39 x 30 x 12 cm",
-        "⚡ Correa ajustable: Longitud máxima 140cm / Ancho 4cm",
-        "⚡ Capacidad: 2 compartimientos grandes y 1 pequeño",
-        "⚡ Ideal para laptop de 14\", cuadernos A5 y A4, Tablet y Folders"
+    badge: "Popular",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Blanco", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Bronceado", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Marrón Oscuro", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Azul", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Negro", img: "img/Bolso Japones Clasico/1.jpg", price: 80.00, status: "disponible" }
     ],
-    desc: "Shoulder bag Bolso Japonés modelo clásico en cuero PU de alta calidad con múltiples compartimientos, correa ajustable y gran capacidad para laptop y folders."
-    },
+    lookbookImages: [
+      "img/Bolso Japones Clasico/3.jpg",
+      "img/Bolso Japones Clasico/4.jpg",
+      "img/Bolso Japones Clasico/4.jpg",
+      "img/Bolso Japones Clasico/3.jpg"
+    ]
+  },
   {
     id: 6,
-    nombre: "Bolso Japonés Itabag I",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso japones itabag I/1.jpg",
-        "img/Bolso japones itabag I/2.jpg",
-        "img/Bolso japones itabag I/3.jpg",
-        "img/Bolso japones itabag I/4.jpg",
-        "img/Bolso japones itabag I/5.jpg",
-        "img/Bolso japones itabag I/6.jpg",
-        "img/Bolso japones itabag I/7.jpg"
+    name: "Bolso Japonés Itabag I",
+    category: "morrales",
+    price: 85.00,
+    oldPrice: 115.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/Bolso Japones Itabag I/1.jpg",
+    desc: "Bolso japonés itabag estilo shoulder bag con diseños de ventana transparente frontal (huella, estrella o corazón), compartimento para laptop de 14 pulgadas.",
+    bullets: [
+      "Cumple con los estándares TSA",
+      "Compartimento para laptop 14\"",
+      "Bolsillo interior portabotella y portallaves",
+      "Medidas: 37cm x 27cm x 14cm",
+      "Incluye llavero decorativo desmontable"
     ],
-    colores: ["Negro", "Marrón"],
-    tieneTallas: true,
-    tallas: [
-        { talla: "Huella", precio: 95.00, dimensions: "37cm x 27cm x 14cm", desc: "Diseño con ventana transparente en forma de huella." },
-        { talla: "Estrella", precio: 95.00, dimensions: "37cm x 27cm x 14cm", desc: "Diseño con ventana transparente en forma de estrella." },
-        { talla: "Corazón", precio: 95.00, dimensions: "37cm x 27cm x 14cm", desc: "Diseño con ventana transparente en forma de corazón." }
+    badge: "Especial",
+    tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
+    sizes: [],
+    variants: [
+      { name: "Huella", img: "img/Bolso Japones Itabag I/2.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Estrella", img: "img/Bolso Japones Itabag I/3.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Corazón", img: "img/Bolso Japones Itabag I/4.jpg", price: 85.00, status: "bajo pedido" }
     ],
-    caracteristicasEspecificas: [
-        "⚡ Bolso Japonés / Shoulder Bag - Itabag",
-        "⚡ Ligero y duradero",
-        "⚡ Cumple con los estándares TSA",
-        "⚡ Compartimento para laptop 14\"",
-        "⚡ Bolsillo interior portabotella y portallaves",
-        "⚡ Medidas: 37cm x 27cm x 14cm",
-        "⚡ Incluye llavero decorativo desmontable",
-        "⚡ Uso: Exclusivo como Bolso",
-        "⚡ Ventana transparente frontal en variantes (Huella, Estrella, Corazón)"
-    ],
-    desc: "Bolso japonés itabag estilo shoulder bag con diseños de ventana transparente frontal (huella, estrella o corazón), compartimento para laptop de 14 pulgadas y bolsillo portallaves."
-    },
-  
-    {
+    lookbookImages: [
+      "img/Bolso Japones Itabag I/1.jpg",
+      "img/Bolso Japones Itabag I/2.jpg",
+      "img/Bolso Japones Itabag I/3.jpg",
+      "img/Bolso Japones Itabag I/4.jpg",
+      "img/Bolso Japones Itabag I/5.jpg"
+    ]
+  },
+  {
     id: 7,
-    nombre: "Bolso Japonés Itabag II",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso Japones Itabag II/1.jpg",
-        "img/Bolso Japones Itabag II/2.jpg",
-        "img/Bolso Japones Itabag II/3.jpg",
+    name: "Bolso Japonés Itabag II",
+    category: "morrales",
+    price: 85.00,
+    oldPrice: 115.00,
+    rating: "4.7 (7 valoraciones)",
+    img: "img/Bolso Japones Itabag II/1.jpg",
+    desc: "Bolso japonés itabag estilo shoulder bag con opciones de ventana transparente frontal rectangular o circular.",
+    bullets: [
+      "Compartimento para laptop 14\"",
+      "Bolsillo interior portabotella y portallaves",
+      "Medidas: 37cm x 27cm x 14cm",
+      "Incluye llavero decorativo desmontable"
     ],
-    colores: ["Negro", "Marrón"],
-    tieneTallas: true,
-    tallas: [
-        { talla: "Rectángulo", precio: 95.00, dimensions: "37cm x 27cm x 14cm", desc: "Diseño con ventana transparente frontal rectangular." },
-        { talla: "Círculo", precio: 95.00, dimensions: "37cm x 27cm x 14cm", desc: "Diseño con ventana transparente frontal circular." }
+    badge: "",
+    tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
+    sizes: [],
+    variants: [
+      { name: "Rectángulo", img: "img/Bolso Japones Itabag II/2.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Círculo", img: "img/Bolso Japones Itabag II/3.jpg", price: 85.00, status: "bajo pedido" }
     ],
-    caracteristicasEspecificas: [
-        "⚡ Bolso Japonés / Shoulder Bag - Itabag",
-        "⚡ Ligero y duradero",
-        "⚡ Cumple con los estándares TSA",
-        "⚡ Compartimento para laptop 14\"",
-        "⚡ Bolsillo interior portabotella y portallaves",
-        "⚡ Medidas: 37cm x 27cm x 14cm",
-        "⚡ Incluye llavero decorativo desmontable",
-        "⚡ Uso: Exclusivo como Bolso",
-        "⚡ Ventana transparente frontal en variantes (Rectángulo, Círculo)"
-    ],
-    desc: "Bolso japonés itabag estilo shoulder bag con opciones de ventana transparente frontal en forma rectangular o circular, compartimento para laptop de 14 pulgadas y bolsillo portallaves."
-    },
- {
+    lookbookImages: [
+      "img/Bolso Japones Itabag II/1.jpg"
+    ]
+  },
+  {
     id: 8,
-    nombre: "Bolso Morral Triple",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso Morral Triple/1.jpg",
-        "img/Bolso Morral Triple/2.jpg",
-        "img/Bolso Morral Triple/3.jpg",
-        "img/Bolso Morral Triple/4.jpg",
-        "img/Bolso Morral Triple/5.jpg"
+    name: "Bolso Morral Triple",
+    category: "bolsos",
+    price: 65.00,
+    oldPrice: 110.00,
+    rating: "4.9 (11 valoraciones)",
+    img: "img/Bolso Morral Triple/1.jpg",
+    desc: "Bolso morral triple estilo JK de cuero PU de alta calidad con múltiples opciones de uso (bolso, morral, cartera o mochila).",
+    bullets: [
+      "Material: Cuero PU de Alta Calidad",
+      "Tamaño: 34x25x10 cm (Se adapta a cuadernos A4)",
+      "Correa ajustable: Longitud máxima 140cm / Ancho 4cm",
+      "Modelo de Uso: Bolso / Morral / Cartera / Mochila",
+      "2 compartimientos principales"
     ],
-    colores: ["Negro", "Rojo Vino"],
-    tieneTallas: false,
-    precio: 92.00,
-    medidas: "34 x 25 x 10 cm",
-    caracteristicasEspecificas: [
-        "⚡ Estilo JK / Bolso Morral Triple New Style",
-        "⚡ Material: Cuero PU de Alta Calidad",
-        "⚡ Tamaño: 34 x 25 x 10 cm (Se adapta a cuadernos A4)",
-        "⚡ Correa ajustable: Longitud máxima 140cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral / Cartera / Mochila",
-        "⚡ 2 compartimientos",
-        "⚡ Ideal para cuadernos A4, Tablet 11\" y Celular"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Bolso Morral Triple/2.jpg", price: 65.00, status: "disponible" },
+      { name: "Rojo Vino", img: "img/Bolso Morral Triple/3.jpg", price: 65.00, status: "disponible" }
     ],
-    desc: "Bolso morral triple estilo JK de cuero PU de alta calidad con múltiples opciones de uso (bolso, morral, cartera o mochila), correa ajustable y compartimiento adaptado para cuadernos A4."
-    },
+    lookbookImages: [
+      "img/Bolso Morral Triple/5.jpg",
+      "img/Bolso Morral Triple/4.jpg",
+      "img/Bolso Morral Triple/5.jpg"
+    ]
+  },
   {
     id: 9,
-    nombre: "Bolso Nubily Lazos",
-    categoria: "carteras",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso Nubily  Lazos/1.jpg",
-        "img/Bolso Nubily  Lazos/2.jpg",
-        "img/Bolso Nubily  Lazos/3.jpg",
-        "img/Bolso Nubily  Lazos/4.jpg",
-        "img/Bolso Nubily  Lazos/5.jpg",
-        "img/Bolso Nubily  Lazos/6.jpg"
+    name: "Bolso Nubily Lazos",
+    category: "bolsos",
+    price: 80.00,
+    oldPrice: 95.00,
+    rating: "4.8 (10 valoraciones)",
+    img: "img/Bolso Nubily  Lazos/1.jpg",
+    desc: "Bolso japonés shoulder bag con diseño de lazos en cuero PU importado, ligero y duradero, con compartimento para laptop de 14 pulgadas.",
+    bullets: [
+      "Material: Cuero PU importado",
+      "Cumple con estándares TSA",
+      "Compartimento para laptop 14\"",
+      "Bolsillo interior portabotella y portallaves",
+      "Medidas: 37cm x 27cm x 14cm"
     ],
-    colores: ["Marrón", "Negro"],
-    tieneTallas: false,
-    precio: 79.00,
-    medidas: "37cm x 27cm x 14cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso Japonés / Shoulder Bag - Lazos",
-        "⚡ Importado de Cuero PU, resistente y duradero",
-        "⚡ Ligero y duradero",
-        "⚡ Cumple con los estándares TSA",
-        "⚡ Compartimento para laptop 14\"",
-        "⚡ Bolsillo interior portabotella y portallaves",
-        "⚡ Medidas: 37cm x 27cm x 14cm",
-        "⚡ Incluye llavero decorativo desmontable",
-        "⚡ Uso: Exclusivo como Bolso (confortable, lo puedes llevar como cartera o como morral)"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Marrón", img: "img/Bolso Nubily  Lazos/2.jpg", price: 80.00, status: "disponible" },
+      { name: "Negro", img: "img/Bolso Nubily  Lazos/3.jpg", price: 80.00, status: "disponible" }
     ],
-    desc: "Bolso japonés shoulder bag con diseño de lazos en cuero PU importado, ligero y duradero, con compartimento para laptop de 14 pulgadas y bolsillo portallaves."
-    },
+    lookbookImages: [
+      "img/Bolso Nubily  Lazos/4.jpg",
+      "img/Bolso Nubily  Lazos/5.jpg",
+      "img/Bolso Nubily  Lazos/6.jpg",
+      "img/Bolso Nubily  Lazos/6.jpg"
+    ]
+  },
   {
     id: 10,
-    nombre: "Bolso Nubily Flor",
-    categoria: "carteras",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Bolso Nubily Flor/1.jpg",
-        "img/Bolso Nubily Flor/2.jpg",
-        "img/Bolso Nubily Flor/3.jpg",
-        "img/Bolso Nubily Flor/4.jpg",
-        "img/Bolso Nubily Flor/5.jpg"
+    name: "Bolso Nubily Flor",
+    category: "bolsos",
+    price: 80.00,
+    oldPrice: 95.00,
+    rating: "4.7 (5 valoraciones)",
+    img: "img/Bolso Nubily Flor/1.jpg",
+    desc: "Bolso japonés shoulder bag modelo flor con ventana transparente frontal con diseño floral.",
+    bullets: [
+      "Compartimento para laptop 14\"",
+      "Bolsillo interior portabotella y portallaves",
+      "Medidas: 37cm x 27cm x 14cm",
+      "Incluye llavero decorativo desmontable"
     ],
-    colores: ["Marrón", "Negro"],
-    tieneTallas: false,
-    precio: 79.00,
-    medidas: "37cm x 27cm x 14cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso Japonés / Shoulder Bag - Modelo Flor",
-        "⚡ Ligero y duradero",
-        "⚡ Cumple con los estándares TSA",
-        "⚡ Compartimento para laptop 14\"",
-        "⚡ Bolsillo interior portabotella y portallaves",
-        "⚡ Medidas: 37cm x 27cm x 14cm",
-        "⚡ Incluye llavero decorativo desmontable",
-        "⚡ Uso: Exclusivo como Bolso",
-        "⚡ Ventana transparente frontal con diseño de flor"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Marrón", img: "img/Bolso Nubily Flor/3.jpg", price: 80.00, status: "disponible" },
+      { name: "Negro", img: "img/Bolso Nubily Flor/2.jpg", price: 80.00, status: "disponible" }
     ],
-    desc: "Bolso japonés shoulder bag modelo flor, ligero y duradero, con compartimento para laptop de 14 pulgadas, bolsillo portallaves y ventana transparente frontal con diseño floral."
-    },
+    lookbookImages: [
+      "img/Bolso Nubily Flor/5.jpg",
+      "img/Bolso Nubily Flor/4.jpg",
+      "img/Bolso Nubily Flor/5.jpg"
+    ]
+  },
   {
     id: 11,
-    nombre: "Goth Hobo Bag",
-    categoria: "carteras",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Goth Hobo Bag/1.jpg",
-        "img/Goth Hobo Bag/2.jpg",
-        "img/Goth Hobo Bag/3.jpg",
-        "img/Goth Hobo Bag/4.jpg",
-        "img/Goth Hobo Bag/5.jpg"
+    name: "Goth Hobo Bag",
+    category: "bolsos",
+    price: 88.00,
+    oldPrice: 105.00,
+    rating: "4.9 (14 valoraciones)",
+    img: "img/Goth Hobo Bag/1.jpg",
+    desc: "Bolso Y2K estilo Goth Hobo Bag en cuero PU premium con diseño Gray Leopardo y 5 compartimientos organizadores.",
+    bullets: [
+      "Material: Cuero PU Premium",
+      "Tamaño: 37x26x13 cm (Se adapta a laptop de hasta 12\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "5 compartimientos organizadores"
     ],
-    colores: ["Gray Leopardo"],
-    tieneTallas: false,
-    precio: 88.00,
-    medidas: "37 x 26 x 13 cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso Y2K / Goth Hobo Bag",
-        "⚡ Material: Cuero PU Premium",
-        "⚡ Tamaño: 37 x 26 x 13 cm (Se adapta a laptop de hasta 12\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral / Cartera",
-        "⚡ 5 compartimientos",
-        "⚡ Ideal para cuadernos B5 y A4, Tablet 12\" y Celular"
+    badge: "Tendencia",
+    tagColor: "bg-pink-500/15 text-pink-700 border-pink-500/30",
+    sizes: [],
+    variants: [
+      { name: "Gray Leopardo", img: "img/Goth Hobo Bag/1.jpg", price: 88.00, status: "disponible" }
     ],
-    desc: "Bolso Y2K estilo Goth Hobo Bag en cuero PU premium con diseño Gray Leopardo, 5 compartimientos organizadores y correa ajustable."
-    },
+    lookbookImages: [
+      "img/Goth Hobo Bag/2.jpg",
+      "img/Goth Hobo Bag/2.jpg",
+      "img/Goth Hobo Bag/2.jpg",
+      "img/Goth Hobo Bag/2.jpg"
+    ]
+  },
   {
     id: 12,
-    nombre: "Mochila Cat",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila Cat/1.jpg",
-        "img/Mochila Cat/2.jpg",
-        "img/Mochila Cat/3.jpg",
-        "img/Mochila Cat/4.jpg"
+    name: "Mochila Cat",
+    category: "mochilas",
+    price: 45.00,
+    oldPrice: 60.00,
+    rating: "4.8 (13 valoraciones)",
+    img: "img/Mochila Cat/1.jpg",
+    desc: "Mochila Cat estilo backpack XXS / morral vintage en cuero PU con diseño de orejas de gato y triple uso.",
+    bullets: [
+      "Material: Cuero PU",
+      "Medidas: 25x18x10 cm (Ideal para cuadernos B5 y celulares)",
+      "Triple uso: mochila, morral o cartera",
+      "4 compartimientos"
     ],
-    colores: ["Negro"],
-    tieneTallas: false,
-    precio: 45.00,
-    medidas: "25 x 18 x 10 cm",
-    caracteristicasEspecificas: [
-        "⚡ Backpack XXS / Mochila Cat New Style",
-        "⚡ Morral Vintage: Cuero PU",
-        "⚡ Estilo: Mark Fairwhale",
-        "⚡ 4 compartimientos",
-        "⚡ Medidas A4: 25 x 18 x 10 cm",
-        "⚡ Ideal para cuadernos B5",
-        "⚡ Triple uso: mochila, morral, cartera",
-        "⚡ Ideal para celulares"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Mochila Cat/1.jpg", price: 45.00, status: "disponible" }
     ],
-    desc: "Mochila Cat estilo backpack XXS / morral vintage en cuero PU con diseño orejas de gato, 4 compartimientos y triple uso como mochila, morral o cartera."
-    },
+    lookbookImages: [
+      "img/Mochila Cat/2.jpg",
+      "img/Mochila Cat/3.jpg",
+      "img/Mochila Cat/4.jpg"
+    ]
+  },
   {
     id: 13,
-    nombre: "Mochila de One Piece",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila de One Piece/1.jpg",
-        "img/Mochila de One Piece/2.jpg",
-        "img/Mochila de One Piece/3.jpg",
-        "img/Mochila de One Piece/4.jpg",
-        "img/Mochila de One Piece/5.jpg"
+    name: "Mochila de One Piece",
+    category: "mochilas",
+    price: 40.00,
+    oldPrice: 60.00,
+    rating: "5.0 (20 valoraciones)",
+    img: "img/Mochila de One Piece/1.jpg",
+    desc: "Mochila escolar y urbana con diseño de One Piece en poliéster, con portalaptop para 15 pulgadas y 3 compartimientos.",
+    bullets: [
+      "Diseño temático: One Piece (Carteles de recompensa / Wanted)",
+      "Dimensiones: 45x30x15 cm",
+      "Portalaptop para 15 pulgadas",
+      "Material: Poliéster resistente"
     ],
-    colores: ["Blanco y Negro (Diseño One Piece)"],
-    tieneTallas: false,
-    precio: 125.00,
-    medidas: "45 x 30 x 15 cm",
-    caracteristicasEspecificas: [
-        "⚡ Diseño temático: One Piece (Carteles de recompensa / Wanted)",
-        "⚡ Dimensiones: 45 x 30 x 15 cm",
-        "⚡ Portalaptop para 15 pulg",
-        "⚡ Material: Poliéster",
-        "⚡ 3 compartimientos"
+    badge: "Anime",
+    tagColor: "bg-orange-500/15 text-orange-700 border-orange-500/30",
+    sizes: [],
+    variants: [
+      { name: "Blanco y Negro (One Piece)", img: "img/Mochila de One Piece/1.jpg", price: 40.00, status: "disponible" }
     ],
-    desc: "Mochila escolar y urbana con diseño de One Piece en poliéster, con portalaptop para 15 pulgadas y 3 compartimientos."
-    },
+    lookbookImages: [
+      "img/Mochila de One Piece/2.jpg",
+      "img/Mochila de One Piece/3.jpg",
+      "img/Mochila de One Piece/4.jpg",
+      "img/Mochila de One Piece/5.jpg"
+    ]
+  },
   {
     id: 14,
-    nombre: "Mochila Gaming",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila Gaming/1.jpg",
-        "img/Mochila Gaming/2.jpg",
-        "img/Mochila Gaming/3.jpg",
-        "img/Mochila Gaming/4.jpg",
-        "img/Mochila Gaming/5.jpg"
+    name: "Mochila Gaming",
+    category: "mochilas",
+    price: 35.00,
+    oldPrice: 60.00,
+    rating: "4.9 (16 valoraciones)",
+    img: "img/Mochila Gaming/1.jpg",
+    desc: "Mochila clásica backpack gaming con diseño 'Let's Play' en nylon, espacio ideal para laptop de 15 pulgadas.",
+    bullets: [
+      "Material: Nylon de alta resistencia",
+      "Medidas: 42x32x13 cm",
+      "Ideal para cuadernos A4, Folders y laptop de 15 pulgadas"
     ],
-    colores: ["Negro / Diseño Let's Play Gaming"],
-    tieneTallas: false,
-    precio: 130.00,
-    medidas: "42 x 32 x 13 cm",
-    caracteristicasEspecificas: [
-        "⚡ Mochila Clásica / Backpack - Mochila Gaming New Style",
-        "⚡ Material: Nylon",
-        "⚡ 1 compartimiento principal",
-        "⚡ Medidas A4: 42 x 32 x 13 cm",
-        "⚡ Ideal para cuadernos A4 y Folders",
-        "⚡ Ideal para laptop de 15 pulg"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro / Let's Play", img: "img/Mochila Gaming/1.jpg", price: 35.00, status: "disponible" }
     ],
-    desc: "Mochila clásica backpack gaming con diseño 'Let's Play' en nylon, 1 compartimiento principal y espacio ideal para laptop de 15 pulgadas, cuadernos A4 y folders."
-    },
+    lookbookImages: [
+      "img/Mochila Gaming/2.jpg"
+    ]
+  },
   {
     id: 15,
-    nombre: "Mochila Luck",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila Luck/1.jpg",
-        "img/Mochila Luck/2.jpg",
-        "img/Mochila Luck/3.jpg",
-        "img/Mochila Luck/4.jpg",
-        "img/Mochila Luck/5.jpg"
+    name: "Mochila Luck",
+    category: "mochilas",
+    price: 35.00,
+    oldPrice: 50.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/Mochila Luck/1.jpg",
+    desc: "Mochila clásica backpack estilo Mochila Luck en nylon poliéster con 4 compartimientos organizadores.",
+    bullets: [
+      "Material: Nylon Poliéster",
+      "4 compartimientos organizadores",
+      "Medidas: 42x30x15 cm",
+      "Ideal para laptop de 14 pulgadas y folders"
     ],
-    colores: ["Beige / Azul Marino"],
-    tieneTallas: false,
-    precio: 110.00,
-    medidas: "42 x 30 x 15 cm",
-    caracteristicasEspecificas: [
-        "⚡ Mochila Clásica / Backpack - Mochila Luck New Style",
-        "⚡ Material: Nylon Poliéster",
-        "⚡ 4 compartimientos",
-        "⚡ Medidas A4: 42 x 30 x 15 cm",
-        "⚡ Ideal para cuadernos A4 y Folders",
-        "⚡ Ideal para laptop de 14pulgs"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Beige / Azul Marino", img: "img/Mochila Luck/1.jpg", price: 35.00, status: "disponible" }
     ],
-    desc: "Mochila clásica backpack estilo Mochila Luck en nylon poliéster, con 4 compartimientos organizadores y espacio ideal para laptop de 14 pulgadas, cuadernos A4 y folders."
-    },
+    lookbookImages: [
+      "img/Mochila Luck/2.jpg"
+    ]
+  },
   {
     id: 16,
-    nombre: "Mochila Satoru Gojo",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila Satoru Gojo/1.jpg",
-        "img/Mochila Satoru Gojo/2.jpg",
-        "img/Mochila Satoru Gojo/3.jpg",
-        "img/Mochila Satoru Gojo/4.jpg",
-        "img/Mochila Satoru Gojo/5.jpg"
+    name: "Mochila Satoru Gojo",
+    category: "mochilas",
+    price: 60.00,
+    oldPrice: 80.00,
+    rating: "5.0 (22 valoraciones)",
+    img: "img/Mochila Satoru Gojo/1.jpg",
+    desc: "Mochila escolar y urbana temática de Jujutsu Kaisen con diseño de Satoru Gojo en nylon, con compartimento para laptop.",
+    bullets: [
+      "Diseño exclusivo anime: Jujutsu Kaisen / Satoru Gojo",
+      "Material: Nylon",
+      "Medidas: 31x44x15 cm Aprox.",
+      "Compartimento interno para Laptop"
     ],
-    colores: ["Negro y Blanco"],
-    tieneTallas: false,
-    precio: 125.00,
-    medidas: "31 x 44 x 15 cm Aprox.",
-    caracteristicasEspecificas: [
-        "⚡ Diseño exclusivo anime: Jujutsu Kaisen / Satoru Gojo",
-        "⚡ Material: Nylon",
-        "⚡ Medidas: 31 x 44 x 15 cm Aprox.",
-        "⚡ Bolsillos exteriores e interiores",
-        "⚡ Compartimento para Laptop",
-        "⚡ Adecuado para Estudiantes"
+    badge: "Anime",
+    tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro y Blanco", img: "img/Mochila Satoru Gojo/1.jpg", price: 60.00, status: "disponible" }
     ],
-    desc: "Mochila escolar y urbana temática de Jujutsu Kaisen con diseño de Satoru Gojo en nylon, con compartimento para laptop, bolsillos interiores y exteriores."
-    },
+    lookbookImages: [
+      "img/Mochila Satoru Gojo/2.jpg"
+      
+    ]
+  },
   {
     id: 17,
-    nombre: "Morral Belstaff",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Belstaff/1.png",
-        "img/Morral Belstaff/2.png",
-        "img/Morral Belstaff/3.png",
-        "img/Morral Belstaff/4.png",
-        "img/Morral Belstaff/5.png"
+    name: "Morral Belstaff",
+    category: "morrales",
+    price: 90.00,
+    oldPrice: 120.00,
+    rating: "4.9 (18 valoraciones)",
+    img: "img/Morral Belstaff/1.png",
+    desc: "Morral Belstaff de lona canvas grueso con correas de cuero PU premium, estilo vintage atemporal y 6 compartimientos.",
+    bullets: [
+      "Material: Lona Canvas Grueso + cuero PU premium",
+      "Tamaño: 39x33x16 cm (Laptop hasta 14\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "6 compartimientos organizadores"
     ],
-    colores: ["Negro", "Azul", "Verde Oliva"],
-    tieneTallas: false,
-    precio: 98.00,
-    medidas: "39 x 33 x 16 cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso de Lona / Morral Vintclass - Morral Belstaff",
-        "⚡ Material: Lona Canvas Grueso + cuero PU premium",
-        "⚡ Tamaño: 39 x 33 x 16 cm (Se adapta a laptop de hasta 14\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral",
-        "⚡ 6 compartimientos",
-        "⚡ Ideal para cuadernos A3 y A4, Tablet 12\" y Celular"
+    badge: "Clásico",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Morral Belstaff/7.png", price: 90.00, status: "disponible" },
+      { name: "Azul", img: "img/Morral Belstaff/8.png", price: 90.00, status: "bajo pedido" },
+      { name: "Verde Oliva", img: "img/Morral Belstaff/9.png", price: 90.00, status: "bajo pedido" },
+      { name: "Khaki", img: "img/Morral Belstaff/6.jpeg", price: 90.00, status: "bajo pedido" }
     ],
-    desc: "Morral Belstaff de lona canvas grueso con correas de cuero PU premium, estilo vintage atemporal, 6 compartimientos y gran capacidad para laptop de 14 pulgadas y cuadernos A3/A4."
-    },
+    lookbookImages: [
+      "img/Morral Belstaff/4.png",
+      "img/Morral Belstaff/5.png",
+      "img/Morral Belstaff/6.png",
+      "img/Morral Belstaff/7.png"
+    ]
+  },
   {
     id: 18,
-    nombre: "Morral Belstaff Básico",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Belstaff Basico/1.jpg",
-        "img/Morral Belstaff Basico/2.jpg",
-        "img/Morral Belstaff Basico/3.jpg",
-        "img/Morral Belstaff Basico/4.jpg",
-        "img/Morral Belstaff Basico/5.jpg"
+    name: "Morral Belstaff Básico",
+    category: "morrales",
+    price: 85.00,
+    oldPrice: 105.00,
+    rating: "4.7 (7 valoraciones)",
+    img: "img/Morral Belstaff Basico/1.jpg",
+    desc: "Morral Belstaff estilo messenger bag retro vintage en tela de cuero PU premium con forro de poliéster, ideal para estudios.",
+    bullets: [
+      "Forro de Poliéster",
+      "Tela Cuero PU Premium",
+      "Tamaño: 39cm x 13cm x 30cm (Laptop de 14\")"
     ],
-    colores: ["Negro"],
-    tieneTallas: false,
-    precio: 85.00,
-    medidas: "39 x 13 x 30 cm",
-    caracteristicasEspecificas: [
-        "⚡ Messenger Bag Retro Vintage - Morral Belstaff",
-        "⚡ Forro de Poliéster",
-        "⚡ Tela Cuero PU Premium",
-        "⚡ Corte ideal y cómodo",
-        "⚡ Perfecto para Estudios",
-        "⚡ Uso: Morral",
-        "⚡ Tamaño: Oficio, laptop de 14\" (Medidas sugerida: A3)",
-        "⚡ Largo: 39cm",
-        "⚡ Ancho: 13cm",
-        "⚡ Alto: 30cm"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Morral Belstaff Basico/1.jpg", price: 85.00, status: "disponible" }
     ],
-    desc: "Morral Belstaff estilo messenger bag retro vintage en tela de cuero PU premium con forro de poliéster, ideal para estudios, tamaño oficio con capacidad para laptop de 14 pulgadas."
-    },
+    lookbookImages: [
+      "img/Morral Belstaff Basico/2.jpg",
+      "img/Morral Belstaff Basico/3.jpg"
+    ]
+  },
   {
     id: 19,
-    nombre: "Morral Cat",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Cat/1.jpg",
-        "img/Morral Cat/2.jpg",
-        "img/Morral Cat/3.jpg",
-        "img/Morral Cat/4.jpg",
-        "img/Morral Cat/5.jpg"
+    name: "Morral Cat",
+    category: "morrales",
+    price: 79.00,
+    oldPrice: 95.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/Morral Cat/1.jpg",
+    desc: "Morral Cat de lona canvas en estilo messenger bag con 6 compartimientos organizadores e ilustrado con temática de gatitos.",
+    bullets: [
+      "Material: Lona Canvas",
+      "Estilo: Messenger Bag",
+      "6 compartimientos",
+      "Medidas: 36x28x10 cm (Ideal para cuadernos A4 y laptop de 12\")"
     ],
-    colores: ["Verde Militar"],
-    tieneTallas: false,
-    precio: 79.00,
-    medidas: "36 x 28 x 10 cm",
-    caracteristicasEspecificas: [
-        "⚡ Morral Cat: Lona Canvas",
-        "⚡ Estilo: Messenger Bag - Cartera",
-        "⚡ 6 compartimientos",
-        "⚡ Medidas A4: 36 x 28 x 10 cm",
-        "⚡ Ideal para cuadernos A4",
-        "⚡ Ideal para laptop de 12 pulg",
-        "",
-        "📌 Nota: No entra Folders"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Gato Sonriente", img: "img/Morral Cat/2.jpg", price: 79.00, status: "disponible" },
+      { name: "Gato en Libro", img: "img/Morral Cat/4.jpg", price: 79.00, status: "disponible" },
+      { name: "Gato Paraguas", img: "img/Morral Cat/6.jpg", price: 79.00, status: "disponible" },
+      { name: "Gato y Flor", img: "img/Morral Cat/8.jpg", price: 79.00, status: "disponible" }
     ],
-    desc: "Morral Cat de lona canvas en estilo messenger bag con 6 compartimientos organizadores e ilustrado con temática de gatitos."
-    },
+    lookbookImages: [
+      "img/Morral Cat/3.jpg",
+      "img/Morral Cat/5.jpg",
+      "img/Morral Cat/7.jpg",
+      "img/Morral Cat/10.jpg"
+    ]
+  },
   {
     id: 20,
-    nombre: "Morral Cosmic",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Cosmic/1.jpg",
-        "img/Morral Cosmic/2.jpg",
-        "img/Morral Cosmic/3.jpg",
-        "img/Morral Cosmic/4.jpg",
-        "img/Morral Cosmic/5.jpg"
+    name: "Morral Cosmic",
+    category: "morrales",
+    price: 60.00,
+    oldPrice: 75.00,
+    rating: "4.8 (11 valoraciones)",
+    img: "img/Morral Cosmic/1.jpg",
+    desc: "Morral Y2K estilo Morral Cosmic clásico de lona canvas con diseño de estrellas y 6 compartimientos organizadores.",
+    bullets: [
+      "Material: Lona Canvas",
+      "6 compartimientos",
+      "Medidas: 32x24x8 cm (Ideal para cuadernos A4 y laptop de 11\")"
     ],
-    colores: ["Negro"],
-    tieneTallas: false,
-    precio: 79.00,
-    medidas: "32 x 24 x 8 cm",
-    caracteristicasEspecificas: [
-        "⚡ Morral Y2K / Morral Cosmic Clásico",
-        "⚡ Morral: Lona Canvas",
-        "⚡ Estilo: Messenger Bag - Cartera",
-        "⚡ 6 compartimientos",
-        "⚡ Medidas A4: 32 x 24 x 8 cm",
-        "⚡ Ideal para cuadernos A4",
-        "⚡ Ideal para laptop de 11 pulg",
-        "",
-        "📌 Nota: No entra Folders"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Estrella 1", img: "img/Morral Cosmic/2.jpg", price: 79.00, status: "disponible" },
+      { name: "Estrella 2", img: "img/Morral Cosmic/3.jpg", price: 79.00, status: "disponible" },
+      { name: "Estrella 3", img: "img/Morral Cosmic/4.jpg", price: 79.00, status: "disponible" },
+      { name: "Estrella 4", img: "img/Morral Cosmic/5.jpg", price: 79.00, status: "disponible" }
     ],
-    desc: "Morral Y2K estilo Morral Cosmic clásico de lona canvas con diseño de estrellas, 6 compartimientos organizadores e ideal para cuadernos A4 y laptop de 11 pulgadas."
-    },
+    lookbookImages: [
+      "img/Morral Cosmic/7.jpg",
+      "img/Morral Cosmic/6.jpg"
+    ]
+  },
   {
     id: 21,
-    nombre: "Morral de Kageyama",
-    categoria: "morrales",
-    esPreventa: true,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral de Kageyama/1.png",
-        "img/Morral de Kageyama/2.png"
+    name: "Morral de Kageyama",
+    category: "morrales",
+    price: 100.00,
+    oldPrice: 150.00,
+    rating: "5.0 (15 valoraciones)",
+    img: "img/Morral de Kageyama/1.png",
+    desc: "Bolso escolar Haikyuu inspirado en Kageyama de cuero PU charol en preventa, con 3 compartimientos y correa ajustable.",
+    bullets: [
+      "Material: Cuero PU Charol",
+      "Tamaño: 40x28x16 cm (Laptop hasta 15\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "3 compartimientos organizadores"
     ],
-    colores: ["Blanco"],
-    tieneTallas: false,
-    precio: 89.00,
-    medidas: "40 x 28 x 16 cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso Escolar Haikyuu - Kageyama",
-        "⚡ Material: Cuero PU Charol",
-        "⚡ Tamaño: 40 x 28 x 16 cm (Se adapta a laptop de hasta 15\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral",
-        "⚡ 3 compartimientos",
-        "⚡ Ideal para cuadernos A3 y A4, Tablet 12\" y Celular"
+    badge: "Preventa",
+    tagColor: "bg-red-500/15 text-red-700 border-red-500/30",
+    sizes: [],
+    variants: [
+      { name: "Blanco", img: "img/Morral de Kageyama/1.png", price: 89.00, status: "bajo pedido" }
     ],
-    desc: "Bolso escolar Haikyuu inspirado en Kageyama de cuero PU charol en preventa, con 3 compartimientos, correa ajustable y gran capacidad para laptop de 15 pulgadas y cuadernos A3/A4."
-    },
+    lookbookImages: [
+      "img/Morral de Kageyama/2.png"
+    ]
+  },
   {
     id: 22,
-    nombre: "Morral de Oficio Clásico",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral de oficio clasico/1.jpg",
-        "img/Morral de oficio clasico/2.jpg",
-        "img/Morral de oficio clasico/3.jpg",
-        "img/Morral de oficio clasico/4.jpg",
-        "img/Morral de oficio clasico/5.jpg",
-        "img/Morral de oficio clasico/6.jpg"
+    name: "Morral de Oficio Clásico",
+    category: "morrales",
+    price: 85.00,
+    oldPrice: 120.00,
+    rating: "4.9 (17 valoraciones)",
+    img: "img/Morral de oficio clasico/1.jpg",
+    desc: "Bolso de negocios morral de oficio clásico en lona canvas grueso con 6 compartimientos organizadores y espacio para laptop de hasta 13 pulgadas.",
+    bullets: [
+      "Material: Lona Canvas Grueso",
+      "Tamaño: 37x30x16 cm (Laptop hasta 13\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "6 compartimientos"
     ],
-    colores: ["Negro", "Azul", "Verde", "Caramelo"],
-    tieneTallas: false,
-    precio: 95.00,
-    medidas: "37 x 30 x 16 cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso de Negocios / Morral de Oficio Clásico",
-        "⚡ Material: Lona Canvas Grueso",
-        "⚡ Tamaño: 37 x 30 x 16 cm (Se adapta a laptop de hasta 13\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral",
-        "⚡ 6 compartimientos",
-        "⚡ Ideal para cuadernos A4, Tablet 12\" y Celular"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Morral de oficio clasico/1.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Azul", img: "img/Morral de oficio clasico/2.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Verde", img: "img/Morral de oficio clasico/3.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Caramelo", img: "img/Morral de oficio clasico/4.jpg", price: 85.00, status: "bajo pedido" }
     ],
-    desc: "Bolso de negocios morral de oficio clásico en lona canvas grueso con 6 compartimientos organizadores, correa ajustable y espacio adaptado para laptop de hasta 13 pulgadas.",
-    },
-    {
+    lookbookImages: [
+      "img/Morral de oficio clasico/5.jpg",
+      "img/Morral de oficio clasico/6.jpg"
+    ]
+  },
+  {
     id: 23,
-    nombre: "Morral Hinata Shoyo",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Hinata Shoyo/1.jpg",
-        "img/Morral Hinata Shoyo/2.jpg",
-        "img/Morral Hinata Shoyo/3.jpg",
-        "img/Morral Hinata Shoyo/4.jpg",
-        "img/Morral Hinata Shoyo/5.jpg"
+    name: "Morral Hinata Shoyo",
+    category: "morrales",
+    price: 75.00,
+    oldPrice: 95.00,
+    rating: "4.9 (13 valoraciones)",
+    img: "img/Morral Hinata Shoyo/1.jpg",
+    desc: "Shoulder bag estilo morral Hinata Shoyo de Haikyuu en lona canvas color hueso/crema, con 4 compartimientos y accesorios decorativos.",
+    bullets: [
+      "Material: Lona Canvas Color Hueso / Crema",
+      "4 compartimientos + porta botella interno",
+      "Medidas: 36x29x12 cm",
+      "Incluye accesorios: Cara feliz + Estrellita"
     ],
-    colores: ["Hueso / Crema"],
-    tieneTallas: false,
-    precio: 79.00,
-    medidas: "36 x 29 x 12 cm",
-    caracteristicasEspecificas: [
-        "⚡ Shoulder Bag / Morral Hinata - Haikyuu",
-        "⚡ Morral Hinata: Lona Canvas",
-        "⚡ Color: Hueso / Crema",
-        "⚡ Estilo: Shoulder Bag",
-        "⚡ 4 compartimientos",
-        "⚡ Porta botella interno",
-        "⚡ Incluye Cara feliz + Estrellita",
-        "⚡ Medidas A4: 36 x 29 x 12 cm"
+    badge: "Anime",
+    tagColor: "bg-orange-500/15 text-orange-700 border-orange-500/30",
+    sizes: [],
+    variants: [
+      { name: "Hueso / Crema", img: "img/Morral Hinata Shoyo/1.jpg", price: 75.00, status: "disponible" }
     ],
-    desc: "Shoulder bag estilo morral Hinata Shoyo de Haikyuu en lona canvas color hueso/crema, con 4 compartimientos, porta botella interno y accesorios decorativos de cara feliz y estrellita."
-    },
+    lookbookImages: [
+      "img/Morral Hinata Shoyo/2.jpg",
+      "img/Morral Hinata Shoyo/3.jpg"
+    ]
+  },
   {
     id: 24,
-    nombre: "Morral Mensajero Totoro 600D",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Mensajero de Totoro 600D/1.jpg",
-        "img/Morral Mensajero de Totoro 600D/2.jpg",
-        "img/Morral Mensajero de Totoro 600D/3.jpg",
-        "img/Morral Mensajero de Totoro 600D/4.jpg",
-        "img/Morral Mensajero de Totoro 600D/5.jpg"
+    name: "Morral Mensajero Totoro 600D",
+    category: "morrales",
+    price: 77.00,
+    oldPrice: 115.00,
+    rating: "5.0 (25 valoraciones)",
+    img: "img/Morral Mensajero de Totoro 600D/1.jpg",
+    desc: "Bolso mensajero Studios Ghibli de Totoro 600D en TetronKodra impermeable, resistente y duradero, con 6 compartimientos.",
+    bullets: [
+      "Material: TetronKodra 600D de Alta Calidad (Water Resistant)",
+      "Tamaño: 40x30x12 cm (Laptop hasta 14\")",
+      "Correa ajustable: Longitud máxima 140cm / Ancho 4cm",
+      "6 compartimientos organizadores"
     ],
-    colores: ["Gris Totoro"],
-    tieneTallas: false,
-    precio: 92.00,
-    medidas: "40 x 30 x 12 cm",
-    caracteristicasEspecificas: [
-        "⚡ Studios Ghibli / Bolso Mensajero de Totoro 600D",
-        "⚡ Material: TetronKodra 600D de Alta Calidad (Water Resistant)",
-        "⚡ Tamaño: 40 x 30 x 12 cm (Se adapta a laptop de hasta 14\")",
-        "⚡ Correa ajustable: Longitud máxima 140cm / Ancho 4cm",
-        "⚡ Confortable, lo puedes llevar como cartera o como morral",
-        "⚡ Contiene 6 compartimientos",
-        "⚡ Ideal para Cuadernos A3 y A4, Folders A4, Tablet 12\" y Celular",
-        "⚡ Inspirado: My neighbor Totoro"
+    badge: "Más Vendido",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Frontal", img: "img/Morral Mensajero de Totoro 600D/2.jpg", price: 77.00, status: "disponible" },
+      { name: "Saludo", img: "img/Morral Mensajero de Totoro 600D/3.jpg", price: 80.00, status: "bajo pedido" }
     ],
-    desc: "Bolso mensajero Studios Ghibli de Totoro 600D en TetronKodra impermeable, resistente y duradero, con 6 compartimientos, correa ajustable y espacio para laptop de 14 pulgadas, cuadernos y folders A3/A4."
-    },
+    lookbookImages: [
+      "img/Morral Mensajero de Totoro 600D/4.jpg",
+      "img/Morral Mensajero de Totoro 600D/5.jpg"
+    ]
+  },
   {
     id: 25,
-    nombre: "Morral Oficio Corto",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Oficio Corto/1.jpg",
-        "img/Morral Oficio Corto/2.jpg",
-        "img/Morral Oficio Corto/3.jpg",
-        "img/Morral Oficio Corto/4.jpg",
-        "img/Morral Oficio Corto/5.jpg"
+    name: "Morral Oficio Corto",
+    category: "morrales",
+    price: 82.00,
+    oldPrice: 100.00,
+    rating: "4.8 (10 valoraciones)",
+    img: "img/Morral Oficio Corto/1.jpg",
+    desc: "Bolso de negocios morral retro clásico en lona canvas grueso con 5 compartimientos organizadores y espacio para laptop de hasta 12 pulgadas.",
+    bullets: [
+      "Material: Lona Canvas Grueso",
+      "Tamaño: 34x30x10 cm (Laptop hasta 12\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "5 compartimientos"
     ],
-    colores: ["Azul", "Negro", "Verde", "Kakhi"],
-    tieneTallas: false,
-    precio: 82.00,
-    medidas: "34 x 30 x 10 cm",
-    caracteristicasEspecificas: [
-        "⚡ Bolso de Negocios / Morral Retro Clásico",
-        "⚡ Material: Lona Canvas Grueso",
-        "⚡ Tamaño: 34 x 30 x 10 cm (Se adapta a laptop de hasta 12\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral",
-        "⚡ 5 compartimientos",
-        "⚡ Ideal para Cuadernos A4, Tablet 12\" y Celular"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Azul", img: "img/Morral Oficio Corto/7.jpg", price: 82.00, status: "disponible" },
+      { name: "Negro", img: "img/Morral Oficio Corto/6.jpg", price: 82.00, status: "disponible" },
+      { name: "Verde", img: "img/Morral Oficio Corto/5.jpg", price: 82.00, status: "disponible" },
+      { name: "Kakhi", img: "img/Morral Oficio Corto/8.jpg", price: 82.00, status: "disponible" }
     ],
-    desc: "Bolso de negocios morral retro clásico en lona canvas grueso con 5 compartimientos organizadores, correa ajustable y espacio adaptado para laptop de hasta 12 pulgadas."
-    },
+    lookbookImages: [
+      "img/Morral Oficio Corto/5.jpg"
+    ]
+  },
   {
     id: 26,
-    nombre: "Morral Ranger Bag",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Ranger Bag/1.jpg",
-        "img/Morral Ranger Bag/2.jpg",
-        "img/Morral Ranger Bag/3.jpg",
-        "img/Morral Ranger Bag/4.jpg",
-        "img/Morral Ranger Bag/5.jpg"
+    name: "Morral Ranger Bag",
+    category: "morrales",
+    price: 99.00,
+    oldPrice: 120.00,
+    rating: "4.9 (12 valoraciones)",
+    img: "img/Morral Ranger Bag/1.jpg",
+    desc: "Morral retro casual Ranger Bag canvas de lona canvas grueso con 4 compartimientos y espacio para laptop de hasta 12 pulgadas.",
+    bullets: [
+      "Material: Lona Canvas Grueso",
+      "Tamaño: 34x27x9 cm (Laptop hasta 12\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "4 compartimientos"
     ],
-    colores: ["Marrón", "Azul", "Verde"],
-    tieneTallas: false,
-    precio: 99.00,
-    medidas: "34 x 27 x 9 cm",
-    caracteristicasEspecificas: [
-        "⚡ Retro Design / Ranger Bag Canvas Casual",
-        "⚡ Material: Lona Canvas Grueso",
-        "⚡ Tamaño: 34 x 27 x 9 cm (Se adapta a laptop de hasta 12\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral",
-        "⚡ 4 compartimientos",
-        "⚡ Ideal para Cuadernos A4, Tablet 12\" y Celular"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Marrón", img: "img/Morral Ranger Bag/1.jpg", price: 99.00, status: "disponible" },
+      { name: "Azul", img: "img/Morral Ranger Bag/2.jpg", price: 99.00, status: "disponible" },
+      { name: "Verde", img: "img/Morral Ranger Bag/3.jpg", price: 99.00, status: "disponible" }
     ],
-    desc: "Morral retro casual Ranger Bag canvas de lona canvas grueso con 4 compartimientos, correa ajustable y espacio adaptado para laptop de hasta 12 pulgadas."
-    },
+    lookbookImages: [
+      "img/Morral Ranger Bag/4.jpg",
+      "img/Morral Ranger Bag/5.jpg"
+    ]
+  },
   {
     id: 27,
-    nombre: "Morral Urban Illust",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral Urban Illust/1.jpg",
-        "img/Morral Urban Illust/2.jpg",
-        "img/Morral Urban Illust/3.jpg",
-        "img/Morral Urban Illust/4.jpg",
-        "img/Morral Urban Illust/5.jpg"
+    name: "Morral Urban Illust",
+    category: "morrales",
+    price: 78.00,
+    oldPrice: 95.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/Morral Urban Illust/1.jpg",
+    desc: "Shoulder bag y messenger bag Morral Urban Illust en lona canvas con 6 compartimientos organizadores, ideal para cuadernos A4 y laptop de 11\".",
+    bullets: [
+      "Material: Lona Canvas",
+      "6 compartimientos",
+      "Medidas: 32x24x8 cm"
     ],
-    colores: ["Negro"],
-    tieneTallas: false,
-    precio: 78.00,
-    medidas: "32 x 24 x 8 cm",
-    caracteristicasEspecificas: [
-        "⚡ Modelo: Clásico / Shoulder Bag - Morral Urban Illust",
-        "⚡ Morral: Lona Canvas",
-        "⚡ Estilo: Messenger Bag - Cartera",
-        "⚡ 6 compartimientos",
-        "⚡ Medidas A4: 32 x 24 x 8 cm",
-        "⚡ Ideal para cuadernos A4",
-        "⚡ Ideal para laptop de 11 pulg",
-        "⚡ Nota: No entra Folders"
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro", img: "img/Morral Urban Illust/1.jpg", price: 78.00, status: "disponible" }
     ],
-    desc: "Shoulder bag y messenger bag Morral Urban Illust en lona canvas con 6 compartimientos organizadores, ideal para cuadernos A4 y laptop de hasta 11 pulgadas."
-    },
+    lookbookImages: [
+      "img/Morral Urban Illust/2.jpg",
+      "img/Morral Urban Illust/3.jpg",
+      "img/Morral Urban Illust/4.jpg",
+      "img/Morral Urban Illust/5.jpg"
+    ]
+  },
   {
     id: 28,
-    nombre: "Morral Maletín Buckle Leather",
-    categoria: "carteras",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Morral.Maletin buckle leather/1.jpg",
-        "img/Morral.Maletin buckle leather/2.jpg",
-        "img/Morral.Maletin buckle leather/3.jpg",
-        "img/Morral.Maletin buckle leather/4.jpg",
-        "img/Morral.Maletin buckle leather/5.jpg"
+    name: "Morral Maletín Buckle Leather",
+    category: "carteras",
+    price: 120.00,
+    oldPrice: 145.00,
+    rating: "4.9 (16 valoraciones)",
+    img: "img/Morral.Maletin buckle leather/1.jpg",
+    desc: "Morral vintage A3 modelo clásico Rainsmore en lona canvas grueso con hebillas frontales y gran capacidad para laptop de hasta 16\".",
+    bullets: [
+      "Material: Lona Canvas Grueso con hebillas",
+      "Tamaño: 44x32x16 cm (Laptop hasta 16\")",
+      "Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
+      "4 compartimientos"
     ],
-    colores: ["Marrón", "Negro"],
-    tieneTallas: false,
-    precio: 120.00,
-    medidas: "44 x 32 x 16 cm",
-    caracteristicasEspecifics: [
-        "⚡ Retro Design / Morral Vintage A3 - Modelo Clásico Rainsmore",
-        "⚡ Material: Lona Canvas Grueso",
-        "⚡ Tamaño: 44 x 32 x 16 cm (Se adapta a laptop de hasta 16\")",
-        "⚡ Correa ajustable: Longitud máxima 130cm / Ancho 4cm",
-        "⚡ Modelo de Uso: Bolso / Morral",
-        "⚡ 4 compartimientos",
-        "⚡ Ideal para Cuadernos A4, Tablet 12\" y Celular"
+    badge: "Premium",
+    tagColor: "bg-amber-500/15 text-amber-700 border-amber-500/30",
+    sizes: [],
+    variants: [
+      { name: "Marrón", img: "img/Morral.Maletin buckle leather/1.jpg", price: 120.00, status: "disponible" },
+      { name: "Negro", img: "img/Morral.Maletin buckle leather/2.jpg", price: 120.00, status: "disponible" }
     ],
-    desc: "Morral vintage A3 modelo clásico Rainsmore en lona canvas grueso con hebillas frontales, 4 compartimientos organizadores, correa ajustable y espacio adaptado para laptop de hasta 16 pulgadas."
-    },
+    lookbookImages: [
+      "img/Morral.Maletin buckle leather/3.jpg",
+      "img/Morral.Maletin buckle leather/4.jpg",
+      "img/Morral.Maletin buckle leather/5.jpg"
+    ]
+  },
   {
     id: 29,
-    nombre: "Mochila Pikachu Clásico",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila Pikachu Clasico/1.jpg",
-        "img/Mochila Pikachu Clasico/2.jpg",
-        "img/Mochila Pikachu Clasico/3.jpg",
-        "img/Mochila Pikachu Clasico/4.jpg",
-        "img/Mochila Pikachu Clasico/5.jpg"
+    name: "Mochila Pikachu Clásico",
+    category: "mochilas",
+    price: 110.00,
+    oldPrice: 135.00,
+    rating: "4.9 (19 valoraciones)",
+    img: "img/Mochila Pikachu Clasico/1.jpg",
+    desc: "Backpack mochila clásica Pikachu New Style en nylon de 3 compartimientos, ideal para cuadernos A4, folders y laptop de hasta 15 pulgadas.",
+    bullets: [
+      "Material: Nylon",
+      "3 compartimientos",
+      "Medidas: 44x30x15 cm",
+      "Ideal para cuadernos A4, Folders y laptop de 15 pulg"
     ],
-    colores: ["Azul Denim"],
-    tieneTallas: false,
-    precio: 110.00,
-    medidas: "44 x 30 x 15 cm",
-    caracteristicasEspecificas: [
-        "⚡ Mochila Clásica / Backpack Mochila Pikachu New Style",
-        "⚡ Material: Nylon",
-        "⚡ 3 compartimientos",
-        "⚡ Medidas A4: 44 x 30 x 15 cm",
-        "⚡ Ideal para cuadernos A4 y Folders",
-        "⚡ Ideal para laptop de 15 pulg"
+    badge: "Anime",
+    tagColor: "bg-yellow-500/15 text-yellow-700 border-yellow-500/30",
+    sizes: [],
+    variants: [
+      { name: "Azul Denim", img: "img/Mochila Pikachu Clasico/1.jpg", price: 110.00, status: "disponible" }
     ],
-    desc: "Backpack mochila clásica Pikachu New Style en nylon de 3 compartimientos, ideal para cuadernos A4, folders y laptop de hasta 15 pulgadas."
-    },
-    {
-    id: 30,
-    nombre: "Mochila Card",
-    categoria: "mochilas",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Mochila Card/1.jpg",
-        "img/Mochila Card/2.jpg",
-        "img/Mochila Card/3.jpg",
-        "img/Mochila Card/4.jpg",
-        "img/Mochila Card/5.jpg"
-    ],
-    colores: ["Negro / Naranja"],
-    tieneTallas: false,
-    precio: 110.00,
-    medidas: "42 x 32 x 13 cm",
-    caracteristicasEspecificas: [
-        "⚡ Itabag M / Mochila Card New Style",
-        "⚡ Mochila Clásica",
-        "⚡ Material: Nylon + Cuero PU",
-        "⚡ 3 compartimientos",
-        "⚡ Medidas A4: 42 x 32 x 13 cm",
-        "⚡ Ideal para cuadernos A4 y Folders",
-        "⚡ Ideal para Tablet de 14 pulg"
-    ],
-    desc: "Mochila Itabag M Card New Style en nylon y cuero PU de 3 compartimientos con ventana frontal para coleccionables, ideal para cuadernos A4, folders y tablet de hasta 14 pulgadas."
-    },
- {
-    id: 31,
-    nombre: "Bolso Cruzado XS",
-    categoria: "morrales",
-    esPreventa: false,
-    esBoxEspecial: false,
-    imagenes: [
-        "img/Boiso cruzado XS/1.jpg",
-        "img/Boiso cruzado XS/2.jpg",
-        "img/Boiso cruzado XS/3.jpg",
-        "img/Boiso cruzado XS/4.jpg",
-        "img/Boiso cruzado XS/5.jpg"
-    ],
-    colores: ["Negro / Vino"],
-    tieneTallas: false,
-    precio: 85.00,
-    medidas: "32 x 26 x 8 cm",
-    caracteristicasEspecificas: [
-        "⚡ Backpack / Bolso Cruzado XS New Style",
-        "⚡ Morral Vintage: Cuero PU",
-        "⚡ Estilo: Mark Fairwhale",
-        "⚡ 4 compartimientos",
-        "⚡ Medidas B5: 32 x 26 x 8 cm",
-        "⚡ Ideal para cuadernos B5",
-        "⚡ Ideal para tablet y celulares"
-    ],
-    desc: "Bolso cruzado XS New Style estilo Mark Fairwhale en cuero PU con 4 compartimientos organizadores, detalles con hebillas, ideal para cuadernos B5, tablet y celulares."
-    },
- 
+    lookbookImages: [
+      "img/Mochila Pikachu Clasico/2.jpg",
+      "img/Mochila Pikachu Clasico/3.jpg",
+      "img/Mochila Pikachu Clasico/4.jpg",
+      "img/Mochila Pikachu Clasico/5.jpg"
+    ]
+  },
   {
-        "id": 101,
-        "nombre": "Cartuchera Haikyuu Modelo 1",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/2.jpg"],
-        "precio": 20.00,
-        "desc": "3 compartimientos, Color: Crema / Hueso, Material: Poliéster, estilo Cartuchera Large.",
-        "medidas": "20cm x 10cm x 5 cm"
-    },
-    {
-        "id": 102,
-        "nombre": "Monedero Panda",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/46.jpg"],
-        "precio": 4.50,
-        "desc": "1 compartimiento, material Tela Peluche.",
-        "medidas": "6cm"
-    },
-    {
-        "id": 103,
-        "nombre": "Monedero Pinguino",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/6.jpg"],
-        "precio": 4.50,
-        "desc": "1 compartimiento, material Tela Peluche.",
-        "medidas": "6cm"
-    },
-    {
-        "id": 104,
-        "nombre": "Monedero Simple Totoro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/7.jpg"],
-        "precio": 4.50,
-        "desc": "1 compartimiento, material Tela Peluche.",
-        "medidas": "6cm"
-    },
-    {
-        "id": 105,
-        "nombre": "Haikyuu Modelo: 2",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/1.jpg"],
-        "precio": 24.00,
-        "desc": "4 compartimientos, color Crema / Hueso, material Poliéster, estilo Cartuchera Large.",
-        "medidas": "23cm x 12cm x 6 cm"
-    },
-    {
-        "id": 106,
-        "nombre": "Blue Lock Modelo: 1",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/3.jpg"],
-        "precio": 24.00,
-        "desc": "4 compartimientos, color Crema / Hueso, material Poliéster, estilo Cartuchera Large.",
-        "medidas": "23cm x 12cm x 6 cm"
-    },
-    {
-        "id": 108,
-        "nombre": "Llavero Mono",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/9.jpg"],
-        "precio": 11.00,
-        "desc": "Material Poliéster Peluche, estilo Llavero de mochila.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 109,
-        "nombre": "Cartuchera Bagre",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/10.jpg"],
-        "precio": 13.00,
-        "desc": "1 compartimiento, color azul acero, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "19cm x 4 cm"
-    },
-    {
-        "id": 110,
-        "nombre": "Cartuchera Pescado",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/11.jpg"],
-        "precio": 13.00,
-        "desc": "1 compartimiento, color negro verdoso, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "26cm x 4 cm"
-    },
-    {
-        "id": 111,
-        "nombre": "Cartuchera Shaun, el cordero",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/5.jpg"],
-        "precio": 22.00,
-        "desc": "1 compartimiento, color Negro, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "19cm x 4 cm"
-    },
-    {
-        "id": 112,
-        "nombre": "Cartuchera Rilakkuma",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/12.jpg"],
-        "precio": 13.00,
-        "desc": "1 compartimiento, color khaki, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "15cm x 4 cm"
-    },
-    {
-        "id": 113,
-        "nombre": "Monedero SIMPLE",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/13.jpg"],
-        "precio": 4.00,
-        "desc": "1 compartimiento, color variedad, material Poliéster Peluche, estilo Monedero.",
-        "medidas": "5cm"
-    },
-    {
-        "id": 114,
-        "nombre": "Monedero BAGRE",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/15.jpg"],
-        "precio": 7.00,
-        "desc": "1 compartimiento, color variedad, material Poliéster Peluche, estilo Monedero.",
-        "medidas": "7cm"
-    },
-    {
-        "id": 115,
-        "nombre": "Monedero GATO SIMPLE",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/14.jpg"],
-        "precio": 6.00,
-        "desc": "1 compartimiento, color variedad, material Poliéster Peluche, estilo Monedero.",
-        "medidas": "6cm"
-    },
-    {
-        "id": 116,
-        "nombre": "Cartuchera Sapo Naruto",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/16.jpg"],
-        "precio": 12.00,
-        "desc": "1 compartimiento, color verde, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "12cm x 6 cm"
-    },
-    {
-        "id": 117,
-        "nombre": "Llavero HELLO KITTY",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/17.jpg"],
-        "precio": 14.00,
-        "desc": "Color Blanco, material Poliéster Peluche, estilo Llavero.",
-        "medidas": "12cm x 8 cm"
-    },
-    {
-        "id": 118,
-        "nombre": "Llavero Gatito",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/19.jpg"],
-        "precio": 5.00,
-        "desc": "Color Blanco, material Poliéster Peluche, estilo Llavero.",
-        "medidas": "9cm"
-    },
-    {
-        "id": 119,
-        "nombre": "Llavero Domo kun",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/20.jpg"],
-        "precio": 6.00,
-        "desc": "Color Marronm, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "9cm"
-    },
-    {
-        "id": 120,
-        "nombre": "Llaverito Rana",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/21.jpg"],
-        "precio": 16.00,
-        "desc": "Color verde, material Tela Peluche, estilo Ranita.",
-        "medidas": "16cm"
-    },
-    {
-        "id": 121,
-        "nombre": "Llaverito ChibiDemon",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/22.jpg"],
-        "precio": 16.00,
-        "desc": "Color Blanco, material Tela Peluche, estilo demonio.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 122,
-        "nombre": "Llaverito Pochacco",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/23.jpg"],
-        "precio": 19.00,
-        "desc": "Color Blanco, material Tela Peluche, estilo demonio.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 123,
-        "nombre": "Llaveros Peluche Totoro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/24.jpg"],
-        "precio": 13.00,
-        "desc": "Color Marron / Azul / Verde, material Tela Peluche, estilo Llaverito Peluche Totoro.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 123,
-        "nombre": "Llaveros Peluche Totoro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/25.jpg"],
-        "precio": 13.00,
-        "desc": "Color Marron / Azul / Verde, material Tela Peluche, estilo Llaverito Peluche Totoro.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 123,
-        "nombre": "Llaveros Peluche Totoro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/26.jpg"],
-        "precio": 13.00,
-        "desc": "Color Marron / Azul / Verde, material Tela Peluche, estilo Llaverito Peluche Totoro.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 124,
-        "nombre": "Llavero Perla Corazon lazo blanco",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/27.jpg"],
-        "precio": 12.00,
-        "desc": "Color Blnaco, estilo Llaverito con Lazos.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 125,
-        "nombre": "Llavero Nube con Lazo",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/28.jpg"],
-        "precio": 8.00,
-        "desc": "Color Rosado, estilo Llaverito con Lazos.",
-        "medidas": "9cm"
-    },
-    {
-        "id": 126,
-        "nombre": "Llavero Nube Estrella",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/29.jpg"],
-        "precio": 8.00,
-        "desc": "Color Rosado, estilo Llaverito.",
-        "medidas": "12cm"
-    },
-    {
-        "id": 127,
-        "nombre": "Llavero Pompom Corazon",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/31.jpg"],
-        "precio": 6.00,
-        "desc": "Color Rosado, estilo Llaverito.",
-        "medidas": "6cm"
-    },
-    {
-        "id": 128,
-        "nombre": "Monedero Abeja",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/30.jpg"],
-        "precio": 8.00,
-        "desc": "1 compartimiento, color: Negro, material Poliéster Peluche, estilo Cartuchera.",
-        "medidas": "8cm"
-    },
-    {
-        "id": 129,
-        "nombre": "Llavero Pompom negro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/32.jpg"],
-        "precio": 6.00,
-        "desc": "Color Rosado, estilo Llaverito.",
-        "medidas": "8cm"
-    },
-    {
-        "id": 130,
-        "nombre": "Llavero Susuwatari",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/33.jpg"],
-        "precio": 4.00,
-        "desc": "Morral: Tela Peluche.",
-        "medidas": "3cm"
-    },
-    {
-        "id": 131,
-        "nombre": "Monedero Llavero Totoro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/34.jpg"],
-        "precio": 14.00,
-        "desc": "1 compartimiento, Morral: Tela Peluche.",
-        "medidas": "20cm"
-    },
-    {
-        "id": 133,
-        "nombre": "Cartuchera Tiburon",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/35.jpg"],
-        "precio": 9.00,
-        "desc": "1 compartimiento, material Poliéster, estilo Cartuchera Large.",
-        "medidas": "23cm x 10cm x 3 cm"
-    },
-    {
-        "id": 134,
-        "nombre": "Cartuchera Pescado Oscuro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/36.jpg"],
-        "precio": 12.00,
-        "desc": "1 compartimiento, material Poliéster, estilo Cartuchera Large.",
-        "medidas": "23cm x 10cm x 3 cm"
-    },
-    {
-        "id": 135,
-        "nombre": "Llavero Peluche Oso",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/37.jpg"],
-        "precio": 4.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "11cm x 6 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Oso con Corbata",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/38.jpg"],
-        "precio": 5.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "11cm x 6 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Llaverito Perlita con Corazon",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/40.jpg"],
-        "precio": 7.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "12 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Lazo de Perlitas",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/39.jpg"],
-        "precio": 9.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "11cm x 6 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Llaverito Estrella",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/41.jpg"],
-        "precio": 5.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "6 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Llaverito Triple Totoro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/42.jpg"],
-        "precio": 5.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "23cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Peluchito Gato  ",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/43.jpg"],
-        "precio": 7.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "10cm x 6 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Peluchito Gato Negro",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/44.jpg"],
-        "precio": 7.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "10cm x 6 cm"
-    },
-    {
-        "id": 136,
-        "nombre": "Peluchito Gato Blanco",
-        "categoria": "accesorios",
-        "imagenes": ["img/accesorios/45.jpg"],
-        "precio": 5.00,
-        "desc": "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
-        "medidas": "8cm x 6 cm"
-    },
-   
-];
-const pinesDisponibles = [
-  { id: 201, titulo: "Pin Totoro ", img: "img/Pin/1.jpeg" },
-  { id: 202, titulo: "Pin Estrellas", img: "img/Pin/2.jpeg" },
-  { id: 203, titulo: "Pin Totoro nocturno", img: "img/Pin/3.jpeg" },
-  { id: 204, titulo: "Pin Totoro Aesthetic", img: "img/Pin/4.jpeg" }
+    id: 30,
+    name: "Mochila Card",
+    category: "mochilas",
+    price: 110.00,
+    oldPrice: 135.00,
+    rating: "4.8 (11 valoraciones)",
+    img: "img/Mochila Card/1.jpg",
+    desc: "Mochila Itabag M Card New Style en nylon y cuero PU de 3 compartimientos con ventana frontal para coleccionables.",
+    bullets: [
+      "Material: Nylon + Cuero PU",
+      "3 compartimientos con ventana frontal Itabag",
+      "Medidas: 42x32x13 cm",
+      "Ideal para cuadernos A4, Folders y Tablet de 14\""
+    ],
+    badge: "Itabag",
+    tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro / Naranja", img: "img/Mochila Card/1.jpg", price: 110.00, status: "disponible" }
+    ],
+    lookbookImages: [
+      "img/Mochila Card/2.jpg",
+      "img/Mochila Card/3.jpg",
+      "img/Mochila Card/4.jpg",
+      "img/Mochila Card/5.jpg"
+    ]
+  },
+  {
+    id: 31,
+    name: "Bolso Cruzado XS",
+    category: "morrales",
+    price: 85.00,
+    oldPrice: 105.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/Boiso cruzado XS/1.jpg",
+    desc: "Bolso cruzado XS New Style estilo Mark Fairwhale en cuero PU con 4 compartimientos organizadores y detalles con hebillas.",
+    bullets: [
+      "Material: Cuero PU",
+      "Estilo: Mark Fairwhale",
+      "4 compartimientos",
+      "Medidas: 32x26x8 cm (Ideal para cuadernos B5, tablet y celulares)"
+    ],
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Negro / Vino", img: "img/Boiso cruzado XS/1.jpg", price: 85.00, status: "disponible" }
+    ],
+    lookbookImages: [
+      "img/Boiso cruzado XS/2.jpg",
+      "img/Boiso cruzado XS/3.jpg",
+      "img/Boiso cruzado XS/4.jpg",
+      "img/Boiso cruzado XS/5.jpg"
+    ]
+  },
+  // --- ACCESORIOS ---
+  {
+    id: 101,
+    name: "Cartuchera Haikyuu Modelo 1",
+    category: "accesorios",
+    price: 20.00,
+    oldPrice: 28.00,
+    rating: "4.9 (10 valoraciones)",
+    img: "img/accesorios/2.jpg",
+    desc: "3 compartimientos, Color: Crema / Hueso, Material: Poliéster, estilo Cartuchera Large.",
+    bullets: ["3 compartimientos", "Material: Poliéster", "Medidas: 20cm x 10cm x 5cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema / Hueso", img: "img/accesorios/2.jpg", price: 20.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 102,
+    name: "Monedero Panda",
+    category: "accesorios",
+    price: 4.50,
+    oldPrice: 7.00,
+    rating: "4.7 (5 valoraciones)",
+    img: "img/accesorios/46.jpg",
+    desc: "1 compartimiento, material Tela Peluche.",
+    bullets: ["1 compartimiento", "Material: Tela Peluche", "Medidas: 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Panda", img: "img/accesorios/46.jpg", price: 4.50, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 103,
+    name: "Monedero Pinguino",
+    category: "accesorios",
+    price: 4.50,
+    oldPrice: 7.00,
+    rating: "4.7 (5 valoraciones)",
+    img: "img/accesorios/6.jpg",
+    desc: "1 compartimiento, material Tela Peluche.",
+    bullets: ["1 compartimiento", "Material: Tela Peluche", "Medidas: 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Pingüino", img: "img/accesorios/6.jpg", price: 4.50, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 104,
+    name: "Monedero Simple Totoro",
+    category: "accesorios",
+    price: 4.50,
+    oldPrice: 7.00,
+    rating: "4.8 (6 valoraciones)",
+    img: "img/accesorios/7.jpg",
+    desc: "1 compartimiento, material Tela Peluche.",
+    bullets: ["1 compartimiento", "Material: Tela Peluche", "Medidas: 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Totoro Simple", img: "img/accesorios/7.jpg", price: 4.50, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 105,
+    name: "Haikyuu Modelo: 2",
+    category: "accesorios",
+    price: 24.00,
+    oldPrice: 32.00,
+    rating: "4.9 (12 valoraciones)",
+    img: "img/accesorios/1.jpg",
+    desc: "4 compartimientos, color Crema / Hueso, material Poliéster, estilo Cartuchera Large.",
+    bullets: ["4 compartimientos", "Color: Crema / Hueso", "Material: Poliéster", "Medidas: 23cm x 12cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Haikyuu 2", img: "img/accesorios/1.jpg", price: 24.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 106,
+    name: "Blue Lock Modelo: 1",
+    category: "accesorios",
+    price: 24.00,
+    oldPrice: 32.00,
+    rating: "4.9 (11 valoraciones)",
+    img: "img/accesorios/3.jpg",
+    desc: "4 compartimientos, color Crema / Hueso, material Poliéster, estilo Cartuchera Large.",
+    bullets: ["4 compartimientos", "Color: Crema / Hueso", "Material: Poliéster", "Medidas: 23cm x 12cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blue Lock 1", img: "img/accesorios/3.jpg", price: 24.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 108,
+    name: "Llavero Mono",
+    category: "accesorios",
+    price: 11.00,
+    oldPrice: 15.00,
+    rating: "4.7 (7 valoraciones)",
+    img: "img/accesorios/9.jpg",
+    desc: "Material Poliéster Peluche, estilo Llavero de mochila.",
+    bullets: ["Material: Poliéster Peluche", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Mono", img: "img/accesorios/9.jpg", price: 11.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 109,
+    name: "Cartuchera Bagre",
+    category: "accesorios",
+    price: 13.00,
+    oldPrice: 18.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/10.jpg",
+    desc: "1 compartimiento, color azul acero, material Poliéster Peluche, estilo Cartuchera.",
+    bullets: ["1 compartimiento", "Color: Azul acero", "Material: Poliéster Peluche", "Medidas: 19cm x 4cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Bagre", img: "img/accesorios/10.jpg", price: 13.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 110,
+    name: "Cartuchera Pescado",
+    category: "accesorios",
+    price: 13.00,
+    oldPrice: 18.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/accesorios/11.jpg",
+    desc: "1 compartimiento, color negro verdoso, material Poliéster Peluche, estilo Cartuchera.",
+    bullets: ["1 compartimiento", "Color: Negro verdoso", "Material: Poliéster Peluche", "Medidas: 26cm x 4cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Pescado", img: "img/accesorios/11.jpg", price: 13.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 111,
+    name: "Cartuchera Shaun, el cordero",
+    category: "accesorios",
+    price: 22.00,
+    oldPrice: 29.00,
+    rating: "4.9 (10 valoraciones)",
+    img: "img/accesorios/5.jpg",
+    desc: "1 compartimiento, color Negro, material Poliéster Peluche, estilo Cartuchera.",
+    bullets: ["1 compartimiento", "Color: Negro", "Material: Poliéster Peluche", "Medidas: 19cm x 4cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Shaun el cordero", img: "img/accesorios/5.jpg", price: 22.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 112,
+    name: "Cartuchera Rilakkuma",
+    category: "accesorios",
+    price: 13.00,
+    oldPrice: 18.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/12.jpg",
+    desc: "1 compartimiento, color khaki, material Poliéster Peluche, estilo Cartuchera.",
+    bullets: ["1 compartimiento", "Color: Khaki", "Material: Poliéster Peluche", "Medidas: 15cm x 4cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Rilakkuma", img: "img/accesorios/12.jpg", price: 13.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 113,
+    name: "Monedero SIMPLE",
+    category: "accesorios",
+    price: 4.00,
+    oldPrice: 6.00,
+    rating: "4.7 (4 valoraciones)",
+    img: "img/accesorios/13.jpg",
+    desc: "1 compartimiento, color variedad, material Poliéster Peluche, estilo Monedero.",
+    bullets: ["1 compartimiento", "Colores variados", "Material: Poliéster Peluche", "Medidas: 5cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Variado", img: "img/accesorios/13.jpg", price: 4.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 114,
+    name: "Monedero BAGRE",
+    category: "accesorios",
+    price: 7.00,
+    oldPrice: 10.00,
+    rating: "4.8 (6 valoraciones)",
+    img: "img/accesorios/15.jpg",
+    desc: "1 compartimiento, color variedad, material Poliéster Peluche, estilo Monedero.",
+    bullets: ["1 compartimiento", "Colores variados", "Material: Poliéster Peluche", "Medidas: 7cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Variado", img: "img/accesorios/15.jpg", price: 7.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 115,
+    name: "Monedero GATO SIMPLE",
+    category: "accesorios",
+    price: 6.00,
+    oldPrice: 9.00,
+    rating: "4.8 (7 valoraciones)",
+    img: "img/accesorios/14.jpg",
+    desc: "1 compartimiento, color variedad, material Poliéster Peluche, estilo Monedero.",
+    bullets: ["1 compartimiento", "Colores variados", "Material: Poliéster Peluche", "Medidas: 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Variado", img: "img/accesorios/14.jpg", price: 6.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 116,
+    name: "Cartuchera Sapo Naruto",
+    category: "accesorios",
+    price: 12.00,
+    oldPrice: 16.00,
+    rating: "4.9 (14 valoraciones)",
+    img: "img/accesorios/16.jpg",
+    desc: "1 compartimiento, color verde, material Poliéster Peluche, estilo Cartuchera.",
+    bullets: ["1 compartimiento", "Color: Verde", "Material: Poliéster Peluche", "Medidas: 12cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Verde Sapo", img: "img/accesorios/16.jpg", price: 12.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 117,
+    name: "Llavero HELLO KITTY",
+    category: "accesorios",
+    price: 14.00,
+    oldPrice: 19.00,
+    rating: "4.9 (15 valoraciones)",
+    img: "img/accesorios/17.jpg",
+    desc: "Color Blanco, material Poliéster Peluche, estilo Llavero.",
+    bullets: ["Color: Blanco", "Material: Poliéster Peluche", "Medidas: 12cm x 8cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blanco", img: "img/accesorios/17.jpg", price: 14.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 118,
+    name: "Llavero Gatito",
+    category: "accesorios",
+    price: 5.00,
+    oldPrice: 8.00,
+    rating: "4.7 (6 valoraciones)",
+    img: "img/accesorios/19.jpg",
+    desc: "Color Blanco, material Poliéster Peluche, estilo Llavero.",
+    bullets: ["Color: Blanco", "Material: Poliéster Peluche", "Medidas: 9cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blanco", img: "img/accesorios/19.jpg", price: 5.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 119,
+    name: "Llavero Domo kun",
+    category: "accesorios",
+    price: 6.00,
+    oldPrice: 9.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/20.jpg",
+    desc: "Color Marrón, material Poliéster Peluche, estilo Llavero.",
+    bullets: ["Color: Marrón", "Material: Poliéster Peluche", "Medidas: 9cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Marrón", img: "img/accesorios/20.jpg", price: 6.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 120,
+    name: "Llaverito Rana",
+    category: "accesorios",
+    price: 16.00,
+    oldPrice: 22.00,
+    rating: "4.9 (10 valoraciones)",
+    img: "img/accesorios/21.jpg",
+    desc: "Color verde, material Tela Peluche, estilo Ranita.",
+    bullets: ["Color: Verde", "Material: Tela Peluche", "Medidas: 16cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Verde", img: "img/accesorios/21.jpg", price: 16.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 121,
+    name: "Llaverito ChibiDemon",
+    category: "accesorios",
+    price: 16.00,
+    oldPrice: 22.00,
+    rating: "4.9 (9 valoraciones)",
+    img: "img/accesorios/22.jpg",
+    desc: "Color Blanco, material Tela Peluche, estilo demonio.",
+    bullets: ["Color: Blanco", "Material: Tela Peluche", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blanco", img: "img/accesorios/22.jpg", price: 16.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 122,
+    name: "Llaverito Pochacco",
+    category: "accesorios",
+    price: 19.00,
+    oldPrice: 25.00,
+    rating: "5.0 (12 valoraciones)",
+    img: "img/accesorios/23.jpg",
+    desc: "Color Blanco, material Tela Peluche.",
+    bullets: ["Color: Blanco", "Material: Tela Peluche", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blanco", img: "img/accesorios/23.jpg", price: 19.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 123,
+    name: "Llaveros Peluche Totoro",
+    category: "accesorios",
+    price: 13.00,
+    oldPrice: 18.00,
+    rating: "4.9 (18 valoraciones)",
+    img: "img/accesorios/24.jpg",
+    desc: "Color Marrón / Azul / Verde, material Tela Peluche, estilo Llaverito Peluche Totoro.",
+    bullets: ["Material: Tela Peluche", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [
+      { name: "Marrón", img: "img/accesorios/24.jpg", price: 13.00, status: "disponible" },
+      { name: "Azul", img: "img/accesorios/25.jpg", price: 13.00, status: "disponible" },
+      { name: "Verde", img: "img/accesorios/26.jpg", price: 13.00, status: "disponible" }
+    ],
+    lookbookImages: []
+  },
+  {
+    id: 124,
+    name: "Llavero Perla Corazon lazo blanco",
+    category: "accesorios",
+    price: 12.00,
+    oldPrice: 16.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/27.jpg",
+    desc: "Color Blanco, estilo Llaverito con Lazos.",
+    bullets: ["Color: Blanco", "Estilo: Llaverito con Lazos", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blanco", img: "img/accesorios/27.jpg", price: 12.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 125,
+    name: "Llavero Nube con Lazo",
+    category: "accesorios",
+    price: 8.00,
+    oldPrice: 12.00,
+    rating: "4.7 (7 valoraciones)",
+    img: "img/accesorios/28.jpg",
+    desc: "Color Rosado, estilo Llaverito con Lazos.",
+    bullets: ["Color: Rosado", "Estilo: Llaverito con Lazos", "Medidas: 9cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Rosado", img: "img/accesorios/28.jpg", price: 8.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 126,
+    name: "Llavero Nube Estrella",
+    category: "accesorios",
+    price: 8.00,
+    oldPrice: 12.00,
+    rating: "4.7 (6 valoraciones)",
+    img: "img/accesorios/29.jpg",
+    desc: "Color Rosado, estilo Llaverito.",
+    bullets: ["Color: Rosado", "Estilo: Llaverito", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Rosado", img: "img/accesorios/29.jpg", price: 8.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 127,
+    name: "Llavero Pompom Corazon",
+    category: "accesorios",
+    price: 6.00,
+    oldPrice: 9.00,
+    rating: "4.7 (5 valoraciones)",
+    img: "img/accesorios/31.jpg",
+    desc: "Color Rosado, estilo Llaverito.",
+    bullets: ["Color: Rosado", "Estilo: Llaverito", "Medidas: 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Rosado", img: "img/accesorios/31.jpg", price: 6.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 128,
+    name: "Monedero Abeja",
+    category: "accesorios",
+    price: 8.00,
+    oldPrice: 12.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/30.jpg",
+    desc: "1 compartimiento, color: Negro, material Poliéster Peluche.",
+    bullets: ["1 compartimiento", "Color: Negro", "Material: Poliéster Peluche", "Medidas: 8cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Negro", img: "img/accesorios/30.jpg", price: 8.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 129,
+    name: "Llavero Pompom negro",
+    category: "accesorios",
+    price: 6.00,
+    oldPrice: 9.00,
+    rating: "4.7 (5 valoraciones)",
+    img: "img/accesorios/32.jpg",
+    desc: "Color Rosado / Negro, estilo Llaverito.",
+    bullets: ["Color: Negro", "Estilo: Llaverito", "Medidas: 8cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Negro", img: "img/accesorios/32.jpg", price: 6.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 130,
+    name: "Llavero Susuwatari",
+    category: "accesorios",
+    price: 4.00,
+    oldPrice: 6.00,
+    rating: "4.9 (12 valoraciones)",
+    img: "img/accesorios/33.jpg",
+    desc: "Material: Tela Peluche.",
+    bullets: ["Material: Tela Peluche", "Medidas: 3cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Negro", img: "img/accesorios/33.jpg", price: 4.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 131,
+    name: "Monedero Llavero Totoro",
+    category: "accesorios",
+    price: 14.00,
+    oldPrice: 19.00,
+    rating: "4.9 (14 valoraciones)",
+    img: "img/accesorios/34.jpg",
+    desc: "1 compartimiento, material Tela Peluche.",
+    bullets: ["1 compartimiento", "Material: Tela Peluche", "Medidas: 20cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Totoro", img: "img/accesorios/34.jpg", price: 14.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 133,
+    name: "Cartuchera Tiburon",
+    category: "accesorios",
+    price: 9.00,
+    oldPrice: 14.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/accesorios/35.jpg",
+    desc: "1 compartimiento, material Poliéster, estilo Cartuchera Large.",
+    bullets: ["1 compartimiento", "Material: Poliéster", "Medidas: 23cm x 10cm x 3cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Tiburón", img: "img/accesorios/35.jpg", price: 9.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 134,
+    name: "Cartuchera Pescado Oscuro",
+    category: "accesorios",
+    price: 12.00,
+    oldPrice: 17.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/36.jpg",
+    desc: "1 compartimiento, material Poliéster, estilo Cartuchera Large.",
+    bullets: ["1 compartimiento", "Material: Poliéster", "Medidas: 23cm x 10cm x 3cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Pescado Oscuro", img: "img/accesorios/36.jpg", price: 12.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 135,
+    name: "Llavero Peluche Oso",
+    category: "accesorios",
+    price: 4.00,
+    oldPrice: 6.00,
+    rating: "4.7 (7 valoraciones)",
+    img: "img/accesorios/37.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito, Modelo 1.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 11cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/37.jpg", price: 4.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 136,
+    name: "Oso con Corbata",
+    category: "accesorios",
+    price: 5.00,
+    oldPrice: 8.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/38.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 11cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/38.jpg", price: 5.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 137,
+    name: "Llaverito Perlita con Corazon",
+    category: "accesorios",
+    price: 7.00,
+    oldPrice: 10.00,
+    rating: "4.8 (7 valoraciones)",
+    img: "img/accesorios/40.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 12cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/40.jpg", price: 7.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 138,
+    name: "Lazo de Perlitas",
+    category: "accesorios",
+    price: 9.00,
+    oldPrice: 13.00,
+    rating: "4.9 (9 valoraciones)",
+    img: "img/accesorios/39.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 11cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/39.jpg", price: 9.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 139,
+    name: "Llaverito Estrella",
+    category: "accesorios",
+    price: 5.00,
+    oldPrice: 8.00,
+    rating: "4.7 (6 valoraciones)",
+    img: "img/accesorios/41.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/41.jpg", price: 5.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 140,
+    name: "Llaverito Triple Totoro",
+    category: "accesorios",
+    price: 5.00,
+    oldPrice: 8.00,
+    rating: "4.9 (11 valoraciones)",
+    img: "img/accesorios/42.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 23cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/42.jpg", price: 5.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 141,
+    name: "Peluchito Gato",
+    category: "accesorios",
+    price: 7.00,
+    oldPrice: 10.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/43.jpg",
+    desc: "Color Crema / Hueso, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Crema / Hueso", "Material: Poliéster", "Medidas: 10cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Crema", img: "img/accesorios/43.jpg", price: 7.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 142,
+    name: "Peluchito Gato Negro",
+    category: "accesorios",
+    price: 7.00,
+    oldPrice: 10.00,
+    rating: "4.8 (8 valoraciones)",
+    img: "img/accesorios/44.jpg",
+    desc: "Color Negro, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Negro", "Material: Poliéster", "Medidas: 10cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Negro", img: "img/accesorios/44.jpg", price: 7.00, status: "disponible" }],
+    lookbookImages: []
+  },
+  {
+    id: 143,
+    name: "Peluchito Gato Blanco",
+    category: "accesorios",
+    price: 5.00,
+    oldPrice: 8.00,
+    rating: "4.7 (6 valoraciones)",
+    img: "img/accesorios/45.jpg",
+    desc: "Color Blanco, material Poliéster, estilo Llaverito.",
+    bullets: ["Color: Blanco", "Material: Poliéster", "Medidas: 8cm x 6cm"],
+    badge: "Accesorios",
+    tagColor: "bg-green-500/15 text-green-700 border-green-500/30",
+    sizes: [],
+    variants: [{ name: "Blanco", img: "img/accesorios/45.jpg", price: 5.00, status: "disponible" }],
+    lookbookImages: []
+  }
 ];
 
-let carrito = [];
-let modalSlideIndex = 0;
-let pinCustomImages = [];
-let pinSeleccionadosCatalogo = {};
-let pinAmpliadoActual = null;
-let costoEnvioActual = 10.00;
-let metodoPagoActual = "Yape / Plin";
-let tallaSeleccionadaActual = 0;
-let colorSeleccionadoActual = "";
-let fotoPrincipalActual = "";
-let isPlayingLofi = false;
+let cart = JSON.parse(localStorage.getItem('milenio_cart')) || [];
+let currentSlideIdx = 0;
+let currentShippingType = 'domicilio';
+let pinConfig = { title: 'Pin Retro Vintage #01', img: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80', qty: 1 };
+let selectedModalProduct = null;
+let currentSelectedVariant = null;
+let currentSelectedSize = 'única';
+let currentModalQty = 1;
+let currentModalPrice = 89.00;
 
-window.addEventListener('DOMContentLoaded', () => {
-    // Recuperar carrito guardado en localStorage al iniciar
-    const carritoGuardado = localStorage.getItem('vintage_milenio_carrito');
-    if (carritoGuardado) {
-        try {
-            carrito = JSON.parse(carritoGuardado);
-        } catch (e) {
-            carrito = [];
-        }
+const presetPins = [
+  { title: 'Pin Retro Y2K Star', img: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Skull Streetwear', img: 'https://images.unsplash.com/photo-1543852766-1cf662469987?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Dusk Sunset', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Vintage Logo MV', img: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Cyberpunk Neon', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Abstract Art', img: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Rose Gold Dusk', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80' },
+  { title: 'Pin Skate Culture', img: 'https://images.unsplash.com/photo-1547447134-cd3f5c716bb3?auto=format&fit=crop&w=400&q=80' }
+];
+
+const estacionesLinea1 = [
+  "Bayóvar", "Pirámide del Sol", "Los Jardines", "Santa Rosa", "San Carlos", 
+  "San Martín", "La Cultura", "Arriola", "Gamarra", "El Ángel", "Presbítero Maestro", 
+  "Miguel Grau", "Cultura", "San Borja Sur", "Angamos", "Cabitos", "Ayacucho", 
+  "San Juan", "Atocongo", "Jabalí", "Pumacahua", "Villa María", "Parque Industrial", "Villa El Salvador"
+];
+const estacionesMetropolitano = [
+  "Naranjal", "Izaguirre", "Palmeras", "Los Alisos", "Dominicos", "Universitaria", 
+  "Tomás Valle", "El Milagro", "Honduras", "Caquetá", "Dos de Mayo", "Central", 
+  "Estadio Nacional", "México", "Canadá", "Arriola", "Javier Prado", "Angamos", 
+  "Ricardo Palma", "Benavides", "28 de Julio", "Plaza de Flores", "Balta", "Bulevar", "Matellini"
+];
+
+window.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeProductModal();
+    closeProductZoom();
+    closePinZoomModal();
+    closePolicyModal();
+    closeClaimsModal();
+    const cartDrawer = document.getElementById('cart-drawer');
+    if (cartDrawer && !cartDrawer.classList.contains('hidden')) {
+      toggleCart();
     }
-
-    renderizarCatalogo(productosCatalogo);
-    renderizarPinesGrid();
-    actualizarContadorCarrito();
-    actualizarEstaciones();
-
-    const heroTexts = ["TENDENCIA", "ESTILO Y2K", "PERSONALIZADOS"];
-    let hIndex = 0;
-    setInterval(() => {
-        hIndex = (hIndex + 1) % heroTexts.length;
-        const el = document.getElementById('animated-hero-text');
-        if (el) el.textContent = heroTexts[hIndex];
-    }, 3000);
+  }
 });
 
-// Función auxiliar para guardar el carrito en localStorage
-function guardarCarritoStorage() {
-    localStorage.setItem('vintage_milenio_carrito', JSON.stringify(carrito));
+const policyData = {
+  privacy: {
+    title: "Políticas de Privacidad",
+    content: `
+      <p>En <strong>Milenio Vintage</strong> (marca Dusk), protegemos estrictamente sus datos personales conforme a la Ley N° 29733 de Protección de Datos Personales.</p>
+      <p><strong>1. Información recopilada:</strong> Recopilamos nombre, número de teléfono, dirección de envío y correo electrónico únicamente con el propósito de procesar y despachar sus pedidos.</p>
+      <p><strong>2. Uso y confidencialidad:</strong> Sus datos son compartidos únicamente con nuestros operadores logísticos autorizados (Olva Courier, Shalom, Marvisur) para garantizar la entrega puntual.</p>
+      <p><strong>3. Seguridad:</strong> Implementamos medidas técnicas para resguardar su información frente a accesos no autorizados.</p>
+    `
+  },
+  shipping: {
+    title: "Políticas de Envío",
+    content: `
+      <p><strong>1. Tiempos de entrega:</strong> En Lima Metropolitana, los envíos a domicilio o estaciones de Lima Metro / Metropolitano se realizan en un plazo de 2 a 4 días hábiles tras la confirmación del pago.</p>
+      <p><strong>2. Envíos a Provincia:</strong> Se despachan a través de agencias de confianza (Shalom, Olva Courier, Marvisur, Civa) con guía de seguimiento facilitada vía WhatsApp.</p>
+      <p><strong>3. Costos:</strong> Los costos varían según el destino y el método seleccionado al finalizar la compra.</p>
+    `
+  },
+  returns: {
+    title: "Políticas de Cambios y Devoluciones",
+    content: `
+      <p><strong>1. Plazo y condiciones:</strong> No realizamos devoluciones en dinero. Se aceptan cambios dentro de los <strong>24 horas</strong> posteriores a la recepción únicamente por errores en el pedido o defectos de fabricación demostrables con foto o video.</p>
+      <p><strong>2. Estado del producto:</strong> El artículo debe conservar sus etiquetas originales, embalaje y sin uso previo.</p>
+    `
+  }
+};
+
+function openPolicy(type) {
+  const policy = policyData[type];
+  if (!policy) return;
+  document.getElementById('policy-modal-title').textContent = policy.title;
+  document.getElementById('policy-modal-body').innerHTML = policy.content;
+  document.getElementById('policy-modal').classList.remove('hidden');
+}
+function closePolicyModal() {
+  document.getElementById('policy-modal').classList.add('hidden');
+}
+function openClaimsModal() {
+  document.getElementById('claims-modal').classList.remove('hidden');
+}
+function closeClaimsModal() {
+  document.getElementById('claims-modal').classList.add('hidden');
+}
+function submitClaimWhatsApp() {
+  const nombre = document.getElementById('claim-nombre').value;
+  const dni = document.getElementById('claim-dni').value;
+  const tel = document.getElementById('claim-tel').value;
+  const email = document.getElementById('claim-email').value;
+  const tipo = document.getElementById('claim-tipo').value;
+  const pedido = document.getElementById('claim-pedido').value || 'N/A';
+  const detalle = document.getElementById('claim-detalle').value;
+
+  let msg = `[LIBRO DE RECLAMACIONES VIRTUAL - LEY N° 29571]\n\n`;
+  msg += `*Nombre:* ${nombre}\n`;
+  msg += `*DNI/CE:* ${dni}\n`;
+  msg += `*Teléfono:* ${tel}\n`;
+  msg += `*Correo:* ${email}\n`;
+  msg += `*Tipo:* ${tipo}\n`;
+  msg += `*Pedido:* ${pedido}\n`;
+  msg += `*Detalle:* ${detalle}\n\n`;
+  msg += `Solicito atención y respuesta en el plazo legal establecido (2 días hábiles).`;
+
+  window.open(`https://wa.me/51926412894?text=${encodeURIComponent(msg)}`, '_blank');
+  closeClaimsModal();
 }
 
-function toggleLofiMusic() {
-    const audio = document.getElementById('lofi-audio');
-    const icon = document.getElementById('lofi-icon');
-    const text = document.getElementById('lofi-text');
-    if (!audio) return;
-    if (isPlayingLofi) {
-        audio.pause();
-        isPlayingLofi = false;
-        icon.className = "fa-solid fa-play text-[9px] text-amber-400";
-        text.textContent = "Ambiente Lo-Fi";
+function goToSlide(idx) {
+  currentSlideIdx = idx;
+  const slides = document.querySelectorAll('.onboarding-slide');
+  const dots = document.querySelectorAll('#onboarding-dots button');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  
+  slides.forEach((slide, i) => {
+    if (i === idx) {
+      slide.classList.remove('hidden');
+      setTimeout(() => {
+        slide.classList.remove('opacity-0', 'translate-x-10');
+        slide.classList.add('opacity-100', 'translate-x-0');
+      }, 50);
     } else {
-        audio.play().catch(e => console.log(e));
-        isPlayingLofi = true;
-        icon.className = "fa-solid fa-pause text-[9px] text-amber-400";
-        text.textContent = "Pausar música";
+      slide.classList.add('opacity-0', 'translate-x-10');
+      setTimeout(() => slide.classList.add('hidden'), 300);
     }
+  });
+  
+  dots.forEach((dot, i) => {
+    dot.className = (i === idx) ? "w-6 sm:w-8 h-2 rounded-full bg-cyan-500 transition-all cursor-pointer shadow-sm" : "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer";
+  });
+  
+  if (idx === 0) prevBtn.classList.add('hidden'); else prevBtn.classList.remove('hidden');
+  if (idx === 2) nextBtn.innerHTML = '¡Empezar! <i class="fa-solid fa-check ml-1"></i>';
+  else nextBtn.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right ml-1"></i>';
 }
-
-function abrirModalPolitica(tipo) {
-    const modal = document.getElementById('policy-modal');
-    const content = document.getElementById('policy-modal-content');
-    if (!modal || !content) return;
-
-    let html = "";
-    if (tipo === 'cambios') {
-        html = `
-            <h2 class="font-outfit text-xl font-bold text-slate-900 mb-3">POLÍTICA DE CAMBIOS Y DEVOLUCIONES</h2>
-            <p class="text-slate-600 mb-2">No realizamos reembolsos de dinero una vez confirmado el pago, salvo en los casos indicados a continuación.</p>
-            <h3 class="font-bold text-slate-900 mt-3">1. Error en el pedido</h3>
-            <p>Si recibes un producto distinto al solicitado, deberás comunicarte dentro de las primeras 24 horas de haberlo recibido. El producto deberá ser devuelto en un plazo máximo de 24 horas luego de la coordinación, en las mismas condiciones en las que fue entregado, sin uso y con sus empaques originales. Deberás acercarte a una agencia de Olva Courier o Shalom para realizar el envío de retorno, previa coordinación con nuestro equipo. Una vez recibido, se realizará la verificación correspondiente y podrás optar por: "El cambio por el producto correcto" o "Devolución del dinero".</p>
-            <h3 class="font-bold text-slate-900 mt-3">2. Producto defectuoso</h3>
-            <p>Si el producto presenta fallas de fabricación, deberás comunicarte dentro de las primeras 24 horas de haberlo recibido, enviando evidencias fotográficas o en video. Si deseas recibir el reembolso completo, deberás devolver el producto en un plazo máximo de 24 horas siguiendo el procedimiento de envío en agencia previamente coordinado. Una vez recibido y verificado, se retornará el dinero. Otra opción disponible es brindarte una compensación sin necesidad de devolver el producto, según nuestra evaluación.</p>
-            <h3 class="font-bold text-slate-900 mt-3">3. Condiciones generales</h3>
-            <ul class="list-disc pl-5 space-y-1">
-                <li>No se aceptan cambios ni devoluciones fuera del plazo establecido.</li>
-                <li>El producto debe ser devuelto sin uso y en perfecto estado.</li>
-                <li>No se aceptan cambios ni devoluciones por uso indebido o desgaste normal.</li>
-            </ul>
-        `;
-    } else if (tipo === 'privacidad') {
-        html = `
-            <h2 class="font-outfit text-xl font-bold text-slate-900 mb-3">POLÍTICA DE PRIVACIDAD</h2>
-            <h3 class="font-bold text-slate-900 mt-2">1. Información que recopilamos</h3>
-            <p>Recopilamos información personal cuando realizas una compra o te comunicas con nosotros, como:</p>
-            <ul class="list-disc pl-5 space-y-1 mb-2">
-                <li>Nombre y apellido</li>
-                <li>Número de teléfono / WhatsApp (+51 926 412 894)</li>
-                <li>Dirección de envío</li>
-            </ul>
-            <h3 class="font-bold text-slate-900 mt-2">2. Uso de la información</h3>
-            <p>La información recopilada es utilizada exclusivamente para procesar tus pedidos de morrales, mochilas, carteras o accesorios, coordinar envíos y brindar atención personalizada.</p>
-            <h3 class="font-bold text-slate-900 mt-2">3. Protección y Compartición</h3>
-            <p>Nos comprometemos a proteger tu información personal y a no compartirla con terceros, excepto cuando sea estrictamente necesario para completar el envío (empresas de mensajería como Olva Courier o Shalom).</p>
-            <h3 class="font-bold text-slate-900 mt-2">4. Derechos del usuario</h3>
-            <p>Puedes solicitar la modificación o eliminación de tus datos personales en cualquier momento escribiéndonos directamente a nuestro WhatsApp oficial.</p>
-        `;
-    } else if (tipo === 'envio') {
-        html = `
-            <h2 class="font-outfit text-xl font-bold text-slate-900 mb-3">POLÍTICAS DE ENVÍO</h2>
-            <h3 class="font-bold text-slate-900 mt-2">1. Cobertura</h3>
-            <p>Realizamos envíos a todo el Perú a través de empresas de mensajería de confianza. El pago del pedido y del envío es adelantado para confirmar tu compra y proceder con la elaboración o despacho.</p>
-            <h3 class="font-bold text-slate-900 mt-2">2. Opciones de envío</h3>
-            <p><strong>Lima Metropolitana:</strong> Envío a domicilio mediante Olva Courier (2 a 4 días hábiles) o recojo en agencia Shalom/Olva.<br><strong>Provincias:</strong> Envíos mediante Shalom u Olva Courier según preferencia del cliente.</p>
-            <h3 class="font-bold text-slate-900 mt-2">3. Seguimiento</h3>
-            <p>Todos los envíos cuentan con número de seguimiento, el cual será enviado vía WhatsApp al número proporcionado durante la compra.</p>
-        `;
+function nextSlide() {
+  if (currentSlideIdx < 2) goToSlide(currentSlideIdx + 1);
+  else closeOnboarding();
+}
+function prevSlide() {
+  if (currentSlideIdx > 0) goToSlide(currentSlideIdx - 1);
+}
+function closeOnboarding() {
+  const modal = document.getElementById('onboarding-modal');
+  modal.classList.add('opacity-0', 'scale-95');
+  setTimeout(() => modal.remove(), 400);
+}
+function switchTab(tabId) {
+  document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
+  const target = document.getElementById('view-' + tabId);
+  if (target) target.classList.remove('hidden');
+  
+  document.querySelectorAll('.nav-link').forEach(btn => {
+    const isBox = btn.dataset.target === 'box';
+    const isPreventa = btn.dataset.target === 'preventa';
+    if (btn.dataset.target === tabId) {
+      if (isBox) btn.className = "nav-link px-3.5 py-2 rounded-xl transition text-emerald-700 bg-emerald-500/25 border border-emerald-500 font-extrabold shadow-md cursor-pointer";
+      else if (isPreventa) btn.className = "nav-link px-3.5 py-2 rounded-xl transition text-amber-700 bg-amber-500/25 border border-amber-500 font-extrabold shadow-md cursor-pointer";
+      else btn.className = "nav-link px-3.5 py-2 rounded-xl transition text-cyan-700 bg-cyan-500/15 font-semibold cursor-pointer border border-cyan-500/30";
+    } else {
+      if (isBox) btn.className = "nav-link px-3.5 py-2 rounded-xl transition text-emerald-700 bg-gradient-to-r from-emerald-500/15 to-teal-500/15 border border-emerald-500/40 font-bold shadow-sm animate-pulse-badge flex items-center gap-1.5 cursor-pointer";
+      else if (isPreventa) btn.className = "nav-link px-3.5 py-2 rounded-xl transition text-amber-700 bg-gradient-to-r from-amber-500/15 to-orange-500/15 border border-amber-500/40 font-bold shadow-sm animate-pulse-badge flex items-center gap-1.5 cursor-pointer";
+      else btn.className = "nav-link px-3.5 py-2 rounded-xl transition text-slate-600 hover:text-slate-900 hover:bg-slate-100 cursor-pointer";
     }
-    content.innerHTML = html;
-    modal.style.display = 'flex';
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-function abrirModalReclamaciones() {
-    const modal = document.getElementById('policy-modal');
-    const content = document.getElementById('policy-modal-content');
-    if (!modal || !content) return;
-
-    content.innerHTML = `
-        <div class="space-y-4">
-            <div class="border-b border-slate-200 pb-3">
-                <span class="text-[10px] font-extrabold text-blue-600 uppercase tracking-widest block">Conforme a la Ley N° 29571</span>
-                <h2 class="font-outfit text-xl font-bold text-slate-900">Libro de Reclamaciones Virtual - Vintage Milenio</h2>
-            </div>
-            <p class="text-slate-600">Complete el siguiente formulario de reclamo o queja. Nos pondremos en contacto con usted a través del WhatsApp proporcionado (+51 926 412 894) en un plazo no mayor a 2 días hábiles.</p>
-            
-            <form onsubmit="enviarReclamoWhatsApp(event)" class="space-y-3">
-                <div>
-                    <label class="block font-bold text-slate-700 mb-1">Nombre y Apellido *</label>
-                    <input type="text" id="rec-nombre" required class="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none bg-slate-50">
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block font-bold text-slate-700 mb-1">Teléfono / WhatsApp *</label>
-                        <input type="tel" id="rec-tel" required class="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none bg-slate-50">
-                    </div>
-                    <div>
-                        <label class="block font-bold text-slate-700 mb-1">Correo electrónico</label>
-                        <input type="email" id="rec-email" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none bg-slate-50">
-                    </div>
-                </div>
-                <div>
-                    <label class="block font-bold text-slate-700 mb-1">Tipo de solicitud *</label>
-                    <select id="rec-tipo" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl bg-slate-50 focus:border-blue-600 focus:outline-none font-semibold">
-                        <option value="Reclamo (Disconformidad relacionada a los productos o servicios)">Reclamo (Disconformidad con producto o servicio)</option>
-                        <option value="Queja (Malestar respecto a la atención al cliente)">Queja (Malestar respecto a la atención)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block font-bold text-slate-700 mb-1">Detalle del reclamo o queja *</label>
-                    <textarea id="rec-detalle" rows="3" required placeholder="Describa el motivo de su reclamo..." class="w-full px-3 py-2.5 border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none bg-slate-50"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 rounded-xl transition shadow-md">
-                    Enviar Reclamo a WhatsApp Oficial
-                </button>
-            </form>
+function toggleMobileMenu() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+}
+function renderApp() {
+  const highlightSections = [
+    { sec: 'morrales', title: 'Morrales Artesanales', color: 'border-cyan-500/40 bg-gradient-to-br from-cyan-50 to-white' },
+    { sec: 'mochilas', title: 'Mochilas Urbanas', color: 'border-blue-500/40 bg-gradient-to-br from-blue-50 to-white' },
+    { sec: 'bolsos', title: 'Bolsos y Carteras', color: 'border-purple-500/40 bg-gradient-to-br from-purple-50 to-white' }
+  ];
+  
+  document.getElementById('highlights-grid').innerHTML = highlightSections.map(item => {
+    const prod = products.find(p => p.category === item.sec);
+    if (!prod) return '';
+    return `
+      <div class="glass-card rounded-2xl sm:rounded-3xl p-2 sm:p-6 border ${item.color} card-3d flex flex-col justify-between space-y-2 sm:space-y-4 bg-white/90">
+        <div class="space-y-1.5 sm:space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[8px] sm:text-xs font-bold bg-slate-100 text-slate-700 truncate">${item.title}</span>
+          </div>
+          <div onclick="openProductModal(${prod.id})" class="w-full rounded-xl sm:rounded-2xl overflow-hidden glass-card p-1 sm:p-2 border border-slate-200 bg-slate-50 card-3d cursor-pointer">
+            <img src="${prod.img}" alt="${prod.name}" class="aspect-square-custom rounded-lg sm:rounded-xl hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="text-[11px] sm:text-lg font-bold font-display text-slate-900 line-clamp-1">${prod.name}</h3>
+          <p class="text-slate-600 text-[9px] sm:text-xs line-clamp-2">${prod.desc}</p>
         </div>
-    `;
-    modal.style.display = 'flex';
-}
-
-function enviarReclamoWhatsApp(e) {
-    e.preventDefault();
-    const nombre = document.getElementById('rec-nombre').value;
-    const tel = document.getElementById('rec-tel').value;
-    const email = document.getElementById('rec-email').value || "No especificado";
-    const tipo = document.getElementById('rec-tipo').value;
-    const detalle = document.getElementById('rec-detalle').value;
-
-    const mensaje = `*LIBRO DE RECLAMACIONES - VINTAGE MILENIO*\n\n*Cliente:* ${nombre}\n*Teléfono:* ${tel}\n*Correo:* ${email}\n*Tipo:* ${tipo}\n*Detalle:* ${detalle}`;
-    window.open(`https://wa.me/51926412894?text=${encodeURIComponent(mensaje)}`, '_blank');
-    cerrarModalPolitica();
-}
-
-function cerrarModalPolitica() {
-    document.getElementById('policy-modal').style.display = 'none';
-}
-
-function cambiarVista(nombreVista, filtroCat = 'todos') {
-    document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
-    const target = document.getElementById(`page-${nombreVista}`);
-    if (target) target.classList.add('active-section');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (nombreVista === 'catalogo') filtrarCatalogo(filtroCat);
-    if (nombreVista === 'pin-personalizado') calcularPrecioPines();
-    if (nombreVista === 'checkout') renderizarCheckoutResumen();
-}
-
-function cerrarModalBienvenida() {
-    const modal = document.getElementById('welcome-modal');
-    if (modal) modal.style.opacity = '0', setTimeout(() => modal.style.display = 'none', 300);
-}
-
-function cambiarSlideModal(dir) {
-    const track = document.getElementById('modal-slides-track');
-    modalSlideIndex = (modalSlideIndex + dir + 3) % 3;
-    track.style.transform = `translateX(-${modalSlideIndex * 100}%)`;
-    actualizarDotsModal();
-}
-
-function irASlideModal(idx) {
-    modalSlideIndex = idx;
-    const track = document.getElementById('modal-slides-track');
-    track.style.transform = `translateX(-${modalSlideIndex * 100}%)`;
-    actualizarDotsModal();
-}
-
-function actualizarDotsModal() {
-    const dots = document.querySelectorAll('#modal-dots-container span');
-    dots.forEach((dot, idx) => {
-        dot.className = (idx === modalSlideIndex) ? "w-2 h-2 rounded-full bg-blue-600 cursor-pointer transition shadow-sm" : "w-2 h-2 rounded-full bg-slate-300 cursor-pointer transition shadow-sm";
-    });
-}
-
-function explorarDesdeModal() {
-    cerrarModalBienvenida();
-    cambiarVista('catalogo', 'todos');
-}
-
-function abrirCarrito() {
-    document.getElementById('cart-drawer').style.right = '0px';
-    document.getElementById('cart-overlay').classList.remove('hidden');
-    renderizarContenidoCarrito();
-}
-
-function cerrarCarrito() {
-    document.getElementById('cart-drawer').style.right = '-440px';
-    document.getElementById('cart-overlay').classList.add('hidden');
-}
-
-function renderizarCatalogo(lista) {
-    const grid = document.getElementById('main-products-grid');
-    if (!grid) return;
-    if (lista.length === 0) {
-        grid.innerHTML = '<p class="col-span-full text-center text-slate-500 py-12 text-xs">No se encontraron productos en esta categoría.</p>';
-        return;
-    }
-    let html = '';
-    lista.forEach(p => {
-        const imgPortada = p.imagenes ? p.imagenes[0] : p.img;
-        const precioMostrado = p.tieneTallas ? `Desde S/ ${p.tallas[0].precio.toFixed(2)}` : `S/ ${p.precio.toFixed(2)}`;
-        
-        let cardStyleClass = "bg-white border border-slate-200/80 rounded-2xl md:rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group transition hover:shadow-md";
-        let badgeHtml = `<span class="absolute top-2 left-2 md:top-3 md:left-3 bg-white/90 backdrop-blur-md text-slate-900 text-[9px] md:text-[10px] font-extrabold px-2 py-0.5 md:px-2.5 md:py-1 rounded-full uppercase tracking-wider shadow-sm">${p.categoria}</span>`;
-        
-        if (p.esBoxEspecial) {
-            cardStyleClass = "card-box-especial rounded-2xl md:rounded-3xl overflow-hidden flex flex-col justify-between group transition hover:shadow-lg";
-            badgeHtml = `<span class="absolute top-2 left-2 md:top-3 md:left-3 bg-amber-500 text-slate-950 text-[9px] md:text-[10px] font-extrabold px-2 py-0.5 md:px-2.5 md:py-1 rounded-full uppercase tracking-wider shadow-md"><i class="fa-solid fa-gift mr-1"></i> Box</span>`;
-        } else if (p.esPreventa) {
-            cardStyleClass = "card-preventa rounded-2xl md:rounded-3xl overflow-hidden flex flex-col justify-between group transition hover:shadow-lg";
-            badgeHtml = `<span class="absolute top-2 left-2 md:top-3 md:left-3 bg-pink-600 text-white text-[9px] md:text-[10px] font-extrabold px-2 py-0.5 md:px-2.5 md:py-1 rounded-full uppercase tracking-wider shadow-md animate-pulse"><i class="fa-solid fa-fire mr-1"></i> Preventa</span>`;
-        }
-
-        html += `
-            <div class="${cardStyleClass}">
-                <div class="relative aspect-square bg-slate-100 overflow-hidden cursor-pointer" onclick="abrirDetalleProducto(${p.id})">
-                    <img src="${imgPortada}" alt="${p.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x400/f3f4f6/111827?text=VM'">
-                    ${badgeHtml}
-                </div>
-                <div class="p-2.5 md:p-5 flex flex-col flex-grow justify-between">
-                    <div>
-                        <h3 class="font-outfit text-xs md:text-sm font-bold text-slate-900 mb-1 line-clamp-2 md:line-clamp-1 cursor-pointer hover:text-blue-600 transition" onclick="abrirDetalleProducto(${p.id})">${p.nombre}</h3>
-                        <p class="text-[11px] md:text-xs font-extrabold ${p.esBoxEspecial ? 'text-amber-700' : (p.esPreventa ? 'text-pink-600' : 'text-blue-600')} mb-2 md:mb-4">${precioMostrado}</p>
-                    </div>
-                    <button onclick="abrirDetalleProducto(${p.id})" class="w-full ${p.esBoxEspecial ? 'bg-amber-500 hover:bg-amber-600 text-slate-950' : (p.esPreventa ? 'bg-pink-600 hover:bg-pink-700 text-white' : 'bg-slate-900 hover:bg-blue-600 text-white')} text-[10px] md:text-xs font-extrabold py-2 px-2 md:px-4 rounded-xl md:rounded-2xl transition flex items-center justify-center gap-1.5 shadow-sm">
-                        <span class="truncate">Ver</span> <i class="fa-solid fa-eye text-[9px]"></i>
-                    </button>
-                </div>
-            </div>
-        `;
-    });
-    grid.innerHTML = html;
-}
-
-function filtrarCatalogo(filtro) {
-    document.querySelectorAll('.filter-pills .pill').forEach(btn => {
-        if (btn.dataset.filter === filtro) {
-            btn.className = "pill active bg-slate-900 text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition shadow-md";
-        } else {
-            btn.className = "pill bg-slate-100 text-slate-700 hover:bg-slate-900 hover:text-white px-5 py-2.5 rounded-2xl text-xs font-extrabold whitespace-nowrap transition";
-        }
-    });
-    if (filtro === 'todos') renderizarCatalogo(productosCatalogo);
-    else if (filtro === 'box-especial') renderizarCatalogo(productosCatalogo.filter(p => p.esBoxEspecial));
-    else if (filtro === 'preventa') renderizarCatalogo(productosCatalogo.filter(p => p.esPreventa));
-    else renderizarCatalogo(productosCatalogo.filter(p => p.categoria === filtro));
-}
-
-function buscarEnCatalogo() {
-    const query = document.getElementById('catalog-search-input').value.toLowerCase();
-    renderizarCatalogo(productosCatalogo.filter(p => p.nombre.toLowerCase().includes(query)));
-}
-
-function abrirDetalleProducto(id) {
-    const p = productosCatalogo.find(prod => prod.id == id);
-    if (!p) return;
-    tallaSeleccionadaActual = 0;
-    colorSeleccionadoActual = p.colores ? p.colores[0] : "Único";
-    fotoPrincipalActual = p.imagenes ? p.imagenes[0] : (p.img || "");
-    const tallaActual = p.tieneTallas ? p.tallas[0] : { precio: p.precio, dimensiones: p.medidas || "Estándar", desc: p.desc };
-    
-    let caracteristicasHtml = "";
-    if (p.caracteristicasEspecificas) {
-        caracteristicasHtml = `
-            <div class="bg-amber-50/70 border border-amber-200 p-4 rounded-2xl mb-6 text-xs space-y-1.5 shadow-inner">
-                <p class="font-bold text-amber-900 mb-1">CARACTERÍSTICAS:</p>
-                ${p.caracteristicasEspecificas.map(c => `<p class="font-medium text-slate-800">${c}</p>`).join('')}
-            </div>
-        `;
-    } else {
-        caracteristicasHtml = `
-            <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl mb-6 text-xs space-y-1.5 shadow-inner">
-                <p class="font-bold text-slate-900">Dimensiones: <span id="modal-product-dim" class="font-normal text-slate-600">${tallaActual.dimensiones}</span></p>
-                <p class="font-bold text-slate-900">Descripción: <span id="modal-product-desc" class="font-normal text-slate-600">${tallaActual.desc}</span></p>
-            </div>
-        `;
-    }
-
-    let htmlContenido = `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-3">
-                <div class="aspect-square bg-slate-100 rounded-2xl overflow-hidden shadow-inner relative border border-slate-200">
-                    <img id="modal-main-img" src="${fotoPrincipalActual}" alt="${p.nombre}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x500/f3f4f6/111827?text=VM'">
-                </div>
-                ${p.imagenes && p.imagenes.length > 1 ? `
-                    <div class="flex gap-2 overflow-x-auto no-scrollbar py-1">
-                        ${p.imagenes.map((imgSrc, idx) => `
-                            <div onclick="cambiarFotoPrincipal('${imgSrc}', this)" class="w-14 h-14 rounded-xl overflow-hidden border-2 cursor-pointer flex-shrink-0 ${idx === 0 ? 'border-blue-600' : 'border-slate-200'} thumb-img-container shadow-sm">
-                                <img src="${imgSrc}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/f3f4f6/111827?text=Foto'">
-                            </div>
-                        `).join('')}
-                    </div>
-                ` : ''}
-            </div>
-            <div class="flex flex-col justify-between">
-                <div>
-                    <span class="${p.esBoxEspecial ? 'bg-amber-100 text-amber-800' : (p.esPreventa ? 'bg-pink-100 text-pink-800' : 'bg-blue-50 text-blue-600')} text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2">${p.categoria}</span>
-                    <h2 class="font-outfit text-2xl font-bold text-slate-900 mb-2">${p.nombre}</h2>
-                    <p id="modal-product-price" class="text-2xl font-extrabold text-blue-600 mb-4">S/ ${tallaActual.precio.toFixed(2)}</p>
-                    
-                    ${p.tieneTallas ? `
-                        <div class="mb-4">
-                            <label class="block text-xs font-extrabold text-slate-700 mb-2">Selecciona la Talla:</label>
-                            <div class="flex gap-2">
-                                ${p.tallas.map((t, idx) => `
-                                    <button onclick="cambiarTallaDetalle(${p.id}, ${idx})" id="btn-talla-${idx}" class="flex-1 py-2 text-xs font-bold rounded-xl border transition ${idx === 0 ? 'border-blue-600 bg-blue-50 text-blue-600 shadow-sm' : 'border-slate-200 bg-white text-slate-700'}">
-                                        ${t.talla}
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-                    ` : ''}
-
-                    ${p.colores && p.colores[0] !== "Edición Única" ? `
-                        <div class="mb-4">
-                            <label class="block text-xs font-extrabold text-slate-700 mb-2">Selecciona el Color:</label>
-                            <div class="flex flex-wrap gap-2">
-                                ${p.colores.map((color, idx) => `
-                                    <button onclick="cambiarColorDetalle('${color}', this)" class="px-3 py-2 text-xs font-bold rounded-xl border transition ${idx === 0 ? 'border-blue-600 bg-blue-50 text-blue-600 color-btn-active shadow-sm' : 'border-slate-200 bg-white text-slate-700'} color-btn">
-                                        ${color}
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-                    ` : ''}
-
-                    ${caracteristicasHtml}
-                </div>
-                <button onclick="agregarAlCarritoDesdeDetalle(${p.id}); cerrarModalDetalle();" class="w-full ${p.esBoxEspecial ? 'bg-amber-500 hover:bg-amber-600 text-slate-950' : (p.esPreventa ? 'bg-pink-600 hover:bg-pink-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white')} font-extrabold py-3.5 rounded-2xl transition flex items-center justify-center gap-2 shadow-lg text-xs">
-                    <i class="fa-solid fa-bag-shopping"></i> Añadir al carrito
-                </button>
-            </div>
+        <div class="flex items-center justify-between pt-2 sm:pt-4 border-t border-slate-200">
+          <span class="text-[11px] sm:text-lg font-extrabold text-cyan-600 font-display">S/ ${prod.price.toFixed(2)}</span>
+          <div class="flex gap-1 sm:gap-2">
+            <button onclick="openProductModal(${prod.id})" class="p-1 sm:p-2.5 rounded-xl glass-card text-slate-700 hover:text-slate-900 border border-slate-300 cursor-pointer card-3d"><i class="fa-solid fa-eye text-[10px] sm:text-sm"></i></button>
+            <button onclick="addToCart(${prod.id})" class="px-2 py-1.5 sm:px-4 sm:py-2.5 rounded-xl bg-cyan-600 text-white font-bold text-[10px] sm:text-xs hover:bg-cyan-500 transition flex items-center gap-1 cursor-pointer card-3d"><i class="fa-solid fa-cart-plus"></i> <span class="hidden sm:inline">Añadir</span></button>
+          </div>
         </div>
+      </div>
     `;
-    document.getElementById('detail-modal-content-area').innerHTML = htmlContenido;
-    document.getElementById('product-detail-modal').style.display = 'flex';
+  }).join('');
+  
+  renderCatalogGrid(products);
+  renderSpecialSubSections();
+  renderPinsGrid();
+  updatePinPricingUI();
 }
-
-function cambiarFotoPrincipal(nuevaSrc, elementoThumb) {
-    document.getElementById('modal-main-img').src = nuevaSrc;
-    fotoPrincipalActual = nuevaSrc;
-    document.querySelectorAll('.thumb-img-container').forEach(el => el.classList.replace('border-blue-600', 'border-slate-200'));
-    elementoThumb.classList.replace('border-slate-200', 'border-blue-600');
+function renderCatalogGrid(list) {
+  document.getElementById('products-container').innerHTML = list.map(prod => `
+    <div class="glass-card rounded-2xl p-2 sm:p-4 border border-slate-200 card-3d flex flex-col justify-between space-y-2 sm:space-y-3 bg-white/90">
+      <div class="space-y-1.5 sm:space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[8px] sm:text-[10px] font-bold uppercase tracking-wider ${prod.tagColor}">${prod.badge}</span>
+        </div>
+        <div onclick="openProductModal(${prod.id})" class="w-full rounded-xl overflow-hidden glass-card p-1 border border-slate-200 bg-slate-50 card-3d cursor-pointer">
+          <img src="${prod.img}" alt="${prod.name}" class="aspect-square-custom rounded-lg hover:scale-105 transition duration-300">
+        </div>
+        <h3 class="text-[11px] sm:text-base font-bold font-display text-slate-900 line-clamp-1">${prod.name}</h3>
+        <p class="text-slate-600 text-[10px] sm:text-xs line-clamp-2">${prod.desc}</p>
+      </div>
+      <div class="flex items-center justify-between pt-2 sm:pt-3 border-t border-slate-200">
+        <span class="text-[11px] sm:text-base font-extrabold text-cyan-600 font-display">S/ ${prod.price.toFixed(2)}</span>
+        <div class="flex gap-1">
+          <button onclick="openProductModal(${prod.id})" class="p-1 sm:p-2 rounded-xl glass-card text-slate-700 hover:text-slate-900 border border-slate-300 cursor-pointer card-3d"><i class="fa-solid fa-eye text-[10px] sm:text-xs"></i></button>
+          <button onclick="addToCart(${prod.id})" class="px-2 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-cyan-600 text-white font-bold text-[10px] sm:text-xs hover:bg-cyan-500 transition cursor-pointer card-3d"><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  `).join('');
 }
-
-function cambiarTallaDetalle(idProducto, idxTalla) {
-    const p = productosCatalogo.find(prod => prod.id === idProducto);
-    if (!p) return;
-    tallaSeleccionadaActual = idxTalla;
-    const t = p.tallas[idxTalla];
-    p.tallas.forEach((_, i) => {
-        const btn = document.getElementById(`btn-talla-${i}`);
-        if (btn) btn.className = (i === idxTalla) ? "flex-1 py-2 text-xs font-bold rounded-xl border border-blue-600 bg-blue-50 text-blue-600 shadow-sm transition" : "flex-1 py-2 text-xs font-bold rounded-xl border border-slate-200 bg-white text-slate-700 transition";
-    });
-    document.getElementById('modal-product-price').textContent = `S/ ${t.precio.toFixed(2)}`;
-    if (document.getElementById('modal-product-dim')) document.getElementById('modal-product-dim').textContent = t.dimensiones;
-    if (document.getElementById('modal-product-desc')) document.getElementById('modal-product-desc').textContent = t.desc;
-}
-
-function cambiarColorDetalle(color, elementoBtn) {
-    colorSeleccionadoActual = color;
-    document.querySelectorAll('.color-btn').forEach(btn => {
-        btn.className = "px-3 py-2 text-xs font-bold rounded-xl border border-slate-200 bg-white text-slate-700 color-btn transition";
-    });
-    elementoBtn.className = "px-3 py-2 text-xs font-bold rounded-xl border border-blue-600 bg-blue-50 text-blue-600 color-btn-active shadow-sm transition";
-}
-
-function cerrarModalDetalle() {
-    document.getElementById('product-detail-modal').style.display = 'none';
-}
-
-function agregarAlCarritoDesdeDetalle(idProducto) {
-    const p = productosCatalogo.find(prod => prod.id === idProducto);
-    if (!p) return;
-    let precioFinal = p.precio || 0;
-    let varianteTalla = "";
-    if (p.tieneTallas) {
-        const t = p.tallas[tallaSeleccionadaActual];
-        varianteTalla = `Talla ${t.talla}`;
-        precioFinal = t.precio;
-    }
-    const detalleVariantes = varianteTalla ? `${varianteTalla} | Color: ${colorSeleccionadoActual}` : `Color: ${colorSeleccionadoActual}`;
-    const nombreCompleto = p.tieneTallas || (p.colores && p.colores[0] !== "Edición Única") ? `${p.nombre} (${detalleVariantes})` : p.nombre;
-    
-    const itemExistente = carrito.find(item => item.id == idProducto && item.variantes == detalleVariantes && !item.esPin);
-    if (itemExistente) {
-        itemExistente.cantidad += 1;
+function filterCatalog(category) {
+  document.querySelectorAll('.cat-tab').forEach(btn => {
+    const isBox = btn.textContent.includes('Box Especial');
+    const isPreventa = btn.textContent.includes('Preventa');
+    const isTarget = (category === 'todos' && btn.textContent.toLowerCase().includes('todos')) || btn.textContent.toLowerCase().includes(category);
+    if (isTarget) {
+      if (isBox) btn.className = "cat-tab px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-emerald-700 text-white shadow-lg transition shrink-0 cursor-pointer card-3d";
+      else if (isPreventa) btn.className = "cat-tab px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-amber-700 text-white shadow-lg transition shrink-0 cursor-pointer card-3d";
+      else btn.className = "cat-tab px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white transition shrink-0 cursor-pointer card-3d";
     } else {
-        carrito.push({
-            id: p.id,
-            nombre: nombreCompleto,
-            precio: precioFinal,
-            cantidad: 1,
-            img: fotoPrincipalActual,
-            variantes: detalleVariantes,
-            esPin: false
-        });
+      if (isBox) btn.className = "cat-tab px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-600/30 animate-pulse-badge transition shrink-0 flex items-center gap-1.5 cursor-pointer card-3d";
+      else if (isPreventa) btn.className = "cat-tab px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg shadow-amber-600/30 animate-pulse-badge transition shrink-0 flex items-center gap-1.5 cursor-pointer card-3d";
+      else btn.className = "cat-tab px-4.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold glass-card text-slate-700 hover:text-slate-900 transition shrink-0 cursor-pointer card-3d";
     }
-    guardarCarritoStorage(); // Guardar cambios en el navegador
-    actualizarContadorCarrito();
-    abrirCarrito();
-    sincronizarPrecioPinesEnCarrito();
+  });
+  if (category === 'todos') renderCatalogGrid(products);
+  else renderCatalogGrid(products.filter(p => p.category === category));
+}
+function renderSpecialSubSections() {
+  document.getElementById('box-container').innerHTML = products.filter(p => p.category === 'box').map(prod => `
+    <div class="glass-card rounded-3xl p-4 sm:p-5 border-2 border-emerald-500/40 card-3d flex flex-col justify-between space-y-3 sm:space-y-4 bg-white/90 hover:border-emerald-500 transition shadow-lg">
+      <div class="space-y-2.5 sm:space-y-3">
+        <div onclick="openProductModal(${prod.id})" class="w-full rounded-2xl overflow-hidden glass-card p-1.5 sm:p-2 border border-emerald-200 bg-emerald-50/50 card-3d cursor-pointer">
+          <img src="${prod.img}" alt="${prod.name}" class="aspect-square-custom rounded-xl">
+        </div>
+        <h3 class="text-sm sm:text-base font-bold font-display text-slate-900">${prod.name}</h3>
+        <p class="text-slate-600 text-[11px] sm:text-xs">${prod.desc}</p>
+      </div>
+      <div class="flex items-center justify-between pt-3 sm:pt-4 border-t border-slate-200">
+        <span class="text-base sm:text-lg font-extrabold text-emerald-600 font-display">S/ ${prod.price.toFixed(2)}</span>
+        <button onclick="addToCart(${prod.id})" class="px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-[11px] sm:text-xs shadow-md hover:scale-105 transition flex items-center gap-1.5 cursor-pointer card-3d"><i class="fa-solid fa-gift"></i> Añadir</button>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('preventa-container').innerHTML = products.filter(p => p.category === 'preventa').map(prod => `
+    <div class="glass-card rounded-3xl p-4 sm:p-5 border-2 border-amber-500/40 card-3d flex flex-col justify-between space-y-3 sm:space-y-4 bg-white/90 hover:border-amber-500 transition shadow-lg">
+      <div class="space-y-2.5 sm:space-y-3">
+        <div onclick="openProductModal(${prod.id})" class="w-full rounded-2xl overflow-hidden glass-card p-1.5 sm:p-2 border border-amber-200 bg-amber-50/50 card-3d cursor-pointer">
+          <img src="${prod.img}" alt="${prod.name}" class="aspect-square-custom rounded-xl">
+        </div>
+        <h3 class="text-sm sm:text-base font-bold font-display text-slate-900">${prod.name}</h3>
+        <p class="text-slate-600 text-[11px] sm:text-xs">${prod.desc}</p>
+      </div>
+      <div class="flex items-center justify-between pt-3 sm:pt-4 border-t border-slate-200">
+        <span class="text-base sm:text-lg font-extrabold text-amber-600 font-display">S/ ${prod.price.toFixed(2)}</span>
+        <button onclick="addToCart(${prod.id})" class="px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold text-[11px] sm:text-xs shadow-md hover:scale-105 transition flex items-center gap-1.5 cursor-pointer card-3d"><i class="fa-solid fa-bolt"></i> Reservar</button>
+      </div>
+    </div>
+  `).join('');
+}
+function renderPinsGrid() {
+  document.getElementById('pins-preset-grid').innerHTML = presetPins.map(pin => `
+    <div onclick="openPinZoom('${pin.title}','${pin.img}')" class="glass-card rounded-2xl p-2.5 sm:p-3 border border-slate-200 hover:border-purple-500 transition cursor-pointer flex flex-col items-center space-y-2 group bg-white card-3d">
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-purple-500/40 group-hover:scale-105 transition flex items-center justify-center bg-slate-950 card-3d">
+        <img src="${pin.img}" alt="${pin.title}" class="aspect-square-custom rounded-full">
+      </div>
+      <span class="text-[10px] sm:text-[11px] font-semibold text-slate-700 text-center truncate w-full">${pin.title}</span>
+    </div>
+  `).join('');
+}
+let zoomPinData = { title: "", img: "" };
+function openPinZoom(title, imgUrl) {
+  zoomPinData = { title, img: imgUrl };
+  document.getElementById('zoom-pin-title').textContent = title;
+  document.getElementById('zoom-pin-img').src = imgUrl;
+  document.getElementById('pin-zoom-modal').classList.remove('hidden');
+}
+function closePinZoomModal() {
+  document.getElementById('pin-zoom-modal').classList.add('hidden');
+}
+function applyZoomPin() {
+  pinConfig.title = zoomPinData.title;
+  pinConfig.img = zoomPinData.img;
+  document.getElementById('pin-preview-img').src = zoomPinData.img;
+  document.getElementById('pin-title-display').textContent = zoomPinData.title;
+  closePinZoomModal();
 }
 
-function modificarCantidad(index, cambio) {
-    carrito[index].cantidad += cambio;
-    if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
-    guardarCarritoStorage(); // Guardar cambios en el navegador
-    actualizarContadorCarrito();
-    renderizarContenidoCarrito();
-    sincronizarPrecioPinesEnCarrito();
+function openProductZoom() {
+  const mainImgSrc = document.getElementById('modal-main-img').src;
+  const productName = document.getElementById('modal-name').textContent;
+  const variantText = document.getElementById('modal-variant-badge-text').textContent;
+  document.getElementById('zoom-product-img').src = mainImgSrc;
+  document.getElementById('zoom-product-title').textContent = `${productName} (${variantText})`;
+  document.getElementById('product-zoom-modal').classList.remove('hidden');
+}
+function closeProductZoom() {
+  document.getElementById('product-zoom-modal').classList.add('hidden');
 }
 
-function actualizarContadorCarrito() {
-    const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-    const totalPrice = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
-    
-    const cartCountEl = document.getElementById('cart-count');
-    if (cartCountEl) cartCountEl.textContent = totalItems;
-    
-    const headerTotalEl = document.getElementById('header-cart-total');
-    if (headerTotalEl) headerTotalEl.textContent = `S/ ${totalPrice.toFixed(2)}`;
-    
-    const cartTotalEl = document.getElementById('cart-total-price');
-    if (cartTotalEl) cartTotalEl.textContent = `S/ ${totalPrice.toFixed(2)}`;
+function setModalTab(tabName) {
+  const tabGaleria = document.getElementById('modal-content-galeria');
+  const tabLookbook = document.getElementById('modal-content-lookbook');
+  const btnGaleria = document.getElementById('modal-tab-galeria');
+  const btnLookbook = document.getElementById('modal-tab-lookbook');
+  if (tabName === 'galeria') {
+    tabGaleria.classList.remove('hidden');
+    tabLookbook.classList.add('hidden');
+    btnGaleria.className = "px-3.5 py-2 sm:px-4.5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white transition-all flex items-center gap-1.5 sm:gap-2 shadow-lg cursor-pointer card-3d";
+    btnLookbook.className = "px-3.5 py-2 sm:px-4.5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer card-3d";
+  } else {
+    tabGaleria.classList.add('hidden');
+    tabLookbook.classList.remove('hidden');
+    btnLookbook.className = "px-3.5 py-2 sm:px-4.5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white transition-all flex items-center gap-1.5 sm:gap-2 shadow-lg cursor-pointer card-3d";
+    btnGaleria.className = "px-3.5 py-2 sm:px-4.5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer card-3d";
+  }
 }
+function addHeroToCart() { addToCart(products[0].id); }
+function addSpecialBox() { const box = products.find(p => p.category === 'box'); if (box) addToCart(box.id); }
+function addPreventaItem() { const prev = products.find(p => p.category === 'preventa'); if (prev) addToCart(prev.id); }
 
-function renderizarContenidoCarrito() {
-    const container = document.getElementById('cart-items');
-    if (carrito.length === 0) {
-        container.innerHTML = '<p class="text-center text-slate-400 text-xs mt-12 font-medium">Tu carrito está vacío.</p>';
-        return;
+function openProductModal(id) {
+  selectedModalProduct = products.find(p => p.id === id) || products[0];
+  currentModalQty = 1;
+  currentModalPrice = selectedModalProduct.price;
+  document.getElementById('modal-name').textContent = selectedModalProduct.name;
+  document.getElementById('modal-desc').textContent = selectedModalProduct.desc;
+  document.getElementById('modal-category').textContent = selectedModalProduct.category.toUpperCase();
+  document.getElementById('modal-rating').textContent = selectedModalProduct.rating || "5.0 (420 valoraciones)";
+  document.getElementById('modal-price').textContent = `S/ ${selectedModalProduct.price.toFixed(2)}`;
+  document.getElementById('modal-old-price').textContent = `S/ ${(selectedModalProduct.oldPrice || selectedModalProduct.price * 1.35).toFixed(2)}`;
+  
+  const bulletsContainer = document.getElementById('modal-bullets');
+  if (selectedModalProduct.bullets && selectedModalProduct.bullets.length > 0) {
+    bulletsContainer.innerHTML = selectedModalProduct.bullets.map(b => `<div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600"></i><span>${b}</span></div>`).join('');
+    bulletsContainer.classList.remove('hidden');
+  } else {
+    bulletsContainer.classList.add('hidden');
+  }
+  
+  const variantsSection = document.getElementById('modal-variants-section');
+  const variantsGrid = document.getElementById('modal-variants-grid');
+  
+  if (selectedModalProduct.variants && selectedModalProduct.variants.length > 0) {
+    variantsSection.classList.remove('hidden');
+    currentSelectedVariant = selectedModalProduct.variants[0];
+    
+    variantsGrid.innerHTML = selectedModalProduct.variants.map((v, idx) => {
+      let statusBadge = '';
+      if (v.status === 'agotado') {
+        statusBadge = `<span class="absolute top-1.5 right-1.5 z-10 px-2 py-0.5 rounded-md text-[8px] sm:text-[9px] font-bold bg-rose-600 text-white shadow-md">Agotado</span>`;
+      } else if (v.status === 'bajo pedido') {
+        statusBadge = `<span class="absolute top-1.5 right-1.5 z-10 px-2 py-0.5 rounded-md text-[8px] sm:text-[9px] font-bold bg-amber-500 text-white shadow-md">Bajo pedido</span>`;
+      } else {
+        statusBadge = `<span class="absolute top-1.5 right-1.5 z-10 px-2 py-0.5 rounded-md text-[8px] sm:text-[9px] font-bold bg-emerald-600 text-white shadow-md">Disponible</span>`;
+      }
+
+      return `
+        <div onclick="selectModalVariant(${idx})" id="modal-variant-card-${idx}" class="modal-var-card cursor-pointer rounded-xl p-1.5 sm:p-2 bg-slate-100 border-2 ${idx === 0 ? 'border-cyan-500 bg-cyan-50 shadow-md' : 'border-slate-300 hover:border-cyan-400'} transition flex flex-col items-center space-y-1 group card-3d">
+          <div class="relative w-full aspect-square-custom rounded-lg overflow-hidden bg-white border border-slate-200">
+            ${statusBadge}
+            <img src="${v.img}" alt="${v.name}" class="w-full h-full object-cover group-hover:scale-105 transition">
+          </div>
+          <div class="text-center w-full">
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-900 block truncate">${v.name}</span>
+            <span class="text-[9px] text-cyan-600 font-mono font-bold">S/ ${v.price.toFixed(2)}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    document.getElementById('modal-main-img').src = currentSelectedVariant.img;
+    document.getElementById('modal-variant-badge-text').textContent = `Modelo: ${currentSelectedVariant.name}`;
+    currentModalPrice = currentSelectedVariant.price;
+    document.getElementById('modal-price').textContent = `S/ ${currentModalPrice.toFixed(2)}`;
+    updateAddButtonStatus(currentSelectedVariant.status);
+  } else {
+    variantsSection.classList.add('hidden');
+    currentSelectedVariant = null;
+    document.getElementById('modal-main-img').src = selectedModalProduct.img;
+    document.getElementById('modal-variant-badge-text').textContent = `Modelo: Alpha`;
+    updateAddButtonStatus('disponible');
+  }
+  
+  const sizesSection = document.getElementById('modal-sizes-section');
+  const sizesGrid = document.getElementById('modal-sizes-grid');
+  if (selectedModalProduct.sizes && selectedModalProduct.sizes.length > 0) {
+    sizesSection.classList.remove('hidden');
+    document.getElementById('modal-sizes-label').textContent = selectedModalProduct.category === 'mochilas' ? '2. Selecciona talla mochila:' : '2. Selecciona tamaño exacto:';
+    
+    sizesGrid.innerHTML = selectedModalProduct.sizes.map((s, idx) => `
+      <div onclick="selectModalSize('${s.name}', ${s.price})" class="modal-size-box cursor-pointer rounded-xl p-2 sm:p-2.5 text-center border-2 ${s.name.includes('M') || idx === 0 ? 'border-cyan-500 bg-cyan-50 text-cyan-900 ring-1 ring-cyan-400/30' : 'border-slate-300 hover:border-cyan-400 bg-slate-100 text-slate-800'} transition card-3d">
+        <span class="text-[11px] sm:text-xs font-bold block">Talla ${s.name}</span>
+        <span class="text-[8px] sm:text-[9px] text-slate-500 block font-mono leading-tight mt-0.5">${s.dim}</span>
+        <span class="text-[10px] text-cyan-600 font-mono font-bold block mt-1">S/ ${s.price.toFixed(2)}</span>
+      </div>
+    `).join('');
+    const defaultSize = selectedModalProduct.sizes.find(s => s.name.includes('M')) || selectedModalProduct.sizes[0];
+    currentSelectedSize = defaultSize.name;
+    currentModalPrice = defaultSize.price;
+    document.getElementById('modal-price').textContent = `S/ ${currentModalPrice.toFixed(2)}`;
+  } else {
+    sizesSection.classList.add('hidden');
+    currentSelectedSize = 'única';
+    if (!selectedModalProduct.variants || selectedModalProduct.variants.length === 0) {
+      currentModalPrice = selectedModalProduct.price;
+      document.getElementById('modal-price').textContent = `S/ ${currentModalPrice.toFixed(2)}`;
     }
-    let html = '';
-    carrito.forEach((item, idx) => {
-        html += `
-            <div class="flex items-center gap-3 py-3 border-b border-slate-200/80 text-xs bg-white p-3 rounded-2xl mb-2 shadow-sm">
-                <img src="${item.img}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded-xl bg-slate-100 flex-shrink-0 shadow-inner" onerror="this.src='https://placehold.co/100x100/f3f4f6/111827?text=VM'">
-                <div class="flex-1 min-w-0">
-                    <h4 class="font-bold text-slate-900 truncate">${item.nombre}</h4>
-                    <span class="text-[11px] font-extrabold text-blue-600">S/ ${item.precio.toFixed(2)} c/u</span>
-                    <div class="flex items-center gap-2 mt-1.5">
-                        <button onclick="modificarCantidad(${idx}, -1)" class="w-6 h-6 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs flex items-center justify-center font-bold">-</button>
-                        <span class="font-bold text-xs">${item.cantidad}</span>
-                        <button onclick="modificarCantidad(${idx}, 1)" class="w-6 h-6 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs flex items-center justify-center font-bold">+</button>
-                    </div>
-                </div>
-                <span class="font-extrabold text-slate-900 flex-shrink-0 text-sm">S/ ${(item.precio * item.cantidad).toFixed(2)}</span>
-            </div>
-        `;
+  }
+
+  const lookbookGrid = document.getElementById('modal-lookbook-grid');
+  const lbImages = selectedModalProduct.lookbookImages && selectedModalProduct.lookbookImages.length > 0 ? selectedModalProduct.lookbookImages : [selectedModalProduct.img];
+  lookbookGrid.innerHTML = lbImages.map(imgUrl => `
+    <div class="rounded-3xl overflow-hidden bg-white p-2 border border-slate-200 shadow-sm card-3d">
+      <img src="${imgUrl}" alt="Lookbook y Outfits" class="aspect-square-custom rounded-2xl object-cover">
+    </div>
+  `).join('');
+  
+  const accessoriesGrid = document.getElementById('modal-accessories-grid');
+  const recs = [
+    { name: 'Morral Cosmic', price: 89.00, img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=200&q=80', badge: 'Classic' },
+    { name: 'Mochila X-Series', price: 89.00, img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=200&q=80', badge: 'Nebula' },
+    { name: 'Bolso Red Edition', price: 89.00, img: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=200&q=80', badge: 'Starburst' }
+  ];
+  accessoriesGrid.innerHTML = recs.map(acc => `
+    <div class="bg-slate-50 rounded-2xl p-2.5 sm:p-3 border border-slate-200 flex flex-col justify-between space-y-2 shadow-sm card-3d">
+      <div class="flex flex-col items-center text-center space-y-1">
+        <img src="${acc.img}" alt="${acc.name}" class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl object-cover border border-slate-200">
+        <span class="text-[9px] sm:text-[10px] font-bold text-cyan-600 uppercase">${acc.badge}</span>
+        <h4 class="font-bold text-[11px] sm:text-xs text-slate-900 truncate w-full">${acc.name}</h4>
+        <span class="text-xs font-extrabold text-cyan-600 font-display">S/ ${acc.price.toFixed(2)}</span>
+      </div>
+      <button onclick="addAccessoryToCart('${acc.name}', ${acc.price}, '${acc.img}')" class="w-full py-1.5 sm:py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-[11px] sm:text-xs transition flex items-center justify-center gap-1 cursor-pointer card-3d">
+        <i class="fa-solid fa-plus"></i> Agregar
+      </button>
+    </div>
+  `).join('');
+  setModalTab('galeria');
+  updateModalTotalButton();
+  document.getElementById('product-modal').classList.remove('hidden');
+}
+
+function updateAddButtonStatus(status) {
+  const addBtn = document.getElementById('modal-add-btn');
+  if (status === 'agotado') {
+    addBtn.disabled = true;
+    addBtn.className = "flex-1 py-3.5 sm:py-4 rounded-2xl bg-slate-400 text-white font-extrabold text-xs sm:text-sm cursor-not-allowed flex items-center justify-center gap-1.5 sm:gap-2";
+    document.getElementById('modal-add-btn-text').textContent = "Diseño Agotado";
+  } else if (status === 'bajo pedido') {
+    addBtn.disabled = false;
+    addBtn.className = "flex-1 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-600 to-amber-500 text-white font-extrabold text-xs sm:text-sm shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer card-3d";
+  } else {
+    addBtn.disabled = false;
+    addBtn.className = "flex-1 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-cyan-500 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-cyan-500/30 hover:brightness-110 transition-all flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer card-3d";
+  }
+}
+
+function selectModalVariant(idx) {
+  const variants = selectedModalProduct.variants || [];
+  currentSelectedVariant = variants[idx];
+  if (!currentSelectedVariant) return;
+  document.getElementById('modal-main-img').src = currentSelectedVariant.img;
+  document.getElementById('modal-variant-badge-text').textContent = `Modelo: ${currentSelectedVariant.name}`;
+  
+  currentModalPrice = currentSelectedVariant.price;
+  document.getElementById('modal-price').textContent = `S/ ${currentModalPrice.toFixed(2)}`;
+
+  updateAddButtonStatus(currentSelectedVariant.status);
+
+  variants.forEach((_, i) => {
+    const card = document.getElementById(`modal-variant-card-${i}`);
+    if (card) {
+      if (i === idx) {
+        card.className = "modal-var-card cursor-pointer rounded-xl p-1.5 sm:p-2 bg-slate-100 border-2 border-cyan-500 bg-cyan-50 shadow-md transition flex flex-col items-center space-y-1 group card-3d";
+      } else {
+        card.className = "modal-var-card cursor-pointer rounded-xl p-1.5 sm:p-2 bg-slate-100 border-2 border-slate-300 hover:border-cyan-400 transition flex flex-col items-center space-y-1 group card-3d";
+      }
+    }
+  });
+  updateModalTotalButton();
+}
+function selectModalSize(size, price) {
+  currentSelectedSize = size;
+  document.querySelectorAll('.modal-size-box').forEach(box => {
+    box.className = "modal-size-box cursor-pointer rounded-xl p-2 sm:p-2.5 text-center border-2 border-slate-300 hover:border-cyan-400 transition bg-slate-100 text-slate-800 card-3d";
+  });
+  event.currentTarget.className = "modal-size-box cursor-pointer rounded-xl p-2 sm:p-2.5 text-center border-2 border-cyan-500 bg-cyan-50 text-cyan-900 ring-1 ring-cyan-400/30 transition card-3d";
+  currentModalPrice = price;
+  document.getElementById('modal-price').textContent = `S/ ${currentModalPrice.toFixed(2)}`;
+  updateModalTotalButton();
+}
+function updateModalQty(change) {
+  currentModalQty = Math.max(1, currentModalQty + change);
+  document.getElementById('modal-qty-display').textContent = currentModalQty;
+  updateModalTotalButton();
+}
+function updateModalTotalButton() {
+  const total = currentModalPrice * currentModalQty;
+  if (!currentSelectedVariant || currentSelectedVariant.status !== 'agotado') {
+    document.getElementById('modal-add-btn-text').textContent = `Agregar - S/. ${total.toFixed(2)}`;
+  }
+}
+function closeProductModal() {
+  document.getElementById('product-modal').classList.add('hidden');
+}
+function handleModalBackdropClick(event) {
+  if (event.target === document.getElementById('product-modal')) {
+    closeProductModal();
+  }
+}
+function addModalItemToCart() {
+  if (!selectedModalProduct) return;
+  if (currentSelectedVariant && currentSelectedVariant.status === 'agotado') {
+    alert("Este diseño se encuentra agotado temporalmente.");
+    return;
+  }
+  const variantName = currentSelectedVariant ? currentSelectedVariant.name : 'Estándar';
+  const sizeSuffix = currentSelectedSize !== 'única' ? `, Talla ${currentSelectedSize}` : '';
+  const cartKey = `${selectedModalProduct.id}-${variantName}-${currentSelectedSize}`;
+  const existing = cart.find(i => i.cartKey === cartKey);
+  const fullName = `${selectedModalProduct.name} [${variantName}${sizeSuffix}]`;
+  if (existing) {
+    existing.qty += currentModalQty;
+  } else {
+    cart.push({
+      cartKey,
+      name: fullName,
+      price: currentModalPrice,
+      qty: currentModalQty,
+      img: currentSelectedVariant ? currentSelectedVariant.img : selectedModalProduct.img,
+      category: selectedModalProduct.category
     });
-    container.innerHTML = html;
+  }
+  saveCard();
+  closeProductModal();
+  toggleCart();
 }
-
-function irACheckout() {
-    if (carrito.length === 0) {
-        alert("Tu carrito está vacío.");
-        return;
+function addAccessoryToCart(name, price, img) {
+  const cartKey = `acc-${name}-${Date.now()}`;
+  cart.push({
+    cartKey,
+    name: `Accesorio: ${name}`,
+    price: price,
+    qty: 1,
+    img: img,
+    category: 'accesorios'
+  });
+  saveCard();
+  closeProductModal();
+  toggleCart();
+}
+function handleMorralUpload(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const imgEl = document.getElementById('custom-uploaded-img');
+      imgEl.src = e.target.result;
+      imgEl.classList.remove('hidden');
+      document.getElementById('morral-preview-container').classList.add('hidden');
+    };
+    reader.readAsDataURL(file);
+  }
+}
+function submitMorralWhatsApp() {
+  const nombre = document.getElementById('form-nombre').value;
+  const whatsapp = document.getElementById('form-whatsapp').value;
+  const alto = document.getElementById('form-alto').value || 'N/A';
+  const ancho = document.getElementById('form-ancho').value || 'N/A';
+  const fuelle = document.getElementById('form-fuelle').value || 'N/A';
+  const modelo = document.getElementById('form-modelo').value;
+  const desc = document.getElementById('form-desc').value;
+  let msg = `¡Hola! Deseo cotizar un morral personalizado en Milenio Vintage:\n\n`;
+  msg += `*Nombre:* ${nombre}\n`;
+  msg += `*WhatsApp:* ${whatsapp}\n`;
+  msg += `*Medidas (Alto x Ancho x Fuelle):* ${alto}cm x ${ancho}cm x ${fuelle}cm\n`;
+  msg += `*Modelo de Referencia:* ${modelo}\n`;
+  msg += `*Descripción:* ${desc}\n\nQuedo atento(a) a la cotización exacta. ¡Gracias!`;
+  window.open(`https://wa.me/51926412894?text=${encodeURIComponent(msg)}`, '_blank');
+}
+function handlePinUpload(event) {
+  const file = event.target.files[0];
+  if (file) {
+    document.getElementById('upload-filename-display').textContent = file.name;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      pinConfig.img = e.target.result;
+      pinConfig.title = 'Pin Personalizado (Foto Propia)';
+      document.getElementById('pin-preview-img').src = e.target.result;
+      document.getElementById('pin-title-display').textContent = 'Pin Personalizado';
+    };
+    reader.readAsDataURL(file);
+  }
+}
+function updatePinQty(change) {
+  pinConfig.qty = Math.max(1, pinConfig.qty + change);
+  document.getElementById('pin-qty-display').textContent = pinConfig.qty;
+  updatePinPricingUI();
+}
+function hasBagInCart() {
+  return cart.some(i => i.category === 'morrales' || i.category === 'mochilas' || i.category === 'bolsos');
+}
+function getPinUnitPrice(additionalQty = 0) {
+  if (hasBagInCart()) return 2.00;
+  
+  const existingPinQty = cart.filter(i => i.category === 'pines').reduce((sum, item) => sum + item.qty, 0);
+  const totalPins = existingPinQty + additionalQty;
+  
+  if (totalPins >= 10) return 2.50;
+  if (totalPins >= 5) return 3.00;
+  return 3.50;
+}
+function normalizePinPricesInCart() {
+  const hasBag = hasBagInCart();
+  const totalPins = cart.filter(i => i.category === 'pines').reduce((sum, item) => sum + item.qty, 0);
+  
+  let unitPrice = 3.50;
+  if (hasBag) {
+    unitPrice = 2.00;
+  } else if (totalPins >= 10) {
+    unitPrice = 2.50;
+  } else if (totalPins >= 5) {
+    unitPrice = 3.00;
+  }
+  
+  cart.forEach(item => {
+    if (item.category === 'pines') {
+      item.price = unitPrice;
     }
-    cerrarCarrito();
-    cambiarVista('checkout');
+  });
 }
-
-function mostrarVistaPreviaFrontal(input) {
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('img-preview-frontal').src = e.target.result;
-            document.getElementById('img-preview-frontal').classList.remove('hidden');
-            document.getElementById('empty-preview-msg').classList.add('hidden');
-            document.getElementById('upload-status-text').textContent = "Imagen cargada correctamente";
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
+function updatePinPricingUI() {
+  const unitPrice = getPinUnitPrice(pinConfig.qty);
+  const total = pinConfig.qty * unitPrice;
+  const hasBag = hasBagInCart();
+  const existingPinQty = cart.filter(i => i.category === 'pines').reduce((sum, item) => sum + item.qty, 0);
+  const totalPinsAccumulated = existingPinQty + pinConfig.qty;
+  
+  document.getElementById('pin-unit-price-label').textContent = hasBag 
+    ? "Precio unitario (Bono Morral/Bolso): S/ 2.00 c/u" 
+    : `Precio unitario: S/ ${unitPrice.toFixed(2)} c/u (Total acumulado: ${totalPinsAccumulated} unid.)`;
+  document.getElementById('pin-total-price').textContent = `S/ ${total.toFixed(2)}`;
 }
-
-function enviarSolicitudPersonalizada(event) {
-    event.preventDefault();
-    const nombre = document.getElementById('cust-nombre').value;
-    const whatsapp = document.getElementById('cust-whatsapp').value;
-    const alto = document.getElementById('medida-alto').value;
-    const ancho = document.getElementById('medida-ancho').value;
-    const fuelle = document.getElementById('medida-fuelle').value;
-    const modelo = document.getElementById('cust-modelo').value;
-    const detalle = document.getElementById('cust-detalle').value;
-    
-    let texto = `¡Hola Vintage Milenio! Deseo cotizar un morral personalizado:\n\n*Nombre:* ${nombre}\n*WhatsApp:* ${whatsapp}\n*Medidas:* ${alto}x${ancho}x${fuelle}cm\n*Modelo:* ${modelo}\n*Detalles:* ${detalle}`;
-    window.open(`https://wa.me/51926412894?text=${encodeURIComponent(texto)}`, '_blank');
+function addPinToCart() {
+  const unitPrice = getPinUnitPrice(pinConfig.qty);
+  cart.push({
+    cartKey: 'pin-' + Date.now(),
+    name: `Pin 58mm Personalizado (${pinConfig.title}) x${pinConfig.qty}`,
+    price: unitPrice,
+    qty: pinConfig.qty,
+    img: pinConfig.img,
+    category: 'pines'
+  });
+  saveCard();
+  toggleCart();
 }
-
-function renderizarPinesGrid() {
-    const grid = document.getElementById('pins-catalog-grid');
-    if (!grid) return;
-    let html = '';
-    pinesDisponibles.forEach(pin => {
-        const cant = pinSeleccionadosCatalogo[pin.id] || 0;
-        html += `
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center gap-3 shadow-sm">
-                <div class="w-14 h-14 rounded-xl overflow-hidden bg-white flex-shrink-0 cursor-pointer shadow-inner" onclick="ampliarPin(${pin.id})">
-                    <img src="${pin.img}" alt="${pin.titulo}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/f3f4f6/db2777?text=Pin'">
-                </div>
-                <div class="flex-grow min-w-0">
-                    <h4 class="text-xs font-bold text-slate-900 truncate cursor-pointer hover:text-pink-600" onclick="ampliarPin(${pin.id})">${pin.titulo}</h4>
-                    <div class="flex items-center gap-2 mt-2">
-                        <button onclick="cambiarPinCantidadCatalog(${pin.id}, -1)" class="w-6 h-6 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-xs font-bold flex items-center justify-center">-</button>
-                        <span class="text-xs font-bold text-slate-900">${cant}</span>
-                        <button onclick="cambiarPinCantidadCatalog(${pin.id}, 1)" class="w-6 h-6 rounded-lg bg-pink-50 border border-pink-200 hover:bg-pink-100 text-pink-600 text-xs font-bold flex items-center justify-center">+</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-    grid.innerHTML = html;
-    calcularPrecioPines();
+function addToCart(productId) {
+  const prod = products.find(p => p.id === productId);
+  if (!prod) return;
+  const cartKey = `${prod.id}-standard-única`;
+  const existing = cart.find(i => i.cartKey === cartKey);
+  if (existing) existing.qty++;
+  else cart.push({ cartKey, name: prod.name, price: prod.price, qty: 1, img: prod.img, category: prod.category });
+  saveCard();
+  toggleCart();
 }
-
-function ampliarPin(id) {
-    const pin = pinesDisponibles.find(p => p.id === id);
-    if (!pin) return;
-    pinAmpliadoActual = pin;
-    document.getElementById('pin-modal-title').textContent = pin.titulo;
-    document.getElementById('pin-modal-img').src = pin.img;
-    document.getElementById('pin-preview-modal').style.display = 'flex';
+function updateCartQty(cartKey, change) {
+  const item = cart.find(i => i.cartKey === cartKey);
+  if (item) {
+    item.qty += change;
+    if (item.qty <= 0) cart = cart.filter(i => i.cartKey !== cartKey);
+    saveCard();
+  }
 }
-
-function cerrarPinModal() {
-    document.getElementById('pin-preview-modal').style.display = 'none';
+function saveCard() {
+  normalizePinPricesInCart();
+  localStorage.setItem('milenio_cart', JSON.stringify(cart));
+  updateCartUI();
+  updatePinPricingUI();
 }
-
-function agregarPinDesdemodalClick() {
-    if (pinAmpliadoActual) {
-        pinSeleccionadosCatalogo[pinAmpliadoActual.id] = (pinSeleccionadosCatalogo[pinAmpliadoActual.id] || 0) + 1;
-    }
-    renderizarPinesGrid();
-    cerrarPinModal();
+function updateCartUI() {
+  const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById('cart-counter').textContent = totalCount;
+  const container = document.getElementById('cart-items-container');
+  if (cart.length === 0) {
+    container.innerHTML = '<div class="text-center py-12 space-y-2"><i class="fa-solid fa-bag-shopping text-3xl text-slate-400"></i><p class="text-slate-500 text-xs sm:text-sm">Tu carrito está vacío.</p></div>';
+    document.getElementById('cart-subtotal').textContent = 'S/ 0.00';
+    document.getElementById('cart-total').textContent = 'S/ 0.00';
+    return;
+  }
+  container.innerHTML = cart.map(item => `
+    <div class="glass-card rounded-2xl p-3 sm:p-4 border border-slate-200 flex items-center gap-3 sm:gap-4 bg-white/90">
+      <img src="${item.img}" alt="${item.name}" class="w-14 h-14 sm:w-16 sm:h-16 aspect-square-custom object-cover rounded-xl border border-slate-200">
+      <div class="flex-1 min-w-0">
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 truncate">${item.name}</h4>
+        <span class="text-[11px] sm:text-xs text-cyan-600 font-semibold font-display">S/ ${(item.price * item.qty).toFixed(2)} <span class="text-[9px] text-slate-400">(S/ ${item.price.toFixed(2)} c/u)</span></span>
+      </div>
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <button onclick="updateCartQty('${item.cartKey}', -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg glass-card text-slate-800 border border-slate-300 flex items-center justify-center text-xs hover:bg-slate-100 cursor-pointer card-3d">-</button>
+        <span class="text-xs font-bold text-slate-900">${item.qty}</span>
+        <button onclick="updateCartQty('${item.cartKey}', 1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg glass-card text-slate-800 border border-slate-300 flex items-center justify-center text-xs hover:bg-slate-100 cursor-pointer card-3d">+</button>
+      </div>
+    </div>
+  `).join('');
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  document.getElementById('cart-subtotal').textContent = `S/ ${subtotal.toFixed(2)}`;
+  document.getElementById('cart-total').textContent = `S/ ${subtotal.toFixed(2)}`;
 }
-
-function cambiarPinCantidadCatalog(id, cambio) {
-    const actual = pinSeleccionadosCatalogo[id] || 0;
-    const nuevo = actual + cambio;
-    if (nuevo <= 0) delete pinSeleccionadosCatalogo[id];
-    else pinSeleccionadosCatalogo[id] = nuevo;
-    renderizarPinesGrid();
+function toggleCart() {
+  document.getElementById('cart-drawer').classList.toggle('hidden');
 }
-
-function handlePinCustomUpload(input) {
-    if (input.files) {
-        for (let i = 0; i < input.files.length; i++) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                pinCustomImages.push(e.target.result);
-                renderizarPinsCustomPreviews();
-                calcularPrecioPines();
-            }
-            reader.readAsDataURL(input.files[i]);
-        }
-    }
+function proceedToCheckout() {
+  if (cart.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+  toggleCart();
+  switchTab('checkout');
+  renderCheckoutSummary();
+  setShippingType('domicilio');
 }
-
-function renderizarPinsCustomPreviews() {
-    const container = document.getElementById('pin-uploaded-previews');
-    if (!container) return;
-    let html = '';
-    pinCustomImages.forEach((src, idx) => {
-        html += `
-            <div class="relative w-full aspect-square rounded-xl overflow-hidden border border-pink-200 shadow-sm bg-white">
-                <img src="${src}" class="w-full h-full object-cover">
-                <button onclick="pinCustomImages.splice(${idx}, 1); renderizarPinsCustomPreviews(); calcularPrecioPines();" class="absolute top-1 right-1 bg-slate-900 text-white w-4 h-4 rounded-full text-[9px] flex items-center justify-center font-bold">×</button>
-            </div>
-        `;
-    });
-    container.innerHTML = html;
-}
-
-function tieneBolsaMochilaCarteraEnCarrito() {
-    return carrito.some(item => {
-        if (item.esPin) return false;
-        const prod = productosCatalogo.find(p => p.id === item.id);
-        if (prod) {
-            const cat = prod.categoria.toLowerCase();
-            return cat.includes('morral') || cat.includes('mochila') || cat.includes('cartera') || cat.includes('bolso') || prod.esBoxEspecial;
-        }
-        return false;
-    });
-}
-
-function calcularPrecioPines() {
-    let totalPins = 0;
-    Object.values(pinSeleccionadosCatalogo).forEach(cant => totalPins += cant);
-    totalPins += pinCustomImages.length;
-    
-    const tienePromoBolsa = tieneBolsaMochilaCarteraEnCarrito();
-    let precioUnitario = tienePromoBolsa ? 2.00 : 3.50;
-    
-    const promoStatusEl = document.getElementById('pin-promo-status');
-    const unitDisplayEl = document.getElementById('pin-unit-display');
-    
-    if (tienePromoBolsa) {
-        if (promoStatusEl) promoStatusEl.innerHTML = '<span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> ¡Promoción aplicada! Pines a <span class="text-amber-600 font-extrabold">S/ 2.00 c/u</span>.</span>';
-        if (unitDisplayEl) unitDisplayEl.textContent = 'S/ 2.00 c/u (Promoción)';
+function setShippingType(type) {
+  currentShippingType = type;
+  ['domicilio', 'estacion', 'provincia'].forEach(t => {
+    const card = document.getElementById(`ship-card-${t}`);
+    if (t === type) {
+      card.className = "ship-card border-2 border-cyan-500 bg-cyan-50 rounded-2xl p-3.5 sm:p-4 cursor-pointer text-center space-y-1.5 sm:space-y-2 transition shadow-sm card-3d";
     } else {
-        if (totalPins >= 10) precioUnitario = 2.50;
-        else if (totalPins >= 5) precioUnitario = 3.00;
-        else precioUnitario = 3.50;
-        
-        if (promoStatusEl) promoStatusEl.innerHTML = 'Al llevar un morral, mochila o cartera, tus pines bajan a <span class="text-amber-600 font-extrabold">S/ 2.00 c/u</span>.';
-        if (unitDisplayEl) unitDisplayEl.textContent = `S/ ${precioUnitario.toFixed(2)} c/u`;
+      card.className = "ship-card border-2 border-slate-200 hover:border-slate-300 rounded-2xl p-3.5 sm:p-4 cursor-pointer text-center space-y-1.5 sm:space-y-2 transition card-3d";
     }
-    
-    const totalPrice = totalPins * precioUnitario;
-    document.getElementById('total-pins-count').textContent = totalPins;
-    document.getElementById('pin-total-price').textContent = `S/ ${totalPrice.toFixed(2)}`;
-    return { totalPins, precioUnitario, totalPrice };
+  });
+  const container = document.getElementById('shipping-details-container');
+  if (type === 'domicilio') {
+    container.innerHTML = `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Dirección <span class="text-red-500">*</span></label>
+          <input type="text" id="chk-dir" placeholder="Av. / Jr. / Calle Nro" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Distrito <span class="text-red-500">*</span></label>
+          <input type="text" id="chk-dist" placeholder="Ej. Lima, Miraflores..." required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-700 mb-1">Referencia <span class="text-red-500">*</span></label>
+        <input type="text" id="chk-ref" placeholder="Ej. A espalda de parque / Cerca a comisaría" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+      </div>
+    `;
+  } else if (type === 'estacion') {
+    const optsLinea1 = estacionesLinea1.map(e => `<option value="Línea 1 - ${e}">${e}</option>`).join('');
+    const optsMetropolitano = estacionesMetropolitano.map(e => `<option value="Metropolitano - ${e}">${e}</option>`).join('');
+    container.innerHTML = `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Sistema de Transporte <span class="text-red-500">*</span></label>
+          <select id="chk-sistema-transporte" onchange="toggleEstacionList()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+            <option value="linea1">Tren Eléctrico (Línea 1)</option>
+            <option value="metropolitano">Metropolitano</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Estación Oficial <span class="text-red-500">*</span></label>
+          <select id="chk-estacion-oficial" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+            ${optsLinea1}
+          </select>
+        </div>
+      </div>
+    `;
+  } else if (type === 'provincia') {
+    container.innerHTML = `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Agencia de Encomienda <span class="text-red-500">*</span></label>
+          <select id="chk-agencia" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+            <option value="Shalom">Shalom</option>
+            <option value="Olva Courier">Olva Courier</option>
+            <option value="Marvisur">Marvisur</option>
+            <option value="Civa">Civa</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Ciudad / Departamento <span class="text-red-500">*</span></label>
+          <input type="text" id="chk-ciudad" placeholder="Ej. Arequipa, Trujillo..." required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Oficina / Agencia Destino <span class="text-red-500">*</span></label>
+          <input type="text" id="chk-oficina" placeholder="Ej. Agencia Principal" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">DNI Receptor <span class="text-red-500">*</span></label>
+          <input type="text" id="chk-dni" placeholder="Nro de DNI para recojo" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-cyan-500">
+        </div>
+      </div>
+    `;
+  }
+  renderCheckoutSummary();
+}
+function toggleEstacionList() {
+  const sistema = document.getElementById('chk-sistema-transporte').value;
+  const selectEst = document.getElementById('chk-estacion-oficial');
+  if (sistema === 'linea1') {
+    selectEst.innerHTML = estacionesLinea1.map(e => `<option value="Línea 1 - ${e}">${e}</option>`).join('');
+  } else {
+    selectEst.innerHTML = estacionesMetropolitano.map(e => `<option value="Metropolitano - ${e}">${e}</option>`).join('');
+  }
+}
+function getShippingFeeCheckout() {
+  if (currentShippingType === 'domicilio') return 10.00;
+  if (currentShippingType === 'estacion') return 5.00;
+  if (currentShippingType === 'provincia') return 18.00;
+  return 0.00;
+}
+function renderCheckoutSummary() {
+  const itemsContainer = document.getElementById('checkout-items-summary');
+  itemsContainer.innerHTML = cart.map(item => `
+    <div class="flex justify-between items-center py-2">
+      <span class="text-slate-700">${item.qty}x ${item.name}</span>
+      <span class="font-semibold text-slate-900">S/ ${(item.price * item.qty).toFixed(2)}</span>
+    </div>
+  `).join('');
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const envio = getShippingFeeCheckout();
+  const total = subtotal + envio;
+  document.getElementById('chk-subtotal').textContent = `S/ ${subtotal.toFixed(2)}`;
+  document.getElementById('chk-envio').textContent = `S/ ${envio.toFixed(2)}`;
+  document.getElementById('chk-total').textContent = `S/ ${total.toFixed(2)}`;
+}
+function confirmOrderWhatsApp() {
+  const nombre = document.getElementById('chk-nombre').value;
+  const whatsapp = document.getElementById('chk-whatsapp').value;
+  const pago = document.querySelector('input[name="pago"]:checked').value;
+  let envioTexto = "";
+  if (currentShippingType === 'domicilio') {
+    const dir = document.getElementById('chk-dir').value;
+    const dist = document.getElementById('chk-dist').value;
+    const ref = document.getElementById('chk-ref').value;
+    envioTexto = `Domicilio (Dir: ${dir}, Distrito: ${dist}, Ref: ${ref}) - S/ 10.00`;
+  } else if (currentShippingType === 'estacion') {
+    const sistema = document.getElementById('chk-sistema-transporte').value;
+    const estacion = document.getElementById('chk-estacion-oficial').value;
+    envioTexto = `Estación (${sistema}: ${estacion}) - S/ 5.00`;
+  } else {
+    const agencia = document.getElementById('chk-agencia').value;
+    const ciudad = document.getElementById('chk-ciudad').value;
+    const oficina = document.getElementById('chk-oficina').value;
+    const dni = document.getElementById('chk-dni').value;
+    envioTexto = `Provincia (${agencia}, Ciudad: ${ciudad}, Of: ${oficina}, DNI: ${dni}) - S/ 18.00`;
+  }
+  let message = `¡Hola! Deseo confirmar mi pedido en Milenio Vintage:\n\n`;
+  message += `*Cliente:* ${nombre}\n`;
+  message += `*WhatsApp:* ${whatsapp}\n\n`;
+  message += `*Productos:*\n`;
+  cart.forEach((item, idx) => {
+    message += `${idx + 1}. ${item.name} (Cant: ${item.qty}) - S/ ${(item.price * item.qty).toFixed(2)}\n`;
+  });
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const envio = getShippingFeeCheckout();
+  const total = subtotal + envio;
+  message += `\n*Método de Envío:* ${envioTexto}`;
+  message += `\n*Método de Pago:* ${pago}`;
+  message += `\nSubtotal: S/ ${subtotal.toFixed(2)}`;
+  message += `\nEnvío: S/ ${envio.toFixed(2)}`;
+  message += `\n*Total a Pagar: S/ ${total.toFixed(2)}*`;
+  message += `\n\nQuedo atento(a) para el envío de mi comprobante Yape/Plin/Transferencia. ¡Gracias!`;
+  window.open(`https://wa.me/51926412894?text=${encodeURIComponent(message)}`, '_blank');
 }
 
-function agregarPinesAICarrito() {
-    const calc = calcularPrecioPines();
-    if (calc.totalPins === 0) {
-        alert("Selecciona al menos un diseño o sube una foto para tus pines.");
-        return;
-    }
-    carrito = carrito.filter(item => !item.esPin);
-    carrito.push({
-        id: 9999,
-        nombre: `Pack de ${calc.totalPins} Pines 58mm`,
-        precio: calc.precioUnitario,
-        cantidad: calc.totalPins,
-        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80",
-        variantes: "Colección 58mm",
-        esPin: true
-    });
-    guardarCarritoStorage(); // Guardar cambios en el navegador
-    actualizarContadorCarrito();
-    abrirCarrito();
-}
-
-function sincronizarPrecioPinesEnCarrito() {
-    const pinItem = carrito.find(item => item.esPin);
-    if (pinItem) {
-        const calc = calcularPrecioPines();
-        pinItem.precio = calc.precioUnitario;
-        guardarCarritoStorage(); // Guardar cambios en el navegador
-        actualizarContadorCarrito();
-        renderizarContenidoCarrito();
-    }
-}
-
-function seleccionarDelivery(tipo, costo) {
-    costoEnvioActual = costo;
-    document.querySelectorAll('.delivery-card').forEach(card => {
-        card.className = "delivery-card border border-slate-200 bg-white rounded-2xl p-4 text-center cursor-pointer transition hover:border-slate-300 shadow-sm";
-    });
-    document.getElementById(`del-card-${tipo}`).className = "delivery-card active border-2 cursor-pointer transition border-blue-600 bg-blue-50/50 rounded-2xl p-4 text-center shadow-sm";
-    
-    document.getElementById('fields-domicilio').hidden = (tipo !== 'domicilio');
-    document.getElementById('fields-estacion').hidden = (tipo !== 'estacion');
-    document.getElementById('fields-provincia').hidden = (tipo !== 'provincia');
-    renderizarCheckoutResumen();
-}
-
-const estacionesMetropolitano = [
-  "Terminal Naranjal", "Estación Izaguirre", "Estación Palmeras", "Estación Tomás Valle", 
-  "Estación El Milagro", "Estación Honorio Delgado", "Estación UNI", "Estación Parque del Trabajo", 
-  "Estación Caquetá", "Estación Dos de Mayo", "Estación Ramón Castilla", "Estación Tacna", 
-  "Estación Jirón de la Unión", "Estación Colmena", "Estación Quilca", "Estación España", 
-  "Estación Central", "Estación Estadio Nacional", "Estación México", "Estación Canadá", 
-  "Estación Javier Prado", "Estación Canaval y Moreyra", "Estación Aramburú", "Estación Domingo Orué", 
-  "Estación Angamos", "Estación Ricardo Palma", "Estación Benavides", "Estación 28 de Julio", 
-  "Estación Plaza de Flores", "Estación Bulevar", "Estación Balta", "Estación Escuela Militar", 
-  "Estación Plaza lima sur", "Terminal Matellini"
-];
-
-const estacionesTren = [
-  "Estación Villa El Salvador", "Estación Parque Industrial", "Estación Pumacahua", "Estación Villa María", 
-  "Estación María Auxiliadora", "Estación San Juan", "Estación Atocongo", "Estación Jorge Chávez", 
-  "Estación Ayacucho", "Estación Cabitos", "Estación Angamos", "Estación San Borja Sur", 
-  "Estación La Cultura", "Estación Nicolás Arriola", "Estación Gamarra", "Estación Miguel Grau", 
-  "Estación El Ángel", "Estación Presbítero Maestro", "Estación Caja de Agua", "Estación Pirámide del Sol", 
-  "Estación Los Jardines", "Estación Los Postes", "Estación San Carlos", "Estación San Martín", 
-  "Estación Santa Rosa", "Estación Bayóvar"
-];
-
-function actualizarEstaciones() {
-    const lineaEl = document.getElementById('chk-linea-estacion');
-    const selectEstacion = document.getElementById('chk-estacion-nombre');
-    if (!lineaEl || !selectEstacion) return;
-    
-    const linea = lineaEl.value;
-    const lista = (linea === 'Metropolitano') ? estacionesMetropolitano : estacionesTren;
-    let html = '';
-    lista.forEach(est => html += `<option value="${est}">${est}</option>`);
-    selectEstacion.innerHTML = html;
-}
-
-function seleccionarMetodoPago(elemento, metodo) {
-    metodoPagoActual = metodo;
-    document.querySelectorAll('.payment-option-row').forEach(row => {
-        row.className = "payment-option-row border border-slate-200 bg-white rounded-2xl p-4 flex items-center gap-3 cursor-pointer transition shadow-sm";
-        row.querySelector('input[type="radio"]').checked = false;
-    });
-    elemento.className = "payment-option-row active border-2 border-blue-600 bg-blue-50/50 rounded-2xl p-4 flex items-center gap-3 cursor-pointer transition shadow-sm";
-    elemento.querySelector('input[type="radio"]').checked = true;
-}
-
-function renderizarCheckoutResumen() {
-    const itemsContainer = document.getElementById('checkout-summary-items');
-    if (!itemsContainer) return;
-    let html = '';
-    let subtotal = 0;
-    carrito.forEach(item => {
-        const sub = item.precio * item.cantidad;
-        subtotal += sub;
-        html += `
-            <div class="flex justify-between items-center py-2">
-                <span class="text-slate-300 truncate pr-2">${item.cantidad}x ${item.nombre}</span>
-                <span class="font-bold text-white flex-shrink-0">S/ ${sub.toFixed(2)}</span>
-            </div>
-        `;
-    });
-    itemsContainer.innerHTML = html;
-    document.getElementById('summary-subtotal').textContent = `S/ ${subtotal.toFixed(2)}`;
-    document.getElementById('summary-envio').textContent = `S/ ${costoEnvioActual.toFixed(2)}`;
-    document.getElementById('summary-total').textContent = `S/ ${(subtotal + costoEnvioActual).toFixed(2)}`;
-}
-
-function enviarPedidoFinalWhatsApp() {
-    const nombre = document.getElementById('chk-nombre').value;
-    const whatsapp = document.getElementById('chk-whatsapp').value;
-    if (!nombre || !whatsapp) {
-        alert("Por favor completa tu nombre y número de WhatsApp.");
-        return;
-    }
-    let detalleEntrega = "";
-    if (!document.getElementById('fields-domicilio').hidden) {
-        const dir = document.getElementById('chk-direccion').value;
-        const dist = document.getElementById('chk-distrito').value;
-        if (!dir || !dist) {
-            alert("Por favor completa la dirección y distrito.");
-            return;
-        }
-        detalleEntrega = `Entrega a Domicilio\nDirección: ${dir}, ${dist}`;
-    } else if (!document.getElementById('fields-estacion').hidden) {
-        detalleEntrega = `Entrega en Estación\nRed: ${document.getElementById('chk-linea-estacion').value}\nEstación: ${document.getElementById('chk-estacion-nombre').value}`;
-    } else {
-        detalleEntrega = `Envío a Provincia (${document.getElementById('chk-agencia-provincia').value})\nCiudad: ${document.getElementById('chk-ciudad-provincia').value}\nOficina: ${document.getElementById('chk-oficina-provincia').value}`;
-    }
-
-    let subtotal = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
-    let totalFinal = subtotal + costoEnvioActual;
-
-    let mensaje = `*¡Hola Vintage Milenio! Deseo confirmar mi pedido:*\n\n*Cliente:* ${nombre}\n*WhatsApp:* ${whatsapp}\n\n*PRODUCTOS:*\n`;
-    carrito.forEach(item => {
-        mensaje += `• ${item.cantidad}x ${item.nombre} (S/ ${(item.precio * item.cantidad).toFixed(2)})\n`;
-    });
-    mensaje += `\n*ENTREGA:*\n${detalleEntrega}\nEnvío: S/ ${costoEnvioActual.toFixed(2)}\n\n`;
-    mensaje += `*PAGO:* ${metodoPagoActual}\n*TOTAL:* S/ ${totalFinal.toFixed(2)}`;
-
-    window.open(`https://wa.me/51926412894?text=${encodeURIComponent(mensaje)}`, '_blank');
-}
+window.onload = function() {
+  renderApp();
+  updateCartUI();
+};
