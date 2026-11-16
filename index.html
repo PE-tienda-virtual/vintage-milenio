@@ -47,7 +47,7 @@
             </div>
             <div class="relative flex justify-center">
               <div class="w-56 sm:w-80 rounded-3xl overflow-hidden glass-card p-2 sm:p-3 card-3d animate-float border border-cyan-500/30 cursor-pointer" onclick="openProductModal(1)">
-                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="Mochila Vintage" class="aspect-square-custom rounded-2xl">
+                <img src="img/Morral Urban Illust/1.jpg" alt="Mochila Vintage" class="aspect-square-custom rounded-2xl">
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@
             </div>
             <div class="relative flex justify-center">
               <div class="w-56 sm:w-80 rounded-3xl overflow-hidden glass-card p-2 sm:p-3 card-3d animate-float border border-indigo-500/30 cursor-pointer" style="animation-delay: 1s;" onclick="openProductModal(2)">
-                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80" alt="Personalización" class="aspect-square-custom rounded-2xl">
+                <img src="img/Boiso cruzado XS/3.jpg" alt="Personalización" class="aspect-square-custom rounded-2xl">
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="relative flex justify-center">
               <div class="w-56 sm:w-80 rounded-3xl overflow-hidden glass-card p-2 sm:p-3 card-3d animate-float border border-emerald-500/30 cursor-pointer" style="animation-delay: 2s;" onclick="openProductModal(9)">
-                <img src="https://images.unsplash.com/photo-1513519245088-0c12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Box Especial" class="aspect-square-custom rounded-2xl">
+                <img src="img/ArmyBomb/6.jpeg" alt="Box Especial" class="aspect-square-custom rounded-2xl">
               </div>
             </div>
           </div>
@@ -168,18 +168,17 @@
             <div class="relative glass-card rounded-2xl sm:rounded-3xl p-3 sm:p-8 card-3d border border-cyan-500/35 overflow-hidden bg-white/90">
               <div class="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white text-[8px] sm:text-xs font-extrabold px-2 py-0.5 sm:px-3.5 sm:py-1.5 rounded-full shadow-lg">Más Vendido</div>
               <div class="relative w-full rounded-xl sm:rounded-2xl overflow-hidden mb-3 sm:mb-6 group card-3d cursor-pointer" onclick="openProductModal(1)">
-                <img id="hero-img" src="img/Bolso Nubily Flor/1.jpg" alt="Morral Urbano" class="aspect-square-custom group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-2.5 sm:p-6 pointer-events-none">
+                <video id="hero-img" src="img/ArmyBomb/10.mp4" class="aspect-square-custom group-hover:scale-105 transition duration-500 object-cover" autoplay muted loop playsinline></video>                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-2.5 sm:p-6 pointer-events-none">
                   <div>
                     <span class="text-[8px] sm:text-xs font-bold text-cyan-200 uppercase tracking-widest bg-cyan-950/80 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md border border-cyan-500/30">Edición Limitada - Lima</span>
-                    <h3 class="text-xs sm:text-2xl font-bold font-display text-white mt-1 sm:mt-2 leading-tight">Morral  Urbano Lona y Cuero</h3>
+                    <h3 class="text-xs sm:text-2xl font-bold font-display text-white mt-1 sm:mt-2 leading-tight">Bag ArmyBomb</h3>
                   </div>
                 </div>
               </div>
               <div class="flex items-center justify-between">
                 <div>
                   <span class="text-[9px] sm:text-xs text-slate-500 block font-medium">Precio Especial</span>
-                  <span class="text-sm sm:text-3xl font-extrabold text-cyan-600 font-display">S/ 149.00</span>
+                  <span class="text-sm sm:text-3xl font-extrabold text-cyan-600 font-display">S/90.00 </span>
                 </div>
                 <button onclick="addHeroToCart()" class="px-2.5 py-2 sm:px-6 sm:py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-[10px] sm:text-sm hover:from-cyan-600 hover:to-indigo-700 shadow-xl shadow-cyan-500/30 transition flex items-center gap-1.5 sm:gap-2 cursor-pointer card-3d">
                   Adquirir <i class="fa-solid fa-cart-plus text-[10px] sm:text-sm"></i>
@@ -533,12 +532,12 @@
               <div onclick="setShippingType('estacion')" id="ship-card-estacion" class="ship-card border-2 border-slate-200 hover:border-slate-300 rounded-2xl p-3.5 sm:p-4 cursor-pointer text-center space-y-1.5 sm:space-y-2 transition card-3d">
                 <i class="fa-solid fa-train-subway text-lg sm:text-xl text-indigo-600"></i>
                 <h4 class="font-bold text-xs sm:text-sm text-slate-900">Estación (Línea 1 / Metro)</h4>
-                <span class="text-[11px] sm:text-xs text-slate-500 block">S/ 5.00</span>
+                <span class="text-[11px] sm:text-xs text-slate-500 block">S/ 3.00</span>
               </div>
               <div onclick="setShippingType('provincia')" id="ship-card-provincia" class="ship-card border-2 border-slate-200 hover:border-slate-300 rounded-2xl p-3.5 sm:p-4 cursor-pointer text-center space-y-1.5 sm:space-y-2 transition card-3d">
                 <i class="fa-solid fa-box text-lg sm:text-xl text-emerald-600"></i>
-                <h4 class="font-bold text-xs sm:text-sm text-slate-900">Provincia (Agencias)</h4>
-                <span class="text-[11px] sm:text-xs text-slate-500 block">S/ 18.00</span>
+                <h4 class="font-bold text-xs sm:text-sm text-slate-900">Agencias Courier</h4>
+                <span class="text-[11px] sm:text-xs text-slate-500 block">S/ 12.00</span>
               </div>
             </div>
             <div id="shipping-details-container" class="space-y-3.5 sm:space-y-4 pt-3.5 sm:pt-4 border-t border-slate-200"></div>
