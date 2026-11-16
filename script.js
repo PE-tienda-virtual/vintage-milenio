@@ -8,7 +8,7 @@ const products = [
   {
     id: 1,
     name: "Bag ArmyBOMB",
-    category: "morrales",
+    category: "morrales, bolsos",
     price: 90.00,
     oldPrice: 110.00,
     rating: "4.8 (9 valoraciones)",
@@ -16,7 +16,7 @@ const products = [
     desc: "Morral cruzado XS, New Style estilo ArmyBomb, Incluye un Llaverito Arirang",
     bullets: [
       "Material: Lona / Tazlan",
-      "Estilo: Mark Fairwhale",
+      "Estilo: Morral",
       "4 compartimientos",
       "Medidas: 30cm x 13.5cm (Diametro circular)"
     ],
