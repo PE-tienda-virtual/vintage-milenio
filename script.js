@@ -123,9 +123,9 @@ const products = [
       { name: 'L', dim: '44cm x 32cm x 14cm (9 bolsillos)', price: 110.00 }
     ],
     variants: [
-      { name: "Negro", img: "img/Morral cruzado Vintage/3.jpg", price: 75.00, status: "disponible" },
-      { name: "Verde Militar", img: "img/Morral cruzado Vintage/2.jpg", price: 75.00, status: "disponible" },
-      { name: "Beige khaki", img: "img/Morral cruzado Vintage/1.jpg", price: 75.00, status: "disponible" }
+      { name: "Negro", img: "img/Morral cruzado Vintage/3.jpg", price: 75.00, status: "bajo pedido" },
+      { name: "Verde Militar", img: "img/Morral cruzado Vintage/2.jpg", price: 75.00, status: "bajo pedido" },
+      { name: "Beige khaki", img: "img/Morral cruzado Vintage/1.jpg", price: 75.00, status: "bajo pedido" }
     ],
     lookbookImages: [
       "img/Morral cruzado Vintage/4.jpg",
