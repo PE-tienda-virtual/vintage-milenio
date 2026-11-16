@@ -171,7 +171,7 @@ const products = [
     price: 85.00,
     oldPrice: 115.00,
     rating: "4.8 (9 valoraciones)",
-    img: "img/Bolso Japones Itabag I/1.jpg",
+    img: "img/Bolso japones itabag I/1.jpg",
     desc: "Bolso japonés itabag estilo shoulder bag con diseños de ventana transparente frontal (huella, estrella o corazón), compartimento para laptop de 14 pulgadas.",
     bullets: [
       "Cumple con los estándares TSA",
@@ -184,9 +184,9 @@ const products = [
     tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
     sizes: [],
     variants: [
-      { name: "Huella", img: "img/Bolso Japones Itabag I/2.jpg", price: 85.00, status: "bajo pedido" },
-      { name: "Estrella", img: "img/Bolso Japones Itabag I/3.jpg", price: 85.00, status: "bajo pedido" },
-      { name: "Corazón", img: "img/Bolso Japones Itabag I/4.jpg", price: 85.00, status: "bajo pedido" }
+      { name: "Huella", img: "img/Bolso japones Itabag I/2.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Estrella", img: "img/Bolso japones Itabag I/3.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Corazón", img: "img/Bolso japones Itabag I/4.jpg", price: 85.00, status: "bajo pedido" }
     ],
     lookbookImages: [
       "img/Bolso Japones Itabag I/1.jpg",
