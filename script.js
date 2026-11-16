@@ -708,10 +708,10 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Azul", img: "img/Morral Oficio Corto/7.jpg", price: 72.00, status: "disponible" },
-      { name: "Negro", img: "img/Morral Oficio Corto/6.jpg", price: 72.00, status: "disponible" },
-      { name: "Verde", img: "img/Morral Oficio Corto/5.jpg", price: 72.00, status: "disponible" },
-      { name: "Kakhi", img: "img/Morral Oficio Corto/8.jpg", price: 72.00, status: "disponible" }
+      { name: "Azul", img: "img/Morral Oficio Corto/7.png", price: 72.00, status: "disponible" },
+      { name: "Negro", img: "img/Morral Oficio Corto/6.pgg", price: 72.00, status: "disponible" },
+      { name: "Verde", img: "img/Morral Oficio Corto/5.pgg", price: 72.00, status: "disponible" },
+      { name: "Kakhi", img: "img/Morral Oficio Corto/8.png", price: 72.00, status: "disponible" }
     ],
     lookbookImages: [
       "img/Morral Oficio Corto/3.jpg",
