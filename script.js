@@ -7,6 +7,36 @@ const standardSizes = [
 const products = [
   {
     id: 1,
+    name: "Bag ArmyBOMB",
+    category: "morrales",
+    price: 90.00,
+    oldPrice: 110.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/ArmyBomb/6.jpeg",
+    desc: "Bolso cruzado XS New Style estilo Mark Fairwhale en cuero PU con 4 compartimientos organizadores y detalles con hebillas.",
+    bullets: [
+      "Material: Cuero PU",
+      "Estilo: Mark Fairwhale",
+      "4 compartimientos",
+      "Medidas: 32x26x8 cm (Ideal para cuadernos B5, tablet y celulares)"
+    ],
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Verde Militar", img: "img/ArmyBomb/1.jpeg", price: 90.00, status: "bajo pedido" },
+      { name: "Negro", img: "img/ArmyBomb/7.jpg", price: 90.00, status: "bajo pedido" }
+    ],
+    lookbookImages: [
+      "img/ArmyBomb/1.jpeg",
+      "img/ArmyBomb/2.jpeg",    
+      "img/ArmyBomb/4.jpeg",
+      "img/ArmyBomb/7.jpg",
+      "img/ArmyBomb/8.jpg"
+    ]
+  },
+  {
+    id: 2,
     name: "Morral de Lona RYH",
     category: "morrales",
     price: 75.00,
@@ -37,7 +67,7 @@ const products = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     name: "Morral Totoro Clasico",
     category: "morrales",
     price: 60.00,
@@ -72,7 +102,7 @@ const products = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     name: "Bolso Cruzado Vintage",
     category: "morrales",
     price: 75.00,
@@ -105,7 +135,7 @@ const products = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     name: "Bolso Bandolera Y2K",
     category: "carteras",
     price: 45.00,
@@ -132,39 +162,6 @@ const products = [
     lookbookImages: [
       "img/Bolso Bandolera y2k/1.jpg",
       "img/Bolso Bandolera y2k/2.jpg"
-    ]
-  },
-  {
-    id: 5,
-    name: "Bolso Japonés Clásico",
-    category: "carteras",
-    price: 80.00,
-    oldPrice: 100.00,
-    rating: "4.9 (12 valoraciones)",
-    img: "img/Bolso Japones Clasico/1.jpg",
-    desc: "Shoulder bag Bolso Japonés modelo clásico en cuero PU de alta calidad con múltiples compartimientos, correa ajustable y gran capacidad para laptop y folders.",
-    bullets: [
-      "Material: Cuero PU de Alta Calidad",
-      "Medidas: 39x30x12 cm",
-      "Correa ajustable: Longitud máx 140cm / Ancho 4cm",
-      "2 compartimientos grandes y 1 pequeño",
-      "Ideal para laptop de 14\", A5/A4, Tablet y Folders"
-    ],
-    badge: "Popular",
-    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
-    sizes: [],
-    variants: [
-      { name: "Blanco", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
-      { name: "Bronceado", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
-      { name: "Marrón Oscuro", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
-      { name: "Azul", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
-      { name: "Negro", img: "img/Bolso Japones Clasico/1.jpg", price: 80.00, status: "disponible" }
-    ],
-    lookbookImages: [
-      "img/Bolso Japones Clasico/3.jpg",
-      "img/Bolso Japones Clasico/4.jpg",
-      "img/Bolso Japones Clasico/4.jpg",
-      "img/Bolso Japones Clasico/3.jpg"
     ]
   },
   {
@@ -274,7 +271,7 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Marrón", img: "img/Bolso Nubily  Lazos/2.jpg", price: 80.00, status: "disponible" },
+      { name: "Marrón", img: "img/Bolso Nubily  Lazos/2.jpg", price: 80.00, status: "bajo pedido" },
       { name: "Negro", img: "img/Bolso Nubily  Lazos/3.jpg", price: 80.00, status: "disponible" }
     ],
     lookbookImages: [
@@ -519,7 +516,7 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Negro", img: "img/Morral Belstaff Basico/1.jpg", price: 85.00, status: "disponible" }
+      { name: "Negro", img: "img/Morral Belstaff Basico/1.jpg", price: 85.00, status: "bajo pedido" }
     ],
     lookbookImages: [
       "img/Morral Belstaff Basico/2.jpg",
@@ -576,9 +573,9 @@ const products = [
     sizes: [],
     variants: [
       { name: "Estrella 1", img: "img/Morral Cosmic/2.jpg", price: 79.00, status: "disponible" },
-      { name: "Estrella 2", img: "img/Morral Cosmic/3.jpg", price: 79.00, status: "disponible" },
-      { name: "Estrella 3", img: "img/Morral Cosmic/4.jpg", price: 79.00, status: "disponible" },
-      { name: "Estrella 4", img: "img/Morral Cosmic/5.jpg", price: 79.00, status: "disponible" }
+      { name: "Estrella 2", img: "img/Morral Cosmic/3.jpg", price: 79.00, status: "bajo pedido" },
+      { name: "Estrella 3", img: "img/Morral Cosmic/4.jpg", price: 79.00, status: "bajo pedido" },
+      { name: "Estrella 4", img: "img/Morral Cosmic/5.jpg", price: 79.00, status: "bajo pedido" }
     ],
     lookbookImages: [
       "img/Morral Cosmic/7.jpg",
@@ -684,7 +681,7 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Frontal", img: "img/Morral Mensajero de Totoro 600D/2.jpg", price: 77.00, status: "disponible" },
+      { name: "Frontal", img: "img/Morral Mensajero de Totoro 600D/2.jpg", price: 77.00, status: "bajo pedido" },
       { name: "Saludo", img: "img/Morral Mensajero de Totoro 600D/3.jpg", price: 80.00, status: "bajo pedido" }
     ],
     lookbookImages: [
@@ -696,7 +693,7 @@ const products = [
     id: 25,
     name: "Morral Oficio Corto",
     category: "morrales",
-    price: 82.00,
+    price: 72.00,
     oldPrice: 100.00,
     rating: "4.8 (10 valoraciones)",
     img: "img/Morral Oficio Corto/1.jpg",
@@ -711,21 +708,23 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Azul", img: "img/Morral Oficio Corto/7.jpg", price: 82.00, status: "disponible" },
-      { name: "Negro", img: "img/Morral Oficio Corto/6.jpg", price: 82.00, status: "disponible" },
-      { name: "Verde", img: "img/Morral Oficio Corto/5.jpg", price: 82.00, status: "disponible" },
-      { name: "Kakhi", img: "img/Morral Oficio Corto/8.jpg", price: 82.00, status: "disponible" }
+      { name: "Azul", img: "img/Morral Oficio Corto/7.jpg", price: 72.00, status: "disponible" },
+      { name: "Negro", img: "img/Morral Oficio Corto/6.jpg", price: 72.00, status: "disponible" },
+      { name: "Verde", img: "img/Morral Oficio Corto/5.jpg", price: 72.00, status: "disponible" },
+      { name: "Kakhi", img: "img/Morral Oficio Corto/8.jpg", price: 72.00, status: "disponible" }
     ],
     lookbookImages: [
-      "img/Morral Oficio Corto/5.jpg"
+      "img/Morral Oficio Corto/3.jpg",
+      "img/Morral Oficio Corto/4.jpg",
+      "img/Morral Oficio Corto/2.jpg"
     ]
   },
   {
     id: 26,
     name: "Morral Ranger Bag",
     category: "morrales",
-    price: 99.00,
-    oldPrice: 120.00,
+    price: 65.00,
+    oldPrice: 75.00,
     rating: "4.9 (12 valoraciones)",
     img: "img/Morral Ranger Bag/1.jpg",
     desc: "Morral retro casual Ranger Bag canvas de lona canvas grueso con 4 compartimientos y espacio para laptop de hasta 12 pulgadas.",
@@ -739,21 +738,24 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Marrón", img: "img/Morral Ranger Bag/1.jpg", price: 99.00, status: "disponible" },
-      { name: "Azul", img: "img/Morral Ranger Bag/2.jpg", price: 99.00, status: "disponible" },
-      { name: "Verde", img: "img/Morral Ranger Bag/3.jpg", price: 99.00, status: "disponible" }
+      { name: "Marrón", img: "img/Morral Ranger Bag/2.jpg", price: 99.00, status: "disponible" },
+      { name: "Azul", img: "img/Morral Ranger Bag/3.jpg", price: 99.00, status: "disponible" },
+      { name: "Negro", img: "img/Morral Ranger Bag/1.jpg", price: 99.00, status: "disponible" },
+      { name: "Verde", img: "img/Morral Ranger Bag/4.jpg", price: 99.00, status: "disponible" }
     ],
     lookbookImages: [
-      "img/Morral Ranger Bag/4.jpg",
-      "img/Morral Ranger Bag/5.jpg"
+      "img/Morral Ranger Bag/5.jpg",
+      "img/Morral Ranger Bag/6.jpg",
+      "img/Morral Ranger Bag/7.jpg",
+      "img/Morral Ranger Bag/8.jpg"
     ]
   },
   {
     id: 27,
     name: "Morral Urban Illust",
     category: "morrales",
-    price: 78.00,
-    oldPrice: 95.00,
+    price: 60.00,
+    oldPrice: 75.00,
     rating: "4.8 (8 valoraciones)",
     img: "img/Morral Urban Illust/1.jpg",
     desc: "Shoulder bag y messenger bag Morral Urban Illust en lona canvas con 6 compartimientos organizadores, ideal para cuadernos A4 y laptop de 11\".",
@@ -766,13 +768,16 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Negro", img: "img/Morral Urban Illust/1.jpg", price: 78.00, status: "disponible" }
+      { name: "Ying Yang", img: "img/Morral Urban Illust/4.jpg", price: 60.00, status: "disponible" },
+      { name: "Zorrito", img: "img/Morral Urban Illust/2.jpg", price: 60.00, status: "disponible" },
+      { name: "3 Gatitos", img: "img/Morral Urban Illust/6.jpg", price: 60.00, status: "disponible" }
     ],
     lookbookImages: [
-      "img/Morral Urban Illust/2.jpg",
+      "img/Morral Urban Illust/1.jpg",
       "img/Morral Urban Illust/3.jpg",
-      "img/Morral Urban Illust/4.jpg",
-      "img/Morral Urban Illust/5.jpg"
+      "img/Morral Urban Illust/5.jpg",
+      "img/Morral Urban Illust/7.jpg",
+      "img/Morral Urban Illust/8.jpg"
     ]
   },
   {
@@ -799,16 +804,15 @@ const products = [
     ],
     lookbookImages: [
       "img/Morral.Maletin buckle leather/3.jpg",
-      "img/Morral.Maletin buckle leather/4.jpg",
-      "img/Morral.Maletin buckle leather/5.jpg"
+      "img/Morral.Maletin buckle leather/4.jpg"
     ]
   },
   {
     id: 29,
     name: "Mochila Pikachu Clásico",
     category: "mochilas",
-    price: 110.00,
-    oldPrice: 135.00,
+    price: 40.00,
+    oldPrice: 55.00,
     rating: "4.9 (19 valoraciones)",
     img: "img/Mochila Pikachu Clasico/1.jpg",
     desc: "Backpack mochila clásica Pikachu New Style en nylon de 3 compartimientos, ideal para cuadernos A4, folders y laptop de hasta 15 pulgadas.",
@@ -822,21 +826,19 @@ const products = [
     tagColor: "bg-yellow-500/15 text-yellow-700 border-yellow-500/30",
     sizes: [],
     variants: [
-      { name: "Azul Denim", img: "img/Mochila Pikachu Clasico/1.jpg", price: 110.00, status: "disponible" }
+      { name: "Azul Denim", img: "img/Mochila Pikachu Clasico/1.jpg", price: 40.00, status: "disponible" }
     ],
     lookbookImages: [
-      "img/Mochila Pikachu Clasico/2.jpg",
-      "img/Mochila Pikachu Clasico/3.jpg",
-      "img/Mochila Pikachu Clasico/4.jpg",
-      "img/Mochila Pikachu Clasico/5.jpg"
+      "img/Mochila Pikachu Clasico/2.jpg"
+    
     ]
   },
   {
     id: 30,
     name: "Mochila Card",
     category: "mochilas",
-    price: 110.00,
-    oldPrice: 135.00,
+    price: 55.00,
+    oldPrice: 75.00,
     rating: "4.8 (11 valoraciones)",
     img: "img/Mochila Card/1.jpg",
     desc: "Mochila Itabag M Card New Style en nylon y cuero PU de 3 compartimientos con ventana frontal para coleccionables.",
@@ -850,20 +852,17 @@ const products = [
     tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
     sizes: [],
     variants: [
-      { name: "Negro / Naranja", img: "img/Mochila Card/1.jpg", price: 110.00, status: "disponible" }
+      { name: "Negro / Naranja", img: "img/Mochila Card/1.jpg", price: 55.00, status: "disponible" }
     ],
     lookbookImages: [
-      "img/Mochila Card/2.jpg",
-      "img/Mochila Card/3.jpg",
-      "img/Mochila Card/4.jpg",
-      "img/Mochila Card/5.jpg"
+      "img/Mochila Card/2.jpg"
     ]
   },
   {
     id: 31,
     name: "Bolso Cruzado XS",
-    category: "morrales",
-    price: 85.00,
+    category: "bolsos",
+    price: 60.00,
     oldPrice: 105.00,
     rating: "4.8 (9 valoraciones)",
     img: "img/Boiso cruzado XS/1.jpg",
@@ -878,13 +877,76 @@ const products = [
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
-      { name: "Negro / Vino", img: "img/Boiso cruzado XS/1.jpg", price: 85.00, status: "disponible" }
+      { name: "Negro / Vino", img: "img/Boiso cruzado XS/1.jpg", price: 60.00, status: "disponible" }
     ],
     lookbookImages: [
       "img/Boiso cruzado XS/2.jpg",
       "img/Boiso cruzado XS/3.jpg",
       "img/Boiso cruzado XS/4.jpg",
       "img/Boiso cruzado XS/5.jpg"
+    ]
+  },
+  {
+    id: 32,
+    name: "Bag ArmyBOMB",
+    category: "morrales",
+    price: 90.00,
+    oldPrice: 110.00,
+    rating: "4.8 (9 valoraciones)",
+    img: "img/ArmyBomb/6.jpeg",
+    desc: "Bolso cruzado XS New Style estilo Mark Fairwhale en cuero PU con 4 compartimientos organizadores y detalles con hebillas.",
+    bullets: [
+      "Material: Cuero PU",
+      "Estilo: Mark Fairwhale",
+      "4 compartimientos",
+      "Medidas: 32x26x8 cm (Ideal para cuadernos B5, tablet y celulares)"
+    ],
+    badge: "",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Verde Militar", img: "img/ArmyBomb/1.jpeg", price: 90.00, status: "bajo pedido" },
+      { name: "Negro", img: "img/ArmyBomb/7.jpeg", price: 90.00, status: "bajo pedido" }
+    ],
+    lookbookImages: [
+      "img/ArmyBomb/1.jpeg",
+      "img/ArmyBomb/2.jpeg",    
+      "img/ArmyBomb/4.jpeg",
+      "img/ArmyBomb/7.jpeg",
+      "img/ArmyBomb/8.jpeg"
+    ]
+  },
+  {
+    id: 33,
+    name: "Bolso Japonés Clásico",
+    category: "carteras",
+    price: 80.00,
+    oldPrice: 100.00,
+    rating: "4.9 (12 valoraciones)",
+    img: "img/Bolso Japones Clasico/1.jpg",
+    desc: "Shoulder bag Bolso Japonés modelo clásico en cuero PU de alta calidad con múltiples compartimientos, correa ajustable y gran capacidad para laptop y folders.",
+    bullets: [
+      "Material: Cuero PU de Alta Calidad",
+      "Medidas: 39x30x12 cm",
+      "Correa ajustable: Longitud máx 140cm / Ancho 4cm",
+      "2 compartimientos grandes y 1 pequeño",
+      "Ideal para laptop de 14\", A5/A4, Tablet y Folders"
+    ],
+    badge: "Popular",
+    tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
+    sizes: [],
+    variants: [
+      { name: "Blanco", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Bronceado", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Marrón Oscuro", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Azul", img: "img/Bolso Japones Clasico/4.jpg", price: 80.00, status: "disponible" },
+      { name: "Negro", img: "img/Bolso Japones Clasico/1.jpg", price: 80.00, status: "disponible" }
+    ],
+    lookbookImages: [
+      "img/Bolso Japones Clasico/3.jpg",
+      "img/Bolso Japones Clasico/4.jpg",
+      "img/Bolso Japones Clasico/4.jpg",
+      "img/Bolso Japones Clasico/3.jpg"
     ]
   },
   // --- ACCESORIOS ---
