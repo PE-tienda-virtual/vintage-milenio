@@ -13,14 +13,14 @@ const products = [
     oldPrice: 110.00,
     rating: "4.8 (9 valoraciones)",
     img: "img/ArmyBomb/6.jpeg",
-    desc: "Morral cruzado XS, New Style estilo ArmyBomb",
+    desc: "Morral cruzado XS, New Style estilo ArmyBomb, Incluye un Llaverito Arirang",
     bullets: [
       "Material: Lona / Tazlan",
       "Estilo: Mark Fairwhale",
       "4 compartimientos",
       "Medidas: 30cm x 13.5cm (Diametro circular)"
     ],
-    badge: "",
+    badge: "Preventa",
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
     sizes: [],
     variants: [
