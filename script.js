@@ -184,16 +184,16 @@ const products = [
     tagColor: "bg-purple-500/15 text-purple-700 border-purple-500/30",
     sizes: [],
     variants: [
-      { name: "Huella", img: "img/Bolso japones Itabag I/2.jpg", price: 85.00, status: "bajo pedido" },
-      { name: "Estrella", img: "img/Bolso japones Itabag I/3.jpg", price: 85.00, status: "bajo pedido" },
-      { name: "Corazón", img: "img/Bolso japones Itabag I/4.jpg", price: 85.00, status: "bajo pedido" }
+      { name: "Huella", img: "img/Bolso japones itabag I/2.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Estrella", img: "img/Bolso japones itabag I/3.jpg", price: 85.00, status: "bajo pedido" },
+      { name: "Corazón", img: "img/Bolso japones itabag I/4.jpg", price: 85.00, status: "bajo pedido" }
     ],
     lookbookImages: [
-      "img/Bolso Japones Itabag I/1.jpg",
-      "img/Bolso Japones Itabag I/2.jpg",
-      "img/Bolso Japones Itabag I/3.jpg",
-      "img/Bolso Japones Itabag I/4.jpg",
-      "img/Bolso Japones Itabag I/5.jpg"
+      "img/Bolso japones itabag I/1.jpg",
+      "img/Bolso japones itabag I/2.jpg",
+      "img/Bolso japones itabag I/3.jpg",
+      "img/Bolso japones itabag I/4.jpg",
+      "img/Bolso japones itabag I/5.jpg"
     ]
   },
   {
