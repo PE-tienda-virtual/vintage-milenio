@@ -13,12 +13,12 @@ const products = [
     oldPrice: 110.00,
     rating: "4.8 (9 valoraciones)",
     img: "img/ArmyBomb/6.jpeg",
-    desc: "Bolso cruzado XS New Style estilo Mark Fairwhale en cuero PU con 4 compartimientos organizadores y detalles con hebillas.",
+    desc: "Morral cruzado XS, New Style estilo ArmyBomb",
     bullets: [
-      "Material: Cuero PU",
+      "Material: Lona / Tazlan",
       "Estilo: Mark Fairwhale",
       "4 compartimientos",
-      "Medidas: 32x26x8 cm (Ideal para cuadernos B5, tablet y celulares)"
+      "Medidas: 30cm x 13.5cm (Diametro circular)"
     ],
     badge: "",
     tagColor: "bg-cyan-500/15 text-cyan-700 border-cyan-500/30",
